@@ -182,6 +182,7 @@
     zoxide
     cbonsai
     yazi # File manager
+    lm_sensors
 
     # Coding Stuff
     lunarvim
