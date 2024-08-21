@@ -93,6 +93,10 @@
     ];
   };
 
+  # Xbox Gamepad
+  # hardware.xone.enable = true;
+  hardware.xpadneo.enable = true;
+
   # Nvidia
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia = {
@@ -128,6 +132,7 @@
       element-desktop
       spotify-player # TUI for Spotify
       spotify
+      telegram-desktop
     ];
   };
   
@@ -144,8 +149,19 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Garbage Collection
+  nix.gc = {
+    automatic = true;
+    dates = "Sat *-*-* 20:30:00";
+  };
+  nix.optimise = {
+    automatic = true;
+    dates = [ "Sat *-*-* 21:00:00" ];
+  };
+
   # Paket
   environment.systemPackages = with pkgs; [
+    motrix
     mpv
     feh
     vlc
@@ -155,7 +171,17 @@
     libreoffice-still
     zathura
     chromium
-    davinci-resolve
+
+    # Mmm Windows
+    wineWowPackages.stable
+    winetricks
+    bottles
+
+    # Mmm what...
+    dwarfs
+    fuse-overlayfs
+    bubblewrap
+    wine-staging
 
     # Ngegame bentaran lah ya
     mindustry-wayland
