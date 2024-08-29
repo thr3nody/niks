@@ -172,16 +172,8 @@
     zathura
     chromium
 
-    # Mmm Windows
-    wineWowPackages.stable
-    winetricks
+    # Bottles(?)
     bottles
-
-    # Mmm what...
-    dwarfs
-    fuse-overlayfs
-    bubblewrap
-    wine-staging
 
     # Ngegame bentaran lah ya
     mindustry-wayland
