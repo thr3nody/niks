@@ -173,6 +173,8 @@
     chromium
 
     # Bottles(?)
+    wineWowPackages.stable
+    winetricks
     bottles
 
     # Ngegame bentaran lah ya
