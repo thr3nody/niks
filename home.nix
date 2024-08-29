@@ -34,6 +34,12 @@
     # '';
   };
 
+  # Gnome GTK4 set all to dark theme.
+  dconf = {
+    enable = true;
+    settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+  };
+
   # Sway
   wayland.windowManager.sway = {
     enable = true;
