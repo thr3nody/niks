@@ -203,6 +203,7 @@
     cbonsai
     yazi # File manager
     lm_sensors
+    bunbun # VERY CUTE!
 
     # Coding Stuff
     lunarvim
@@ -279,6 +280,8 @@
     interactiveShellInit = ''
       starship init fish | source
       zoxide init fish | source
+      set fish_greeting
+      bunbun
     '';
   };
 
