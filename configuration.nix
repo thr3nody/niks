@@ -221,6 +221,9 @@
 
     python3
 
+    # Docker Compose
+    docker-compose
+
     # LaTex
     texliveFull
     texlab
