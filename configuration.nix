@@ -213,6 +213,7 @@
     lunarvim
     vscode
     zed-editor
+    android-studio
 
     php
     php82Packages.composer
