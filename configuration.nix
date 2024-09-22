@@ -162,15 +162,19 @@
   # Paket
   environment.systemPackages = with pkgs; [
     motrix
-    mpv
     feh
-    vlc
     gimp
     krita
     audacity
     libreoffice-still
     zathura
     chromium
+
+    # Video thing
+    flowblade
+    kdenlive
+    mpv
+    vlc
 
     # Bottles(?)
     wineWowPackages.stable
@@ -284,6 +288,7 @@
       starship init fish | source
       zoxide init fish | source
       set fish_greeting
+      alias blade="GDK_BACKEND=x11 SDL_VIDEODRIVER=x11 nvidia-offload flowblade"
       bunbun
     '';
   };
