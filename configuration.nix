@@ -125,7 +125,7 @@
   users.users.erine = {
     isNormalUser = true;
     description = "Erine Moira";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "kvm" "adbuser" ];
     packages = with pkgs; [
       thunderbird
       vesktop
@@ -253,6 +253,9 @@
     # Cloudflare
     cloudflare-warp
   ];
+
+  # Adb
+  programs.adb.enable = true;
 
   # Steamy
   programs.steam = {
