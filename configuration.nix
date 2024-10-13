@@ -208,12 +208,15 @@
     yazi # File manager
     lm_sensors
     bunbun # VERY CUTE!
+    unrar
 
     # Coding Stuff
     lunarvim
     vscode
     zed-editor
     android-studio
+
+    gitlab-runner
 
     php
     php82Packages.composer
@@ -225,6 +228,8 @@
     luajitPackages.luarocks
 
     python3
+
+    flutter
 
     # Docker Compose
     docker-compose
