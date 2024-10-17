@@ -4,6 +4,7 @@
   imports = [
     ./component/waybar.nix
     ./paper.nix
+    ./lock.nix
     ../../wofi.nix
   ];
 
@@ -40,8 +41,8 @@
 
       general {
         sensitivity=1.0 # for mouse cursor    
-        gaps_in=8
-        gaps_out=15
+        gaps_in=6
+        gaps_out=10
         border_size=3
         col.active_border=rgba(cba6f7ff) rgba(89b4faff) rgba(94e2d5ff) 10deg
         col.inactive_border=0xff45475a
