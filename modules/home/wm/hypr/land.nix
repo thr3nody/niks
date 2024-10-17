@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../waybar.nix
+    ./component/waybar.nix
   ];
 
   wayland.windowManager.hyprland = {

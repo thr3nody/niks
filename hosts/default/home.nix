@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../modules/home/wm/hypr.nix
+    ../../modules/home/wm/hypr/land.nix
   ];
   
 
