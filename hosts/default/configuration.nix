@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, lib, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -47,8 +47,11 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
+  # Display Manager
+  services.xserver.displayManager = {
+    gdm.enable = true;
+  };
+
   services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
@@ -329,47 +332,6 @@
   services.udev.packages = with pkgs; [
     gnome.gnome-settings-daemon
   ];
-
-  # LEMP maybe
-  services.nginx = {
-    enable = true;
-    virtualHosts."adminer.localhost" = {
-      root = "/var/www/adminer";
-      locations."~ \\.php$".extraConfig = ''
-        fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
-        fastcgi_index adminer.php;
-      '';
-    };
-    virtualHosts."helloworld.localhost" = {
-      root = "/var/www/helloworld";
-      locations."~ \\.html$".extraConfig = ''
-        fastcgi_index index.html;
-      '';
-    };
-    virtualHosts."hotelenak.localhost" = {
-      root = "/var/www/hotel_enak";
-      locations."~ \\.php$".extraConfig = ''
-        fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
-        fastcgi_index index.php;
-      '';
-    };
-  };
-  services.mysql = {
-    enable = true;
-    package = pkgs.mariadb;
-  };
-  services.phpfpm.pools.mypool = {
-    user = "nobody";
-    settings = {
-      "pm" = "dynamic";
-      "listen.owner" = config.services.nginx.user;
-      "pm.max_children" = 5;
-      "pm.start_servers" = 2;
-      "pm.min_spare_servers" = 1;
-      "pm.max_spare_servers" = 3;
-      "pm.max_requests" = 500;
-    };
-  };
 
   # Fonts
   fonts.packages = with pkgs; [

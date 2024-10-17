@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # lobster.url = "github:justchokingaround/lobster";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -15,7 +14,7 @@
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
-        ./configuration.nix
+        "${self}/hosts/default/configuration.nix"
         inputs.home-manager.nixosModules.default
       ];
     };

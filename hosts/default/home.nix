@@ -1,6 +1,12 @@
 { config, pkgs, inputs, ... }:
 
 {
+  import = [
+    ../../modules/home/wm/hypr.nix
+  ];
+  
+
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "erine";
@@ -41,11 +47,13 @@
   };
 
   # Sway
-  wayland.windowManager.sway = {
-    enable = true;
-    config = rec {
-      modifier = "Mod4";
-      terminal = "kitty";
+  wayland.windowManager = {
+    sway = {
+      enable = true;
+      config = rec {
+        modifier = "Mod4";
+        terminal = "kitty";
+      };
     };
   };
 
