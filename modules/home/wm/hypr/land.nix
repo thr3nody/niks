@@ -4,6 +4,7 @@
   imports = [
     ./component/waybar.nix
     ./paper.nix
+    ../../rofi.nix
   ];
 
   wayland.windowManager.hyprland = {
@@ -101,6 +102,10 @@
       bind=SUPER,Q,killactive
       bind=SUPERSHIFT,Q,exit
       bind=SUPER,B,exec,firefox
+      
+      $menu = rofi -show drun
+
+      bind=SUPER,S,exec,$menu
     '';
   };
 }
