@@ -103,7 +103,7 @@
       bind=SUPERSHIFT,Q,exit
       bind=SUPER,B,exec,firefox
       
-      $menu = rofi -show drun
+      $menu = wofi --show drun
 
       bind=SUPER,S,exec,$menu
     '';
