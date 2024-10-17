@@ -10,6 +10,7 @@
       inputs.home-manager.nixosModules.default
       ./hardware-configuration.nix
       ../../modules/system/dm/greetd.nix
+      ../../modules/system/audio/pulse.nix
     ];
 
   # Bootloader.
@@ -61,7 +62,6 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

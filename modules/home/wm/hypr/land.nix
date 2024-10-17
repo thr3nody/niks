@@ -37,10 +37,11 @@
         touchpad {
           natural_scroll = true
         }
+        sensitivity=-0.6
+        accel_profile=flat
       }
 
       general {
-        sensitivity=1.0 # for mouse cursor    
         gaps_in=6
         gaps_out=10
         border_size=3
