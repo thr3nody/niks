@@ -1,7 +1,7 @@
 { config, pkgs, inputs, ... }:
 
 {
-  import = [
+  imports = [
     ../../modules/home/wm/hypr.nix
   ];
   

@@ -6,9 +6,10 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+    [
       inputs.home-manager.nixosModules.default
+      ./hardware-configuration.nix
+      ../../modules/system/dm/greetd.nix
     ];
 
   # Bootloader.
@@ -47,10 +48,6 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Display Manager
-  services.xserver.displayManager = {
-    gdm.enable = true;
-  };
 
   services.xserver.desktopManager.gnome.enable = true;
 
