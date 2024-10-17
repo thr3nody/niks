@@ -1,6 +1,10 @@
 { ... }:
 
 {
+  imports = [
+    ../waybar.nix
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -24,6 +28,14 @@
       );
     };
     extraConfig = ''
+      monitor =,1920x1080@144,0x0,1
+
+      input {
+        touchpad {
+          natural_scroll = true
+        }
+      }
+
       general {
         sensitivity=1.0 # for mouse cursor    
         gaps_in=8
@@ -32,8 +44,8 @@
         col.active_border=rgba(cba6f7ff) rgba(89b4faff) rgba(94e2d5ff) 10deg
         col.inactive_border=0xff45475a
         apply_sens_to_raw=0 # whether to apply the sensitivity to raw input (e.g. used by games where you aim using your mouse)
-        col.group_border=0xff89dceb
-        col.group_border_active=0xfff9e2af
+        # col.group_border=0xff89dceb
+        # col.group_border_active=0xfff9e2af
       }
 
       decoration {
@@ -87,6 +99,7 @@
       bind=SUPER,return,exec,kitty
       bind=SUPER,Q,killactive
       bind=SUPERSHIFT,Q,exit
+      bind=SUPER,B,exec,firefox
     '';
   };
 }
