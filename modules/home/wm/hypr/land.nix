@@ -4,7 +4,7 @@
   imports = [
     ./component/waybar.nix
     ./paper.nix
-    ../../rofi.nix
+    ../../wofi.nix
   ];
 
   wayland.windowManager.hyprland = {
