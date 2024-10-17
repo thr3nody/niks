@@ -107,6 +107,8 @@
       $menu = wofi --show drun
 
       bind=SUPER,S,exec,$menu
+
+      bind=SUPERSHIFT,L,exec,hyprlock
     '';
   };
 }
