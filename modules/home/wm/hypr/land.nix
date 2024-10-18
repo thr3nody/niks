@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -8,14 +8,20 @@
     ../../wofi.nix
   ];
 
+  home.packages = with pkgs; [
+    sway-contrib.grimshot
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
       "$mod" = "SUPER";
+      "$supermod" = "SUPERSHIFT";
       bind =
         [
-          # "$mod, F, exec, ${pkgs.firefox}"
-          # "$mod, return, exec, ${pkgs.kitty}"
+          "$mod, B, exec, firefox"
+          "$mod, return, exec, kitty"
+          "$supermod, S, exec, grimshot copy anything"
         ]
       ++ (
         # workspaces
@@ -39,6 +45,11 @@
         }
         sensitivity=-0.6
         accel_profile=flat
+      }
+
+      device {
+        name=elan1203:00-04f3:307a-touchpad
+        sensitivity=0.5
       }
 
       general {
@@ -100,10 +111,8 @@
       #windowrule=pseudo,abc
       #windowrule=monitor 0,xyz
 
-      bind=SUPER,return,exec,kitty
       bind=SUPER,Q,killactive
       bind=SUPERSHIFT,Q,exit
-      bind=SUPER,B,exec,firefox
       
       $menu = wofi --show drun
 
