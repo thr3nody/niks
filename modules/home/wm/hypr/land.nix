@@ -3,9 +3,11 @@
 {
   imports = [
     ./component/waybar.nix
+    ./component/wofi.nix
+    ./theme/cursor.nix
+    ./theme/gtk.nix
     ./paper.nix
     ./lock.nix
-    ../../wofi.nix
   ];
 
   home.packages = with pkgs; [
