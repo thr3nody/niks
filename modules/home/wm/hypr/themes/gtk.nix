@@ -4,15 +4,14 @@
   gtk = {
     enable = true;
 
-    # TODO: Change to GruvBox
-    # theme = {
-    #   package = pkgs.flat-remix-gtk;
-    #   name = "Flat-Remix-GTK-Grey-Darkest";
-    # };
+    theme = {
+      package = pkgs.gruvbox-gtk-theme;
+      name = "Gruvbox GTK Theme";
+    };
 
     iconTheme = {
-      package = pkgs.adwaita-icon-theme;
-      name = "Adwaita";
+      package = pkgs.gruvbox-plus-icons;
+      name = "Gruvbox Plus Icons";
     };
 
     font = {
