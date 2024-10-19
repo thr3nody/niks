@@ -11,46 +11,47 @@
         layer = "top";
         position = "top";
         height = 30;
+        spacing = 5;
+        margin-top = 5;
+        margin-left = 10;
+        margin-right = 10;
         output = [
           "eDP-1"
           "HDMI-A-1"
         ];
+
         modules-left = [
 
         ]
         ++ (lib.optionals
         config.wayland.windowManager.hyprland.enable [
-          "hyprland/workspaces"
+          "hyprland/window"
         ]);
-        modules-center = [ "sway/window" "custom/hello-from-waybar" ];
-        modules-right = [ "battery" "clock" ];
+        modules-center = [
 
-        "sway/workspaces" = {
-          disable-scroll = true;
-          all-outputs = true;
+        ]
+        ++ (lib.optionals
+        config.wayland.windowManager.hyprland.enable [
+          "hyprland/workspaces" 
+        ]);
+        modules-right = [
+          "pulseaudio"
+          "battery"
+          "clock"
+        ];
+
+        # Left
+        "hyprland/window" = {
+          format = "{}";
+          max-length = 35;
+          rewrite = { "" = "Hyprland"; };
+          separate-outputs = true;
         };
 
-        "custom/hello-from-waybar" = {
-          format = "hello {}";
-          max-length = 40;
-          interval = "once";
-          exec = pkgs.writeShellScript "hello-from-waybar" ''
-            echo "from within waybar"
-          '';
-        };
-
-        battery = {
-          format = "{capacity}% {icon}";
-          format-icons = ["" "" "" "" ""];
-        };
-
-        clock = {
-          format-alt = ":%a, %d. %b  %H:%M";
-        };
-
+        # Center
         "hyprland/workspaces" = {
-        format = "{icon}";
-        all-outputs = true;
+          format = "{icon}";
+          all-outputs = true;
           format-icons = {
             "1" = "一";
             "2" = "二";
@@ -64,6 +65,28 @@
             "10" = "十";
             default = " ";
           };
+          presistent-workspaces = { "*" = [ 1 2 3 4 5 ]; };
+        };
+
+        # Right
+        pulseaudio = {
+          format = "{icon} {volume}"; 
+          format-muted = "{} {format_source}";
+          format-icons = {
+            headphone = " ";
+            default = [ "" " " " " ];
+          };
+          on-click = "pavucontrol";
+        };
+
+        battery = {
+          format = "{capacity}% {icon}";
+          format-icons = [" " " " " " " " " "];
+        };
+
+        clock = {
+          tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+          format-alt = "{:%Y-%m-%d}";
         };
       };
     };
