@@ -3,7 +3,7 @@
 {
   stylix = {
     enable = true;
-    stylix.base16Scheme = {
+    base16Scheme = {
     base00 = "282828";
     base01 = "3c3836";
     base02 = "504945";
