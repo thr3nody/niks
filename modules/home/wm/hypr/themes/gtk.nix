@@ -4,7 +4,7 @@
   gtk = {
     enable = true;
 
-    # Use Gruvbox
+    # TODO: Change to GruvBox
     # theme = {
     #   package = pkgs.flat-remix-gtk;
     #   name = "Flat-Remix-GTK-Grey-Darkest";
