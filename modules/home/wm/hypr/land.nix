@@ -4,8 +4,8 @@
   imports = [
     ./component/waybar.nix
     ./component/wofi.nix
-    ./theme/cursor.nix
-    ./theme/gtk.nix
+    ./themes/cursor.nix
+    ./themes/gtk.nix
     ./paper.nix
     ./lock.nix
   ];
