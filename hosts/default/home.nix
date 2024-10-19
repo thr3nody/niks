@@ -2,6 +2,7 @@
 
 {
   imports = [
+    inputs.nix-colors.homeManagerModules.default
     ../../modules/home/wm/hypr/land.nix
   ];
   
@@ -9,6 +10,8 @@
   # manage.
   home.username = "erine";
   home.homeDirectory = "/home/erine";
+
+  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
