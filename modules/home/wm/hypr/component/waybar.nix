@@ -90,8 +90,27 @@
         };
       };
     };
+
+    # Styling Look like this, goes from darker color (top) to lighter color (bottom).
+    # base00: "282828" # ----
+    # base01: "3c3836" # ---
+    # base02: "504945" # --
+    # base03: "665c54" # -
+    # base04: "bdae93" # +
+    # base05: "d5c4a1" # ++
+    # base06: "ebdbb2" # +++
+    # base07: "fbf1c7" # ++++
+    # base08: "fb4934" # red
+    # base09: "fe8019" # orange
+    # base0A: "fabd2f" # yellow
+    # base0B: "b8bb26" # green
+    # base0C: "8ec07c" # aqua/cyan
+    # base0D: "83a598" # blue
+    # base0E: "d3869b" # purple
+    # base0F: "d65d0e" # brown
+
     style = let
-    inherit (config.colorScheme) colors;
+      inherit (config.colorScheme) colors;
     in
     "
       * {
@@ -105,6 +124,10 @@
       #waybar {
         background: transparent;
         font-size: 13px;
+        font-weight: bold;
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
       }
 
       #battery,
@@ -123,32 +146,39 @@
       }
 
       #window {
-        font-weight: bold;
+        background-color: #${colors.base01};
+        color: #${colors.base06};
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
       }
 
       #workspaces {
         font-size: 13px;
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
       }
 
       #workspaces button {
-        border-bottom: 1px solid transparent;
-        margin-bottom: 0px;
-        padding: 0px 5px;
+        padding: 0.5rem 1rem;
         background-color: #${colors.base01};
-        border-radius: 15px;
+        color: #${colors.base06};
+        border-radius: 25px;
       }
 
       #workspaces button.active {
-        border-bottom: 1px solid #${colors.base0A};
+        padding: 0.5rem 2rem;
       }
 
-      #workspaces button.urgent {
-        border-color: #${colors.base09};
-        color: #${colors.base08};
+      #workspaces button:hover {
+        background-color: #${colors.base06};
+        color: #${colors.base01};
       }
 
       #pulseaudio {
-        padding-top: 6px;
       }
 
       #pulseaudio.muted {
