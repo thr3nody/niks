@@ -24,6 +24,7 @@
           "$mod, B, exec, firefox"
           "$mod, return, exec, kitty"
           "$supermod, S, exec, grimshot copy anything"
+          "$mod, F, fullscreen"
         ]
       ++ (
         # workspaces

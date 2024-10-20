@@ -6,12 +6,12 @@
 
     theme = {
       package = pkgs.gruvbox-gtk-theme;
-      name = "Gruvbox GTK Theme";
+      name = "gruvbox-gtk-theme";
     };
 
     iconTheme = {
       package = pkgs.gruvbox-plus-icons;
-      name = "Gruvbox Plus Icons";
+      name = "gruvbox-plus-icons";
     };
 
     font = {

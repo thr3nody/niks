@@ -90,5 +90,96 @@
         };
       };
     };
+    style = let
+    inherit (config.colorScheme) colors;
+    in
+    "
+      * {
+        border: none;
+        border-radius: 0;
+        min-height: 0;
+        margin: 1px;
+        padding: 0;
+      }
+
+      #waybar {
+        background: transparent;
+        font-size: 13px;
+      }
+
+      #battery,
+      #clock,
+      #backlight,
+      #cpu,
+      #memory,
+      #mode,
+      #network,
+      #pulseaudio,
+      #temperature,
+      #tray,
+      #idle_inhibitor {
+          padding:0.5rem 0.6rem;
+          margin: 1px 0px;
+      }
+
+      #window {
+        font-weight: bold;
+      }
+
+      #workspaces {
+        font-size: 13px;
+      }
+
+      #workspaces button {
+        border-bottom: 1px solid transparent;
+        margin-bottom: 0px;
+        padding: 0px 5px;
+        background-color: #${colors.base01};
+        border-radius: 15px;
+      }
+
+      #workspaces button.active {
+        border-bottom: 1px solid #${colors.base0A};
+      }
+
+      #workspaces button.urgent {
+        border-color: #${colors.base09};
+        color: #${colors.base08};
+      }
+
+      #pulseaudio {
+        padding-top: 6px;
+      }
+
+      #pulseaudio.muted {
+        color: #${colors.base0A};
+      }
+
+      #pulseaudio.critical {
+        color: #${colors.base08};
+      }
+
+      #battery {
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+
+      #battery.warning {
+          color: #${colors.base09};
+      }
+
+      #battery.critical {
+          color: #${colors.base08};
+      }
+
+      #battery.warning.discharging {
+          color: #${colors.base09};
+      }
+
+      #battery.critical.discharging {
+          color: #${colors.base08};
+      }
+    ";
   };
 }

@@ -9,6 +9,7 @@
     [
       inputs.home-manager.nixosModules.default
       ./hardware-configuration.nix
+      ../../modules/system/wm/hypr.nix
       ../../modules/system/dm/greetd.nix
       ../../modules/system/audio/pulse.nix
       ../../modules/system/audio/pipewire.nix
@@ -49,7 +50,6 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-
   services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
