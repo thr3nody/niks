@@ -5,10 +5,10 @@
     enable = true;
     settings = {
       preload = [
-        "/home/erine/Pictures/Walp/two.jpg"
+        "$HOME/niks/modules/system/themes/wallpaper/gruv-estimate.png"
       ];
       wallpaper = [
-        ",/home/erine/Pictures/Walp/two.jpg"
+        ",$HOME/niks/modules/system/themes/wallpaper/gruv-estimate.png"
       ];
     };
   };

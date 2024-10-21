@@ -1,9 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   imports = [
     ./component/waybar.nix
     ./component/wofi.nix
+    ./component/mako.nix
     ./themes/cursor.nix
     ./themes/gtk.nix
     ./paper.nix
@@ -16,9 +17,27 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
+    # Styling Look like this, goes from darker color (top) to lighter color (bottom).
+    # base00: "282828" # ----
+    # base01: "3c3836" # ---
+    # base02: "504945" # --
+    # base03: "665c54" # -
+    # base04: "bdae93" # +
+    # base05: "d5c4a1" # ++
+    # base06: "ebdbb2" # +++
+    # base07: "fbf1c7" # ++++
+    # base08: "fb4934" # red
+    # base09: "fe8019" # orange
+    # base0A: "fabd2f" # yellow
+    # base0B: "b8bb26" # green
+    # base0C: "8ec07c" # aqua/cyan
+    # base0D: "83a598" # blue
+    # base0E: "d3869b" # purple
+    # base0F: "d65d0e" # brown
     settings = {
       "$mod" = "SUPER";
       "$supermod" = "SUPERSHIFT";
+
       bind =
         [
           "$mod, B, exec, firefox"
@@ -38,6 +57,14 @@
           )
         9)
       );
+
+      general = with config.colorScheme.palette; {
+        gaps_in = 6;
+        gaps_out = 10;
+        border_size = 2;
+        "col.active_border" = "rgba(${base09}ee)";
+        "col.inactive_border" = "rgba(${base0C}ee)";
+      };
     };
     extraConfig = ''
       monitor =,1920x1080@144,0x0,1
@@ -56,14 +83,7 @@
       }
 
       general {
-        gaps_in=6
-        gaps_out=10
-        border_size=3
-        col.active_border=rgba(cba6f7ff) rgba(89b4faff) rgba(94e2d5ff) 10deg
-        col.inactive_border=0xff45475a
-        apply_sens_to_raw=0 # whether to apply the sensitivity to raw input (e.g. used by games where you aim using your mouse)
-        # col.group_border=0xff89dceb
-        # col.group_border_active=0xfff9e2af
+        apply_sens_to_raw=0 # Raw mouse input
       }
 
       decoration {
@@ -77,7 +97,6 @@
 
       animations {
         enabled=1
-        # bezier=overshot,0.05,0.9,0.1,1.1
         bezier=overshot,0.13,0.99,0.29,1.1
         animation=windows,1,4,overshot,slide
         animation=border,1,10,default

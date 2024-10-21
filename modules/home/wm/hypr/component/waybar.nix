@@ -110,14 +110,14 @@
     # base0F: "d65d0e" # brown
 
     style = let
-      inherit (config.colorScheme) colors;
+      inherit (config.colorScheme) palette;
     in
     "
       * {
         border: none;
         border-radius: 0;
         min-height: 0;
-        margin: 1px;
+        margin: 0;
         padding: 0;
       }
 
@@ -146,10 +146,10 @@
       }
 
       #window {
-        background-color: #${colors.base01};
-        color: #${colors.base06};
+        background-color: #${palette.base01};
+        color: #${palette.base06};
         padding: 0.5rem 1rem;
-        border-radius: 25px;
+        border-radius: 30px;
         transition-property: all;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         transition-duration: 150ms;
@@ -157,58 +157,76 @@
 
       #workspaces {
         font-size: 13px;
+      }
+
+      #workspaces button {
+        padding: 0.5rem 1rem;
+        margin: 0 0.25rem;
+        border-radius: 30px;
+        background-color: #${palette.base01};
+        color: #${palette.base06};
+      }
+
+      #workspaces button.active {
+        padding: 0.5rem 2rem;
         transition-property: all;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         transition-duration: 150ms;
       }
 
-      #workspaces button {
-        padding: 0.5rem 1rem;
-        background-color: #${colors.base01};
-        color: #${colors.base06};
-        border-radius: 25px;
-      }
-
-      #workspaces button.active {
-        padding: 0.5rem 2rem;
-      }
-
       #workspaces button:hover {
-        background-color: #${colors.base06};
-        color: #${colors.base01};
+        background-color: #${palette.base06};
+        color: #${palette.base01};
       }
 
       #pulseaudio {
+        padding: 0.5rem 1rem;
+        border-radius: 30px;
+        background-color: #${palette.base01};
+        color: #${palette.base06};
       }
 
       #pulseaudio.muted {
-        color: #${colors.base0A};
+        background-color: #${palette.base01};
+        color: #${palette.base0A};
       }
 
       #pulseaudio.critical {
-        color: #${colors.base08};
+        background-color: #${palette.base01};
+        color: #${palette.base08};
       }
 
       #battery {
+        padding: 0.5rem 1rem;
+        border-radius: 30px;
+        background-color: #${palette.base01};
+        color: #${palette.base06};
         animation-timing-function: linear;
         animation-iteration-count: infinite;
         animation-direction: alternate;
       }
 
       #battery.warning {
-          color: #${colors.base09};
+          color: #${palette.base09};
       }
 
       #battery.critical {
-          color: #${colors.base08};
+          color: #${palette.base08};
       }
 
       #battery.warning.discharging {
-          color: #${colors.base09};
+          color: #${palette.base09};
       }
 
       #battery.critical.discharging {
-          color: #${colors.base08};
+          color: #${palette.base08};
+      }
+
+      #clock {
+        padding: 0.5rem 1rem;
+        border-radius: 30px;
+        background-color: #${palette.base01};
+        color: #${palette.base06};
       }
     ";
   };

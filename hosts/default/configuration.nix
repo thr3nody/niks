@@ -230,9 +230,6 @@
     texliveFull
     texlab
 
-    # Notification
-    dunst
-
     #Gnome Extensions
     gnomeExtensions.paperwm
     gnomeExtensions.color-picker
