@@ -21,7 +21,7 @@
         ];
 
         modules-left = [
-
+          "tray"
         ]
         ++ (lib.optionals
         config.wayland.windowManager.hyprland.enable [
@@ -35,6 +35,7 @@
           "hyprland/workspaces" 
         ]);
         modules-right = [
+          "backlight"
           "pulseaudio"
           "battery"
           "clock"
@@ -43,9 +44,15 @@
         # Left
         "hyprland/window" = {
           format = "{}";
-          max-length = 35;
+          max-length = 20;
           rewrite = { "" = "Hyprland"; };
           separate-outputs = true;
+        };
+
+        tray = {
+          icon-size = 16;
+          spacing = 8;
+          show-passive-items = true;
         };
 
         # Center
@@ -80,7 +87,7 @@
         };
 
         battery = {
-          format = "{capacity}% {icon}";
+          format = "{icon} {capacity}%";
           format-icons = [" " " " " " " " " "];
         };
 
@@ -139,7 +146,6 @@
       #network,
       #pulseaudio,
       #temperature,
-      #tray,
       #idle_inhibitor {
           padding:0.5rem 0.6rem;
           margin: 1px 0px;
@@ -150,9 +156,20 @@
         color: #${palette.base06};
         padding: 0.5rem 1rem;
         border-radius: 30px;
-        transition-property: all;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        transition-duration: 150ms;
+      }
+
+      #tray {
+        background-color: #${palette.base01};
+        color: #${palette.base06};
+        padding: 0.5rem 1rem;
+        border-radius: 30px;
+      }
+
+      #tray menu {
+        background-color: #${palette.base02};
+        border-radius: 12px;
+        color: #${palette.base06};
+        padding: 0.5rem;
       }
 
       #workspaces {
@@ -179,6 +196,13 @@
         color: #${palette.base01};
       }
 
+      #backlight {
+        padding: 0.5rem 1rem;
+        border-radius: 30px;
+        background-color: #${palette.base01};
+        color: #${palette.base06};
+      }
+
       #pulseaudio {
         padding: 0.5rem 1rem;
         border-radius: 30px;
@@ -187,13 +211,13 @@
       }
 
       #pulseaudio.muted {
-        background-color: #${palette.base01};
-        color: #${palette.base0A};
+        background-color: #${palette.base09};
+        color: #${palette.base01};
       }
 
       #pulseaudio.critical {
-        background-color: #${palette.base01};
-        color: #${palette.base08};
+        background-color: #${palette.base08};
+        color: #${palette.base01};
       }
 
       #battery {
