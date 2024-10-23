@@ -37,13 +37,16 @@
     settings = {
       "$mod" = "SUPER";
       "$supermod" = "SUPERSHIFT";
+      "$menu" = "wofi --show drun --allow-image";
 
       bind =
         [
           "$mod, B, exec, firefox"
           "$mod, return, exec, kitty"
-          "$supermod, S, exec, grimshot copy anything"
+          "$mod, S, exec, grimshot copy anything"
           "$mod, F, fullscreen"
+          "$mod, SPACE, exec, $menu"
+          "$mod, M, exec, spotify"
         ]
       ++ (
         # workspaces
@@ -135,10 +138,6 @@
 
       bind=SUPER,Q,killactive
       bind=SUPERSHIFT,Q,exit
-      
-      $menu = wofi --show drun
-
-      bind=SUPER,S,exec,$menu
 
       bind=SUPERSHIFT,L,exec,hyprlock
     '';
