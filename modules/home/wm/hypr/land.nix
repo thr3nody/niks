@@ -47,6 +47,8 @@
           "$mod, SPACE, exec, $menu"
           "$mod, M, exec, spotify"
           "$mod, P, exec, hyprpicker -a -f hex"
+          "$mod, W, exec, pkill waybar || waybar &"
+          "$mod, E, exec, nautilus"
 
           "$mod, H, movefocus, l"
           "$mod, L, movefocus, r"
@@ -54,7 +56,7 @@
           "$mod, J, movefocus, d"
           "$mod, F, fullscreen"
           "$mod, Q, killactive"
-          "$mod, W, togglefloating"
+          "$mod, A, togglefloating"
 
           "$mod, mouse_up, workspace, e-1"
           "$mod, mouse_down, workspace, e+1"
@@ -107,8 +109,8 @@
 
       decoration = {
         drop_shadow = true;
-        shadow_range = 100;
-        shadow_render_power = 5;
+        shadow_range = 50;
+        shadow_render_power = 3;
         "col.shadow" = "rgba(${base02}ee)";
         "col.shadow_inactive" = "rgba(${base00}ee)";
         rounding = 15;
