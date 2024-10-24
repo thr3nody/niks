@@ -13,7 +13,7 @@
 
     nixvim = {
       url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nikpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
