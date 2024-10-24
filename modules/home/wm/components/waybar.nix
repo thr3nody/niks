@@ -72,7 +72,8 @@
             "10" = "十";
             default = " ";
           };
-          presistent-workspaces = { "*" = [ 1 2 3 4 5 ]; };
+          on-scroll-up = "hyprctl dispatch workspace e+1";
+          on-scroll-down = "hyprctl dispatch workspace e-1";
         };
 
         # Right
