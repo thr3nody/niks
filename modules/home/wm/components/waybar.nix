@@ -72,8 +72,8 @@
             "10" = "十";
             default = " ";
           };
-          on-scroll-up = "hyprctl dispatch workspace e+1";
-          on-scroll-down = "hyprctl dispatch workspace e-1";
+          on-scroll-up = "hyprctl dispatch workspace e-1";
+          on-scroll-down = "hyprctl dispatch workspace e+1";
         };
 
         # Right
