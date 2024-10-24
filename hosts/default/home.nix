@@ -3,7 +3,7 @@
 {
   imports = [
     inputs.nix-colors.homeManagerModules.default
-    inputs.nixvim.homeMangerModules.default
+    inputs.nixvim.homeManagerModules.default
     ../../modules/home/wm/hypr/land.nix
   ];
   
