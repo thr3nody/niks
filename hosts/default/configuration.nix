@@ -13,6 +13,7 @@
       ../../modules/system/dm/greetd.nix
       ../../modules/system/audio/pulse.nix
       ../../modules/system/audio/pipewire.nix
+      ../../modules/system/securities/pam.nix
     ];
 
   # Bootloader.
