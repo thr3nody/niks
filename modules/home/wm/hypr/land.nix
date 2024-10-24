@@ -2,13 +2,12 @@
 
 {
   imports = [
-    ./component/waybar.nix
-    ./component/wofi.nix
-    ./component/mako.nix
-    ./themes/cursor.nix
-    ./themes/gtk.nix
+    ../../themes/cursor.nix
+    ../../themes/gtk.nix
+    ../components/waybar.nix
+    ../components/wofi.nix
+    ../components/mako.nix
     ./paper.nix
-    ./picker.nix
     ./lock.nix
   ];
 
