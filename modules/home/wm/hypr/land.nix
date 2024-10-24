@@ -8,6 +8,7 @@
     ./themes/cursor.nix
     ./themes/gtk.nix
     ./paper.nix
+    ./picker.nix
     ./lock.nix
   ];
 
@@ -47,6 +48,7 @@
           "$mod, F, fullscreen"
           "$mod, SPACE, exec, $menu"
           "$mod, M, exec, spotify"
+          "$mod, P, exec, hyprpicker -a -f hex"
         ]
       ++ (
         # workspaces
