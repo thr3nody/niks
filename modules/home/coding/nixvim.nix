@@ -4,7 +4,7 @@
   programs.nixvim = {
     enable = true;
 
-    colorscheme.gruvbox.enable = true;
+    colorschemes.gruvbox.enable = true;
 
     plugins = {
       lualine.enable = true;
