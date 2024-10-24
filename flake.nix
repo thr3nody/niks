@@ -10,6 +10,11 @@
     };
 
     nix-colors.url = "github:misterio77/nix-colors";
+
+    nixvim.url = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nikpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {

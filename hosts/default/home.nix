@@ -3,6 +3,7 @@
 {
   imports = [
     inputs.nix-colors.homeManagerModules.default
+    inputs.nixvim.homeMangerModules.default
     ../../modules/home/wm/hypr/land.nix
   ];
   
@@ -58,54 +59,7 @@
     };
   };
 
-  # Neovim
-  programs.neovim =
-  {
-    enable = true;
-
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
-
-    extraPackages = with pkgs; [
-      lua-language-server
-      nil
-
-      xclip
-      wl-clipboard
-    ];
-
-    plugins = with pkgs.vimPlugins; [
-      neodev-nvim
-      nvim-cmp 
-
-      telescope-fzf-native-nvim
-
-      cmp_luasnip
-      cmp-nvim-lsp
-
-      luasnip
-      friendly-snippets
-
-
-      lualine-nvim
-      nvim-web-devicons
-
-      {
-        plugin = (nvim-treesitter.withPlugins (p: [
-          p.tree-sitter-nix
-          p.tree-sitter-vim
-          p.tree-sitter-bash
-          p.tree-sitter-lua
-          p.tree-sitter-python
-          p.tree-sitter-json
-        ]));
-      }
-
-      vim-nix
-    ];
-  };
-
+  # OBS
   programs.obs-studio = {
     enable = true;
     plugins = with pkgs.obs-studio-plugins; [
