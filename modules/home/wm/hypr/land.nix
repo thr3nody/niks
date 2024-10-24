@@ -34,7 +34,7 @@
     # base0D: "83a598" # blue
     # base0E: "d3869b" # purple
     # base0F: "d65d0e" # brown
-    settings = {
+    settings = with config.colorScheme.palette; {
       "$mod" = "SUPER";
       "$supermod" = "SUPERSHIFT";
       "$menu" = "wofi --show drun --allow-image";
@@ -42,12 +42,25 @@
       bind =
         [
           "$mod, B, exec, firefox"
-          "$mod, return, exec, kitty"
+          "$mod, RETURN, exec, kitty"
           "$mod, S, exec, grimshot copy anything"
-          "$mod, F, fullscreen"
           "$mod, SPACE, exec, $menu"
           "$mod, M, exec, spotify"
           "$mod, P, exec, hyprpicker -a -f hex"
+
+          "$mod, H, movefocus, l"
+          "$mod, L, movefocus, r"
+          "$mod, K, movefocus, u"
+          "$mod, J, movefocus, d"
+          "$mod, F, fullscreen"
+          "$mod, Q, killactive"
+          "$mod, W, togglefloating"
+
+          "$mod, mouse_up, workspace, e-1"
+          "$mod, mouse_down, workspace, e+1"
+
+          "$supermod, Q, exit"
+          "$supermod, L, exec, hyprlock"
         ]
       ++ (
         # workspaces
@@ -62,43 +75,59 @@
         9)
       );
 
-      general = with config.colorScheme.palette; {
+      bindm = [
+        "$mod, mouse:272, movewindow"
+        "$mod, mouse:273, resizewindow"
+      ];
+
+      monitor = ",1920x1080@144,0x0,1";
+
+      general = {
         gaps_in = 6;
         gaps_out = 10;
         border_size = 2;
         "col.active_border" = "rgba(${base09}ee)";
-        "col.inactive_border" = "rgba(${base0C}ee)";
+        "col.inactive_border" = "rgba(${base02}ee)";
+        apply_sens_to_raw = 0; # Raw mouse input
       };
+
+      input = {
+        touchpad = {
+          natural_scroll = true;
+        };
+
+        sensitivity = -0.6;
+        accel_profile = "flat";
+      };
+
+      device = {
+        name = "elan1203:00-04f3:307a-touchpad";
+        sensitivity = 0.5;
+      };
+
+      decoration = {
+        drop_shadow = true;
+        shadow_range = 100;
+        shadow_render_power = 5;
+        "col.shadow" = "rgba(${base02}ee)";
+        "col.shadow_inactive" = "rgba(${base00}ee)";
+        rounding = 15;
+      };
+
+      dwindle = {
+        pseudotile = 1; # Enable pseudotiling on dwindle
+        force_split = 0;
+      };
+
+      gestures =  {
+        workspace_swipe = "yes";
+        workspace_swipe_fingers = 4;
+      };
+
+      # windowrule = ""
     };
+
     extraConfig = ''
-      monitor =,1920x1080@144,0x0,1
-
-      input {
-        touchpad {
-          natural_scroll = true
-        }
-        sensitivity=-0.6
-        accel_profile=flat
-      }
-
-      device {
-        name=elan1203:00-04f3:307a-touchpad
-        sensitivity=0.5
-      }
-
-      general {
-        apply_sens_to_raw=0 # Raw mouse input
-      }
-
-      decoration {
-        drop_shadow = true
-        shadow_range=100
-        shadow_render_power=5
-        col.shadow= 0x33000000
-        col.shadow_inactive=0x22000000
-        rounding=15
-      }
-
       animations {
         enabled=1
         bezier=overshot,0.13,0.99,0.29,1.1
@@ -106,20 +135,6 @@
         animation=border,1,10,default
         animation=fade,1,10,default
         animation=workspaces,1,6,overshot,slidevert
-      }
-
-      dwindle {
-        pseudotile=1 # enable pseudotiling on dwindle
-        force_split=0
-      }
-
-      master{
-          
-      }
-
-      gestures {
-        workspace_swipe=yes
-        workspace_swipe_fingers=4
       }
 
       # example window rules
@@ -136,11 +151,6 @@
       windowrule=size 418 234,title:^(clock_is_kitty)$
       #windowrule=pseudo,abc
       #windowrule=monitor 0,xyz
-
-      bind=SUPER,Q,killactive
-      bind=SUPERSHIFT,Q,exit
-
-      bind=SUPERSHIFT,L,exec,hyprlock
     '';
   };
 }
