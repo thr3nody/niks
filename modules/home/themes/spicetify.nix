@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, pkgs, ... }:
 
 {
   programs.spicetify = 
@@ -7,7 +7,7 @@
   in
   {
     enable = true;
-    theme = spicePkgs.themes.catppuccin;
-    colorScheme = "mocha";
+    theme = spicePkgs.themes.dribbblish;
+    colorScheme = "gruvbox";
   };
 }

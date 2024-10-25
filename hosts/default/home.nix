@@ -7,6 +7,7 @@
     inputs.spicetify-nix.homeManagerModules.default
     ../../modules/home/wm/hypr/land.nix
     ../../modules/home/coding/nvf.nix
+    ../../modules/home/themes/spicetify.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
