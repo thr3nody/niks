@@ -8,6 +8,6 @@
   {
     enable = true;
     theme = spicePkgs.themes.dribbblish;
-    colorScheme = "gruvbox";
+    colorScheme = "gruvbox-material-dark";
   };
 }
