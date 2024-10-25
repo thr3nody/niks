@@ -213,6 +213,7 @@
     php82Packages.composer
 
     nodejs_22
+    nodePackages.eslint
 
     bun
 
@@ -223,6 +224,8 @@
     flutter
 
     zulu
+
+    vscode-langservers-extracted
 
     # Docker Compose
     docker-compose

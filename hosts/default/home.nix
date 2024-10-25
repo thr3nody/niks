@@ -3,9 +3,9 @@
 {
   imports = [
     inputs.nix-colors.homeManagerModules.default
-    inputs.nixvim.homeManagerModules.default
+    inputs.nvf.homeManagerModules.default
     ../../modules/home/wm/hypr/land.nix
-    ../../modules/home/coding/nixvim.nix
+    ../../modules/home/coding/nvf.nix
   ];
   
   # Home Manager needs a bit of information about you and the paths it should

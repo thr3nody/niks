@@ -1,0 +1,7 @@
+{ ... }:
+
+{
+  programs.nvf = {
+    enable = true;
+  };
+}
