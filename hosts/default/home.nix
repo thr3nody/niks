@@ -4,10 +4,13 @@
   imports = [
     inputs.nix-colors.homeManagerModules.default
     inputs.nvf.homeManagerModules.default
+    inputs.spicetify-nix.homeManagerModules.default
     ../../modules/home/wm/hypr/land.nix
     ../../modules/home/coding/nvf.nix
   ];
-  
+
+  nixpkgs.config.allowUnfree = true;
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "erine";

@@ -17,6 +17,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       # inputs.obsidian-nvim.follows = "obsidian-nvim";
     };
+
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
