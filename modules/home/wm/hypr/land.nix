@@ -138,6 +138,9 @@
         animation=fade,1,10,default
         animation=workspaces,1,6,overshot,slidevert
       }
+
+      exec-once = wl-paste --type text --watch cliphist store # Stores only text data
+      exec-once = wl-paste --type image --watch cliphist store # Stores only image data
     '';
   };
 }
