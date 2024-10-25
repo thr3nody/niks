@@ -7,6 +7,7 @@
     ../components/waybar.nix
     ../components/wofi.nix
     ../components/mako.nix
+    ../components/cliphist.nix
     ./paper.nix
     ./lock.nix
   ];
@@ -49,6 +50,7 @@
           "$mod, P, exec, hyprpicker -a -f hex"
           "$mod, W, exec, pkill waybar || waybar &"
           "$mod, E, exec, nautilus"
+          "$mod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
 
           "$mod, H, movefocus, l"
           "$mod, L, movefocus, r"
@@ -125,8 +127,6 @@
         workspace_swipe = "yes";
         workspace_swipe_fingers = 4;
       };
-
-      # windowrule = ""
     };
 
     extraConfig = ''
@@ -138,21 +138,6 @@
         animation=fade,1,10,default
         animation=workspaces,1,6,overshot,slidevert
       }
-
-      # example window rules
-      # for windows named/classed as abc and xyz
-      #windowrule=move 69 420,abc
-      windowrule=move center,title:^(fly_is_kitty)$
-      windowrule=size 800 500,title:^(fly_is_kitty)$
-      windowrule=animation slide,title:^(all_is_kitty)$
-      windowrule=float,title:^(all_is_kitty)$
-      #windowrule=tile,xy
-      windowrule=tile,title:^(kitty)$
-      windowrule=float,title:^(fly_is_kitty)$
-      windowrule=float,title:^(clock_is_kitty)$
-      windowrule=size 418 234,title:^(clock_is_kitty)$
-      #windowrule=pseudo,abc
-      #windowrule=monitor 0,xyz
     '';
   };
 }
