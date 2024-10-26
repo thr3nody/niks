@@ -1,6 +1,4 @@
-{ ... }:
-
-{
+{...}: {
   programs.nvf = {
     enable = true;
 
@@ -11,6 +9,9 @@
 
         lsp = {
           enable = true;
+          formatOnSave = true;
+          lightbulb.enable = true;
+          lspconfig.enable = true;
         };
 
         languages = {
@@ -21,7 +22,18 @@
             extraDiagnostics.enable = true;
             treesitter.enable = true;
           };
-          ts.enable = true;
+          ts = {
+            enable = true;
+            extensions = {
+              ts-error-translator.enable = true;
+            };
+            extraDiagnostics.enable = true;
+            format.enable = true;
+            lsp.enable = true;
+            treesitter = {
+              enable = true;
+            };
+          };
           sql.enable = true;
           html = {
             enable = true;
@@ -39,6 +51,7 @@
           addDefaultGrammars = true;
           context.enable = true;
           highlight.enable = true;
+          autotagHtml = true;
         };
 
         telescope = {
@@ -53,15 +66,8 @@
           enable = true;
         };
 
-        filetree.neo-tree = {
+        filetree.nvimTree = {
           enable = true;
-          setupOpts = {
-            enable_cursor_hijack = true;
-            enable_git_status = true;
-            git_status_async = true;
-            enable_opened_markers = true;
-            enable_refresh_on_write = true;
-          };
         };
 
         dashboard = {
