@@ -1,6 +1,8 @@
-{ pkgs, config, ... }:
-
 {
+  pkgs,
+  config,
+  ...
+}: {
   imports = [
     ../../themes/cursor.nix
     ../../themes/gtk.nix
@@ -44,7 +46,7 @@
         [
           "$mod, B, exec, firefox"
           "$mod, RETURN, exec, kitty"
-          "$mod, S, exec, grimshot copy anything"
+          "$mod, S, exec, grimshot savecopy anything"
           "$mod, SPACE, exec, $menu"
           "$mod, M, exec, spotify"
           "$mod, P, exec, hyprpicker -a -f hex"
@@ -66,18 +68,19 @@
           "$supermod, Q, exit"
           "$supermod, L, exec, hyprlock"
         ]
-      ++ (
-        # workspaces
-        # binds $mod + [shift +] {1..9} to [move to] workspace {1..9}
-        builtins.concatLists (builtins.genList (i:
-            let ws = i + 1;
-            in [
-              "$mod, code:1${toString i}, workspace, ${toString ws}"
-              "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
-            ]
-          )
-        9)
-      );
+        ++ (
+          # workspaces
+          # binds $mod + [shift +] {1..9} to [move to] workspace {1..9}
+          builtins.concatLists (builtins.genList (
+              i: let
+                ws = i + 1;
+              in [
+                "$mod, code:1${toString i}, workspace, ${toString ws}"
+                "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
+              ]
+            )
+            9)
+        );
 
       bindm = [
         "$mod, mouse:272, movewindow"
@@ -123,7 +126,7 @@
         force_split = 0;
       };
 
-      gestures =  {
+      gestures = {
         workspace_swipe = "yes";
         workspace_swipe_fingers = 4;
       };
@@ -138,6 +141,13 @@
         animation=fade,1,10,default
         animation=workspaces,1,6,overshot,slidevert
       }
+
+      windowrulev2 = workspace 5, class:(Spotify)
+      windowrulev2 = workspace 3, class:(firefox)
+      windowrulev2 = workspace 1, class:(Discord)
+      windowrulev2 = float, class:(pavucontrol)
+      windowrulev2 = size 622 652, class:(pavucontrol)
+
 
       exec-once = wl-paste --type text --watch cliphist store # Stores only text data
       exec-once = wl-paste --type image --watch cliphist store # Stores only image data
