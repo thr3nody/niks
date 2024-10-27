@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   programs.nvf = {
     enable = true;
 
@@ -74,6 +74,25 @@
           # alpha.enable = true;
           startify.enable = true;
         };
+
+        extraPlugins = with pkgs.vimPlugins; {
+          ts-autotag = {
+            package = nvim-ts-autotag;
+            setup = "
+              require('nvim-ts-autotag').setup({
+                opts = {
+                  enable_close = true,
+                  enable_rename = true,
+                  enable_close_on_slash = true
+                }
+              })
+            ";
+          };
+        };
+
+        startPlugins = [
+          pkgs.vimPlugins.nvim-ts-autotag
+        ];
 
         theme = {
           enable = true;

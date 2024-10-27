@@ -1,20 +1,23 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, inputs, ... }:
-
 {
-  imports =
-    [
-      inputs.home-manager.nixosModules.default
-      ./hardware-configuration.nix
-      ../../modules/system/wm/hypr.nix
-      ../../modules/system/dm/greetd.nix
-      ../../modules/system/audio/pulse.nix
-      ../../modules/system/audio/pipewire.nix
-      ../../modules/system/securities/pam.nix
-    ];
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
+    inputs.home-manager.nixosModules.default
+    ./hardware-configuration.nix
+    ../../modules/system/wm/hypr.nix
+    ../../modules/system/dm/greetd.nix
+    ../../modules/system/audio/pulse.nix
+    ../../modules/system/audio/pipewire.nix
+    ../../modules/system/securities/pam.nix
+    ../../modules/system/networking/firewall.nix
+    ../../modules/system/networking/tailscale.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -69,7 +72,7 @@
   # services.xserver.libinput.enable = true;
 
   # Experimental
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # OpenGL
   hardware.graphics = {
@@ -99,7 +102,7 @@
       openSha256 = "sha256-wvRdHguGLxS0mR06P5Qi++pDJBCF8pJ8hr4T8O6TJIo=";
       settingsSha256 = "sha256-9wqoDEWY4I7weWW05F4igj1Gj9wjHsREFMztfEmqm10=";
       persistencedSha256 = "sha256-d0Q3Lk80JqkS1B54Mahu2yY/WocOqFFbZVBh+ToGhaE=";
-    }; 
+    };
 
     prime = {
       offload = {
@@ -116,7 +119,7 @@
   users.users.erine = {
     isNormalUser = true;
     description = "Erine Moira";
-    extraGroups = [ "networkmanager" "wheel" "docker" "kvm" "adbuser" ];
+    extraGroups = ["networkmanager" "wheel" "docker" "kvm" "adbuser"];
     packages = with pkgs; [
       thunderbird
       vesktop
@@ -126,9 +129,9 @@
       telegram-desktop
     ];
   };
-  
+
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = {inherit inputs;};
     users = {
       "erine" = import ./home.nix;
     };
@@ -147,7 +150,7 @@
   };
   nix.optimise = {
     automatic = true;
-    dates = [ "Sat *-*-* 21:00:00" ];
+    dates = ["Sat *-*-* 21:00:00"];
   };
 
   # Paket
@@ -262,8 +265,7 @@
   };
   programs.gamemode.enable = true;
   environment.sessionVariables = {
-    STEAM_EXTRA_COMPAT_TOOLS_PATHS =
-    "\${HOME}/.steam/root/compatibilitytools.d";
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
   };
 
   # Virt Manager
@@ -307,8 +309,8 @@
   };
 
   # Autostart warp-svc on startup.
-  systemd.packages = [ pkgs.cloudflare-warp ];
-  systemd.targets.multi-user.wants = [ "warp-svc.service" ];
+  systemd.packages = [pkgs.cloudflare-warp];
+  systemd.targets.multi-user.wants = ["warp-svc.service"];
 
   # Gnome SysTray
   services.udev.packages = with pkgs; [
@@ -325,7 +327,7 @@
     fira-code-symbols
     dina-font
 
-    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+    (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
   ];
 
   # Polkit
@@ -344,11 +346,6 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [ 80 443 ];
-  };
-
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
@@ -356,5 +353,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }
