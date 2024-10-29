@@ -143,6 +143,7 @@
       }
 
       windowrulev2 = workspace 5, class:(Spotify)
+      windowrulev2 = workspace 4, class:(Code)
       windowrulev2 = workspace 3, class:(firefox)
       windowrulev2 = workspace 1, class:(Discord)
       windowrulev2 = float, class:(pavucontrol)

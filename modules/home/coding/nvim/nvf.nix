@@ -1,14 +1,15 @@
 _: {
   imports = [
-    ./nvf.nix
     ./visuals.nix
     ./theme.nix
     ./filetree.nix
     ./visuals.nix
+    ./languages.nix
   ];
 
   programs.nvf = {
     enable = true;
+    enableManpages = true;
 
     settings = {
       vim = {
@@ -27,10 +28,6 @@ _: {
         };
 
         telescope = {
-          enable = true;
-        };
-
-        comments.comment-nvim = {
           enable = true;
         };
 
