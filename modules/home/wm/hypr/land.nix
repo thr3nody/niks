@@ -62,8 +62,8 @@
           "$mod, Q, killactive"
           "$mod, A, togglefloating"
 
-          "$mod, mouse_up, workspace, e-1"
-          "$mod, mouse_down, workspace, e+1"
+          "$mod, mouse_up, workspace, e+1"
+          "$mod, mouse_down, workspace, e-1"
 
           "$supermod, Q, exit"
           "$supermod, L, exec, hyprlock"
@@ -86,6 +86,11 @@
         "$mod, mouse:272, movewindow"
         "$mod, mouse:273, resizewindow"
       ];
+
+      gestures = {
+        workspace_swipe = "yes";
+        workspace_swipe_fingers = 3;
+      };
 
       monitor = ",1920x1080@144,0x0,1";
 
@@ -124,11 +129,6 @@
       dwindle = {
         pseudotile = 1; # Enable pseudotiling on dwindle
         force_split = 0;
-      };
-
-      gestures = {
-        workspace_swipe = "yes";
-        workspace_swipe_fingers = 4;
       };
     };
 
