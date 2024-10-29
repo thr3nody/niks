@@ -4,6 +4,7 @@ _: {
     ./visuals.nix
     ./theme.nix
     ./filetree.nix
+    ./visuals.nix
   ];
 
   programs.nvf = {
