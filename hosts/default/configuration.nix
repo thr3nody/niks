@@ -125,7 +125,6 @@
       vesktop
       element-desktop
       spotify-player # TUI for Spotify
-      spotify
       telegram-desktop
     ];
   };
@@ -223,8 +222,6 @@
     luajitPackages.luarocks
 
     python3
-
-    flutter
 
     zulu
 
