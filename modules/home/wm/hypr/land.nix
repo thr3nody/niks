@@ -41,6 +41,7 @@
       "$mod" = "SUPER";
       "$supermod" = "SUPERSHIFT";
       "$menu" = "wofi --show drun --allow-image";
+      "$clipboard" = "cliphist list | wofi --dmenu | cliphist decode | wl-copy";
 
       bind =
         [
@@ -52,7 +53,7 @@
           "$mod, P, exec, hyprpicker -a -f hex"
           "$mod, W, exec, pkill waybar || waybar &"
           "$mod, E, exec, nautilus"
-          "$mod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
+          "$mod, V, exec, $clipboard"
 
           "$mod, H, movefocus, l"
           "$mod, L, movefocus, r"
