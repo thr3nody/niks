@@ -18,6 +18,7 @@
     ../../modules/system/networking/firewall.nix
     ../../modules/system/networking/tailscale.nix
     ../../modules/system/themes/fonts.nix
+    ../../modules/system/de/gnome.nix
   ];
 
   # Bootloader.
