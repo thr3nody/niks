@@ -17,6 +17,7 @@
     ../../modules/system/securities/pam.nix
     ../../modules/system/networking/firewall.nix
     ../../modules/system/networking/tailscale.nix
+    ../../modules/system/themes/fonts.nix
   ];
 
   # Bootloader.
@@ -312,19 +313,6 @@
   # Gnome SysTray
   services.udev.packages = with pkgs; [
     gnome.gnome-settings-daemon
-  ];
-
-  # Fonts
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    liberation_ttf
-    fira-code
-    fira-code-symbols
-    dina-font
-
-    (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
   ];
 
   # Polkit
