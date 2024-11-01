@@ -55,7 +55,6 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -235,12 +234,6 @@
     texliveFull
     texlab
 
-    #Gnome Extensions
-    gnomeExtensions.paperwm
-    gnomeExtensions.color-picker
-    gnomeExtensions.clipboard-indicator
-    gnomeExtensions.appindicator
-
     # Fish Plugins
     fishPlugins.done
     fishPlugins.fzf-fish
@@ -309,11 +302,6 @@
   # Autostart warp-svc on startup.
   systemd.packages = [pkgs.cloudflare-warp];
   systemd.targets.multi-user.wants = ["warp-svc.service"];
-
-  # Gnome SysTray
-  services.udev.packages = with pkgs; [
-    gnome.gnome-settings-daemon
-  ];
 
   # Polkit
   security.polkit.enable = true;
