@@ -1,6 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   config,
   pkgs,
@@ -20,6 +17,8 @@
     ../../modules/system/themes/fonts.nix
     ../../modules/system/de/gnome.nix
     ../../modules/system/services/tor.nix
+    ../../modules/system/graphics/opengl.nix
+    ../../modules/system/graphics/nvidia/535.nix
   ];
 
   boot = {
@@ -30,7 +29,7 @@
     initrd.luks.devices."luks-9addd389-4e0e-408d-be35-702214e2f5de".device = "/dev/disk/by-uuid/9addd389-4e0e-408d-be35-702214e2f5de";
   };
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "nixos";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -69,8 +68,6 @@
     printing.enable = true;
   };
 
-  # Enable CUPS to print documents.
-
   # RTKit
   security.rtkit.enable = true;
 
@@ -80,46 +77,9 @@
   # Experimental
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  # OpenGL
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-    extraPackages = with pkgs; [
-      intel-media-driver
-      intel-vaapi-driver
-      libvdpau-va-gl
-      intel-compute-runtime
-    ];
-  };
-
   # Xbox Gamepad
   # hardware.xone.enable = true;
   hardware.xpadneo.enable = true;
-
-  # Nvidia
-  services.xserver.videoDrivers = ["nvidia"];
-  hardware.nvidia = {
-    modesetting.enable = true;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-      version = "535.154.05";
-      sha256_64bit = "sha256-fpUGXKprgt6SYRDxSCemGXLrEsIA6GOinp+0eGbqqJg=";
-      sha256_aarch64 = "sha256-G0/GiObf/BZMkzzET8HQjdIcvCSqB1uhsinro2HLK9k=";
-      openSha256 = "sha256-wvRdHguGLxS0mR06P5Qi++pDJBCF8pJ8hr4T8O6TJIo=";
-      settingsSha256 = "sha256-9wqoDEWY4I7weWW05F4igj1Gj9wjHsREFMztfEmqm10=";
-      persistencedSha256 = "sha256-d0Q3Lk80JqkS1B54Mahu2yY/WocOqFFbZVBh+ToGhaE=";
-    };
-
-    prime = {
-      offload = {
-        enable = true;
-        enableOffloadCmd = true;
-      };
-
-      intelBusId = "PCI:0:2:0";
-      nvidiaBusId = "PCI:1:0:0";
-    };
-  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.erine = {
