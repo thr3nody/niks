@@ -160,6 +160,7 @@
     ripgrep
     xclip # Clipboard for X
     wl-clipboard # Clipboard for Wayland
+    clipse # TUI Clipboard Manager
     wget
     starship
     zoxide
@@ -207,9 +208,6 @@
     fishPlugins.grc
     fishPlugins.colored-man-pages
     fishPlugins.autopair
-
-    # Cloudflare
-    cloudflare-warp
   ];
 
   # Adb
@@ -252,10 +250,6 @@
       fi
     '';
   };
-
-  # Autostart warp-svc on startup.
-  systemd.packages = [pkgs.cloudflare-warp];
-  systemd.targets.multi-user.wants = ["warp-svc.service"];
 
   # Polkit
   security.polkit.enable = true;

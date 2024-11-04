@@ -9,7 +9,6 @@
     ../components/waybar.nix
     ../components/wofi.nix
     ../components/mako.nix
-    ../components/cliphist.nix
     ./paper.nix
     ./lock.nix
   ];
@@ -41,7 +40,7 @@
       "$mod" = "SUPER";
       "$supermod" = "SUPERSHIFT";
       "$menu" = "wofi --show drun --allow-image";
-      "$clipboard" = "cliphist list | wofi --dmenu | cliphist decode | wl-copy";
+      "$clipboard" = "kitty --class clipse -e clipse";
 
       bind =
         [
@@ -149,10 +148,10 @@
       windowrulev2 = workspace 1, class:(Discord)
       windowrulev2 = float, class:(pavucontrol)
       windowrulev2 = size 622 652, class:(pavucontrol)
+      windowrulev2 = float, class:(clipse)
+      windowrulev2 = size 622 652, class:(clipse)
 
-
-      exec-once = wl-paste --type text --watch cliphist store # Stores only text data
-      exec-once = wl-paste --type image --watch cliphist store # Stores only image data
+      exec-once = clipse -listen
     '';
   };
 }
