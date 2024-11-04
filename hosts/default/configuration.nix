@@ -19,6 +19,7 @@
     ../../modules/system/networking/tailscale.nix
     ../../modules/system/themes/fonts.nix
     ../../modules/system/de/gnome.nix
+    ../../modules/system/services/tor.nix
   ];
 
   boot = {
