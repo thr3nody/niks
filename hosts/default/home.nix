@@ -11,6 +11,7 @@
     ../../modules/home/wm/hypr/land.nix
     ../../modules/home/coding/nvim/nvf.nix
     ../../modules/home/themes/spicetify.nix
+    ../../modules/home/shell/fish.nix
   ];
 
   nixpkgs.config.allowUnfree = true;

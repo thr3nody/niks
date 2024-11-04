@@ -242,18 +242,6 @@
     ];
   };
 
-  # Fish
-  programs.fish = {
-    enable = true;
-    interactiveShellInit = ''
-      starship init fish | source
-      zoxide init fish | source
-      set fish_greeting
-      alias blade="GDK_BACKEND=x11 SDL_VIDEODRIVER=x11 nvidia-offload flowblade"
-      bunbun
-    '';
-  };
-
   # Bash
   programs.bash = {
     interactiveShellInit = ''
