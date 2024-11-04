@@ -18,7 +18,7 @@
     ../../modules/system/de/gnome.nix
     ../../modules/system/services/tor.nix
     ../../modules/system/graphics/opengl.nix
-    ../../modules/system/graphics/nvidia/535.nix
+    ../../modules/system/graphics/nvidia/565.nix
   ];
 
   boot = {
