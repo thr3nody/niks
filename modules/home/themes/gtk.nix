@@ -15,7 +15,7 @@
     };
 
     font = {
-      name = "Sans";
+      name = "Inter";
       size = 11;
     };
   };

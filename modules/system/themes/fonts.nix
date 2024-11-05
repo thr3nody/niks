@@ -7,6 +7,7 @@
     fira-code
     fira-code-symbols
     dina-font
+    inter
 
     (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
   ];
