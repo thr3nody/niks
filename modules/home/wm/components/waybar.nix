@@ -78,8 +78,8 @@
 
         # Right
         pulseaudio = {
-          format = "{icon} {volume}"; 
-          format-muted = "{} {format_source}";
+          format = "{icon}   {volume}"; 
+          format-muted = "{}   {format_source}";
           format-icons = {
             headphone = " ";
             default = [ "" " " " " ];
@@ -88,7 +88,7 @@
         };
 
         battery = {
-          format = "{icon} {capacity}%";
+          format = "{icon}   {capacity}%";
           format-icons = [" " " " " " " " " "];
         };
 
