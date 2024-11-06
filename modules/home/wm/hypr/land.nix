@@ -144,8 +144,10 @@
 
       windowrulev2 = workspace 5, class:(Spotify)
       windowrulev2 = workspace 4, class:(Code)
+      windowrulev2 = workspace 4, class:(dev.zed.Zed)
+      windowrulev2 = workspace 4, class:(Godot_Engine)
       windowrulev2 = workspace 3, class:(firefox)
-      windowrulev2 = workspace 1, class:(Discord)
+      windowrulev2 = workspace 1, class:(vesktop)
       windowrulev2 = float, class:(pavucontrol)
       windowrulev2 = size 622 652, class:(pavucontrol)
       windowrulev2 = float, class:(clipse)
