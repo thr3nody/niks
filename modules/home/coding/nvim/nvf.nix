@@ -1,5 +1,6 @@
-_: {
+{inputs, ...}: {
   imports = [
+    inputs.nvf.homeManagerModules.default
     ./visuals.nix
     ./theme.nix
     ./filetree.nix

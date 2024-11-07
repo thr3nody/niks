@@ -6,8 +6,6 @@
 }: {
   imports = [
     inputs.nix-colors.homeManagerModules.default
-    inputs.nvf.homeManagerModules.default
-    inputs.spicetify-nix.homeManagerModules.default
     ../../modules/home/wm/hypr/land.nix
     ../../modules/home/coding/nvim/nvf.nix
     ../../modules/home/themes/spicetify.nix
