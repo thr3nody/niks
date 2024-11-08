@@ -11,11 +11,13 @@
 
     nix-colors.url = "github:misterio77/nix-colors";
 
-    # obsidian-nvim.url = "github:epwalsh/obsidian.nvim";
     nvf = {
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
-      # inputs.obsidian-nvim.follows = "obsidian-nvim";
+    };
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
     };
 
     spicetify-nix = {
@@ -32,7 +34,7 @@
         inputs.home-manager.nixosModules.default
       ];
     };
-    homeConfiguratinos.default = home-manager.lib.homeManagerConfigurations {
+    homeConfigurations.default = home-manager.lib.homeManagerConfigurations {
       extraSpecialArgs = { inherit inputs;};
       modules = [
         "${self}/hosts/default/home.nix"
