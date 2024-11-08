@@ -7,7 +7,7 @@
   imports = [
     inputs.nix-colors.homeManagerModules.default
     ../../modules/home/wm/hypr/land.nix
-    ../../modules/home/coding/nvim/nvf.nix
+    ../../modules/home/coding/nvim/nixvim/default.nix
     ../../modules/home/themes/spicetify.nix
     ../../modules/home/shell/fish.nix
   ];
@@ -32,6 +32,7 @@
 
   home.packages = with pkgs; [
     hello
+    pkgs.nodePackages.eslint
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
