@@ -14,6 +14,7 @@
     ../../modules/system/securities/pam.nix
     ../../modules/system/networking/firewall.nix
     ../../modules/system/networking/tailscale.nix
+    ../../modules/system/networking/warp.nix
     ../../modules/system/themes/fonts.nix
     ../../modules/system/de/gnome.nix
     ../../modules/system/services/tor.nix
@@ -87,7 +88,6 @@
     description = "Erine Moira";
     extraGroups = ["networkmanager" "wheel" "docker" "kvm" "adbuser"];
     packages = with pkgs; [
-      thunderbird
       vesktop
       element-desktop
       spotify-player # TUI for Spotify
@@ -104,6 +104,11 @@
 
   # Install firefox.
   programs.firefox.enable = true;
+  # Install thunderbird
+  programs.thunderbird = {
+    enable = true;
+    package = pkgs.thunderbird-128;
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
