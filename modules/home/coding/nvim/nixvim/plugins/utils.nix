@@ -10,7 +10,20 @@
     };
     comment.enable = true;
     nvim-autopairs.enable = true;
-    ts-autotag.enable = true;
+    ts-autotag = {
+      enable = true;
+      settings = {
+        opts = {
+          enable_close = true;
+          enable_close_on_slash = true;
+          enable_rename = true;
+        };
+        aliases = {
+          php = "html";
+          vue = "html";
+        };
+      };
+    };
     friendly-snippets.enable = true;
     todo-comments.enable = true;
     twilight.enable = true;
