@@ -12,8 +12,8 @@ _: {
       g = "git";
       c = "code";
       ch = "code .";
-      v = "lvim";
-      vh = "lvim .";
+      v = "nvim";
+      vh = "nvim .";
       ".." = "cd ..";
       "..." = "cd ../..";
     };
