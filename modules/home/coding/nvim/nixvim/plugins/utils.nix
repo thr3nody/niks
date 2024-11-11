@@ -20,6 +20,8 @@
         };
         aliases = {
           php = "html";
+          blade = "html";
+          "blade.php" = "html";
           vue = "html";
         };
       };
