@@ -10,6 +10,7 @@
     ./plugins/telescope.nix
     ./plugins/ui.nix
     ./plugins/utils.nix
+    ./plugins/cmp.nix
   ];
 
   programs.nixvim = {
