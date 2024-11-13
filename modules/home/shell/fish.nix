@@ -18,7 +18,7 @@ _: {
       "..." = "cd ../..";
     };
     functions = {
-      rebuild = "sudo nixos-rebuild $argv --upgrade --flake /home/erine/niks/#default --show-trace --verbose";
+      rebuild = "sudo nixos-rebuild $argv --flake /home/erine/niks/#default --show-trace --verbose";
       fuck = "nix shell nixpkgs#$argv";
     };
   };
