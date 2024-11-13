@@ -1,4 +1,7 @@
-{
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    phpactor
+  ];
   programs.nixvim.plugins = {
     lsp-format.enable = true;
     lsp = {
@@ -11,6 +14,13 @@
           enable = true;
           autostart = true;
           tslsIntegration = true;
+        };
+        phpactor = {
+          enable = true;
+          filetypes = [
+            "php"
+            "blade.php"
+          ];
         };
       };
     };

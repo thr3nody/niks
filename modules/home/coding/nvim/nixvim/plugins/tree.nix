@@ -23,13 +23,13 @@
         };
         float = {padding = 5;};
         keymaps = {
-          "h" = "actions.parent";
-          "q" = "actions.close";
+          "<C-b>" = "actions.parent";
+          "<C-q>" = "actions.close";
           "<C-h>" = "actions.select_split";
-          "r" = "actions.refresh";
-          "p" = "actions.preview";
+          "<C-r>" = "actions.refresh";
+          "<C-Space>" = "actions.preview";
           "<C-s>" = "actions.select_vsplit";
-          "t" = "actions.select_tab";
+          "<C-t>" = "actions.select_tab";
           "<CR>" = "actions.select";
           _ = "actions.open_cwd";
           "`" = "actions.cd";

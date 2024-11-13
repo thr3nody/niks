@@ -41,12 +41,14 @@
       "$supermod" = "SUPERSHIFT";
       "$menu" = "wofi --show drun --allow-image";
       "$clipboard" = "kitty --class clipse -e clipse";
+      "$screenshot" = "grimshot savecopy anything \"./Pictures/Screenshots/$(date +'%Y-%m-%d %H:%M:%S').png\"";
 
       bind =
         [
           "$mod, B, exec, firefox"
+          "$mod, D, exec, vesktop"
           "$mod, RETURN, exec, kitty"
-          "$mod, S, exec, grimshot savecopy anything"
+          "$mod, S, exec, $screenshot"
           "$mod, SPACE, exec, $menu"
           "$mod, M, exec, spotify"
           "$mod, P, exec, hyprpicker -a -f hex"
