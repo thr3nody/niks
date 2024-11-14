@@ -102,7 +102,6 @@
         border_size = 2;
         "col.active_border" = "rgba(${base09}ee)";
         "col.inactive_border" = "rgba(${base02}ee)";
-        apply_sens_to_raw = 0; # Raw mouse input
       };
 
       input = {
