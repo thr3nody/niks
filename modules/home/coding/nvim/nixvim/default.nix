@@ -24,6 +24,9 @@
           }
         }
       }
+      require'lspconfig'.nixd.setup{
+        offset_encoding = "utf-8"
+      }
     '';
   };
 }
