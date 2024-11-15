@@ -1,6 +1,8 @@
-{ config, lib, pkgs, ...}:
-
 {
+  config,
+  lib,
+  ...
+}: {
   programs.waybar = {
     enable = true;
     systemd = {
@@ -20,20 +22,21 @@
           "HDMI-A-1"
         ];
 
-        modules-left = [
-          "tray"
-        ]
-        ++ (lib.optionals
-        config.wayland.windowManager.hyprland.enable [
-          "hyprland/window"
-        ]);
-        modules-center = [
-
-        ]
-        ++ (lib.optionals
-        config.wayland.windowManager.hyprland.enable [
-          "hyprland/workspaces" 
-        ]);
+        modules-left =
+          [
+            "tray"
+          ]
+          ++ (lib.optionals
+            config.wayland.windowManager.hyprland.enable [
+              "hyprland/window"
+            ]);
+        modules-center =
+          [
+          ]
+          ++ (lib.optionals
+            config.wayland.windowManager.hyprland.enable [
+              "hyprland/workspaces"
+            ]);
         modules-right = [
           "backlight"
           "pulseaudio"
@@ -45,7 +48,7 @@
         "hyprland/window" = {
           format = "{}";
           max-length = 20;
-          rewrite = { "" = "Hyprland"; };
+          rewrite = {"" = "Hyprland";};
           separate-outputs = true;
         };
 
@@ -77,12 +80,17 @@
         };
 
         # Right
+        backlight = {
+          format = "{icon} {percent}%";
+          format-icons = [" "];
+        };
+
         pulseaudio = {
-          format = "{icon}   {volume}"; 
+          format = "{icon}   {volume}";
           format-muted = "{}   {format_source}";
           format-icons = {
             headphone = " ";
-            default = [ "" " " " " ];
+            default = ["" " " " "];
           };
           on-click = "pavucontrol";
         };
@@ -119,8 +127,7 @@
 
     style = let
       inherit (config.colorScheme) palette;
-    in
-    "
+    in "
       * {
         border: none;
         border-radius: 0;
