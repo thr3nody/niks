@@ -11,6 +11,7 @@
     ./plugins/ui.nix
     ./plugins/utils.nix
     ./plugins/cmp.nix
+    ./plugins/dap.nix
   ];
 
   programs.nixvim = {
