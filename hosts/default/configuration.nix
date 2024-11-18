@@ -8,12 +8,15 @@
     ./hardware-configuration.nix
     ../../modules/system/wm/hypr.nix
     ../../modules/system/dm/greetd.nix
+
     ../../modules/system/audio/pulse.nix
     ../../modules/system/audio/pipewire.nix
+
     ../../modules/system/securities/pam.nix
     ../../modules/system/networking/firewall.nix
     ../../modules/system/networking/tailscale.nix
     ../../modules/system/networking/warp.nix
+
     ../../modules/system/themes/fonts.nix
     ../../modules/system/de/gnome.nix
     ../../modules/system/services/tor.nix

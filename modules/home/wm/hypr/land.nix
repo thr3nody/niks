@@ -155,6 +155,9 @@
       windowrulev2 = size 622 652, class:(clipse)
 
       exec-once = clipse -listen
+
+      env = HYPRCURSOR_THEME,Bibata-Modern-Classic
+      env = HYPRCURSOR_SIZE,24
     '';
   };
 }

@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   inputs,
   ...
@@ -10,16 +9,19 @@
     ../../modules/home/coding/nvim/nixvim/default.nix
     ../../modules/home/themes/spicetify.nix
     ../../modules/home/shell/fish.nix
+    ../../modules/home/services/easyeffects.nix
   ];
+
+  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
 
   nixpkgs.config.allowUnfree = true;
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "erine";
-  home.homeDirectory = "/home/erine";
-
-  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
+  home = {
+    username = "erine";
+    homeDirectory = "/home/erine";
+  };
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -56,17 +58,6 @@
     settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
   };
 
-  # Sway
-  wayland.windowManager = {
-    sway = {
-      enable = true;
-      config = rec {
-        modifier = "Mod4";
-        terminal = "kitty";
-      };
-    };
-  };
-
   # OBS
   programs.obs-studio = {
     enable = true;
@@ -94,7 +85,7 @@
   #  /etc/profiles/per-user/erine/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    EDITOR = "lvim";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.
