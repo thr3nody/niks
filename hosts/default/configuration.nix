@@ -133,20 +133,14 @@
     gimp
     krita
     audacity
-    libreoffice-still
+    libreoffice-fresh
     zathura
     chromium
 
     # Video thing
-    flowblade
     kdenlive
     mpv
     vlc
-
-    # Bottles(?)
-    wineWowPackages.stable
-    winetricks
-    bottles
 
     # Ngegame bentaran lah ya
     mindustry-wayland
@@ -181,8 +175,6 @@
     # Coding Stuff
     lunarvim
     vscode
-    zed-editor
-    android-studio
 
     gitlab-runner
 
@@ -194,20 +186,12 @@
 
     bun
 
-    luajitPackages.luarocks
-
     python3
-
-    zulu
 
     vscode-langservers-extracted
 
     # Docker Compose
     docker-compose
-
-    # LaTex
-    texliveFull
-    texlab
 
     # Fish Plugins
     fishPlugins.done

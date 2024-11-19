@@ -119,11 +119,13 @@
       };
 
       decoration = {
-        drop_shadow = true;
-        shadow_range = 50;
-        shadow_render_power = 3;
-        "col.shadow" = "rgba(${base02}ee)";
-        "col.shadow_inactive" = "rgba(${base00}ee)";
+        shadow = {
+          enabled = true;
+          render_power = 3;
+          color = "rgba(${base02}ee)";
+          color_inactive = "rgba(${base00}ee)";
+          range = 50;
+        };
         rounding = 15;
       };
 
