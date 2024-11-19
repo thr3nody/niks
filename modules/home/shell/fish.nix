@@ -19,6 +19,7 @@ _: {
     };
     functions = {
       rebuild = "nh os $argv -a -H default"; # sudo nixos-rebuild $argv --flake /home/erine/niks/#default --show-trace --verbose
+      update = "nh os $argv -u -a -H default"; # nix flake update; sudo nixos-rebuild $argv --flake /home/erine/niks/#default --show-trace --verbose
       fuck = "nix shell nixpkgs#$argv";
       shit = "nh search $argv";
     };
