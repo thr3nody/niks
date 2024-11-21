@@ -18,7 +18,6 @@
 
     enabledExtensions = with spicePkgs.extensions; [
       keyboardShortcut
-      powerBar
       copyLyrics
       {
         src =
