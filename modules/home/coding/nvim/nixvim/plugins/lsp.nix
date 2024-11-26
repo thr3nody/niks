@@ -8,7 +8,10 @@
       enable = true;
       servers = {
         bashls.enable = true;
-        nixd.enable = true;
+        nixd = {
+          enable = true;
+          autostart = true;
+        };
         html.enable = true;
         volar = {
           enable = true;
@@ -21,6 +24,14 @@
             "php"
             "blade.php"
           ];
+        };
+        ltex = {
+          enable = true;
+          autostart = true;
+        };
+        texlab = {
+          enable = true;
+          autostart = true;
         };
       };
     };

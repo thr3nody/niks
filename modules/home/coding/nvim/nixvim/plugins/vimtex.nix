@@ -1,5 +1,5 @@
 {
-  progarms.nixvim.plugins.vimtex = {
+  programs.nixvim.plugins.vimtex = {
     enable = true;
     settings.view_method = "zathura";
   };
