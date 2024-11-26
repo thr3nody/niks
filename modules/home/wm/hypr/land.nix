@@ -56,19 +56,25 @@
           "$mod, E, exec, nautilus"
           "$mod, V, exec, $clipboard"
 
+          "$mod, F, fullscreen"
+          "$mod, Q, killactive"
+          "$mod, A, togglefloating"
+
           "$mod, H, movefocus, l"
           "$mod, L, movefocus, r"
           "$mod, K, movefocus, u"
           "$mod, J, movefocus, d"
-          "$mod, F, fullscreen"
-          "$mod, Q, killactive"
-          "$mod, A, togglefloating"
+
+          "$supermod, H, movewindow, l"
+          "$supermod, L, movewindow, r"
+          "$supermod, K, movewindow, u"
+          "$supermod, J, movewindow, d"
 
           "$mod, mouse_up, workspace, e+1"
           "$mod, mouse_down, workspace, e-1"
 
           "$supermod, Q, exit"
-          "$supermod, L, exec, hyprlock"
+          "$supermod, BACKSPACE, exec, hyprlock"
         ]
         ++ (
           # workspaces
