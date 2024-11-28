@@ -81,7 +81,7 @@
 
         # Right
         backlight = {
-          format = "{icon} {percent}%";
+          format = "{icon} {percent}";
           format-icons = [" "];
         };
 
@@ -96,7 +96,7 @@
         };
 
         battery = {
-          format = "{icon}   {capacity}%";
+          format = "{icon}   {capacity}";
           format-icons = [" " " " " " " " " "];
         };
 
