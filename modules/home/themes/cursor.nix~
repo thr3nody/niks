@@ -1,4 +1,5 @@
 {pkgs, ...}: {
+  # Bibata was broken
   # home.pointerCursor = let
   #   getFrom = url: hash: name: {
   #     gtk.enable = true;
@@ -19,14 +20,11 @@
   #   "sha256-BvVE9qupMjw7JRqFUj1J0a4ys6kc9fOLBPx2bGaapTk="
   #   "Fuchsia-Pop";
 
-  # Bibata broken damn
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
-    # package = pkgs.bibata-cursors;
-    package = pkgs.pokemon-cursor;
-    # name = "Bibata-Modern-Classic";
-    name = "Pokemon";
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
     size = 24;
   };
 }

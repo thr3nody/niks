@@ -163,6 +163,7 @@
       windowrulev2 = size 622 652, class:(clipse)
 
       exec-once = clipse -listen
+      exec-once = hyprctl setcursor Pokemon 24
     '';
   };
 }

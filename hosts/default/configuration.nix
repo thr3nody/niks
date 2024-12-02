@@ -33,6 +33,8 @@
     initrd.luks.devices."luks-9addd389-4e0e-408d-be35-702214e2f5de".device = "/dev/disk/by-uuid/9addd389-4e0e-408d-be35-702214e2f5de";
   };
 
+  boot.kernelParams = [ "module_blacklist=mt7921e" ];
+
   networking.hostName = "nixos";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -185,6 +187,7 @@
     nodePackages.eslint
 
     bun
+    deno
 
     python3
 

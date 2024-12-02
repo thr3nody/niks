@@ -9,6 +9,8 @@
     dina-font
     inter
 
-    (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
+    nerd-fonts.fira-code
+    nerd-fonts.fira-mono
+    nerd-fonts.jetbrains-mono
   ];
 }
