@@ -203,6 +203,9 @@
     fishPlugins.grc
     fishPlugins.colored-man-pages
     fishPlugins.autopair
+    fishPlugins.fish-you-should-use
+    fishPlugins.gruvbox
+    fishPlugins.sponge
   ];
 
   # Adb
