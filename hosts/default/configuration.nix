@@ -31,36 +31,38 @@
     loader.efi.canTouchEfiVariables = true;
 
     initrd.luks.devices."luks-9addd389-4e0e-408d-be35-702214e2f5de".device = "/dev/disk/by-uuid/9addd389-4e0e-408d-be35-702214e2f5de";
+    kernelParams = ["module_blacklist=mt7921e"];
   };
 
-  boot.kernelParams = [ "module_blacklist=mt7921e" ];
+  networking = {
+    hostName = "nixos";
+    # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  networking.hostName = "nixos";
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+    # Configure network proxy if necessary
+    # networking.proxy.default = "http://user:password@proxy:port/";
+    # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
+    # Enable networking
+    networkmanager.enable = true;
+  };
 
   # Set your time zone.
   time.timeZone = "Asia/Jakarta";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "id_ID.UTF-8";
-    LC_IDENTIFICATION = "id_ID.UTF-8";
-    LC_MEASUREMENT = "id_ID.UTF-8";
-    LC_MONETARY = "id_ID.UTF-8";
-    LC_NAME = "id_ID.UTF-8";
-    LC_NUMERIC = "id_ID.UTF-8";
-    LC_PAPER = "id_ID.UTF-8";
-    LC_TELEPHONE = "id_ID.UTF-8";
-    LC_TIME = "id_ID.UTF-8";
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    extraLocaleSettings = {
+      LC_ADDRESS = "id_ID.UTF-8";
+      LC_IDENTIFICATION = "id_ID.UTF-8";
+      LC_MEASUREMENT = "id_ID.UTF-8";
+      LC_MONETARY = "id_ID.UTF-8";
+      LC_NAME = "id_ID.UTF-8";
+      LC_NUMERIC = "id_ID.UTF-8";
+      LC_PAPER = "id_ID.UTF-8";
+      LC_TELEPHONE = "id_ID.UTF-8";
+      LC_TIME = "id_ID.UTF-8";
+    };
   };
 
   # Enable the X11 windowing system.
@@ -79,9 +81,6 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-
-  # Experimental
-  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Xbox Gamepad
   # hardware.xone.enable = true;
@@ -107,25 +106,28 @@
     };
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
-  # Install thunderbird
-  programs.thunderbird = {
-    enable = true;
-    package = pkgs.thunderbird-128;
+  programs = {
+    firefox.enable = true;
+    thunderbird = {
+      enable = true;
+      package = pkgs.thunderbird-128;
+    };
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Garbage Collection
-  nix.gc = {
-    automatic = true;
-    dates = "Sat *-*-* 20:30:00";
-  };
-  nix.optimise = {
-    automatic = true;
-    dates = ["Sat *-*-* 21:00:00"];
+  nix = {
+    settings.experimental-features = ["nix-command" "flakes"];
+    # Garbage Collection
+    gc = {
+      automatic = true;
+      dates = "Sat *-*-* 20:30:00";
+    };
+    optimise = {
+      automatic = true;
+      dates = ["Sat *-*-* 21:00:00"];
+    };
   };
 
   # Paket
@@ -208,17 +210,19 @@
     fishPlugins.sponge
   ];
 
-  # Adb
-  programs.adb.enable = true;
+  programs = {
+    # Adb
+    adb.enable = true;
 
-  # Steamy
-  programs.steam = {
-    enable = true;
-    gamescopeSession.enable = true;
-  };
-  programs.gamemode.enable = true;
-  environment.sessionVariables = {
-    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
+    # Steamy
+    steam = {
+      enable = true;
+      gamescopeSession.enable = true;
+    };
+    gamemode.enable = true;
+    environment.sessionVariables = {
+      STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
+    };
   };
 
   # Virt Manager
