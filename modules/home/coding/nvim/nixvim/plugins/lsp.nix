@@ -33,6 +33,7 @@
           enable = true;
           autostart = true;
         };
+        tinymist.enable = true;
       };
     };
     none-ls = {
