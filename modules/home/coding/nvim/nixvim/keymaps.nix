@@ -2,7 +2,7 @@
   programs.nixvim = {
     keymaps = [
       {
-        key = "<leader>e";
+        key = "<leader>E";
         action = "<cmd>Oil --float<cr>";
         options.desc = "Oil";
       }
@@ -12,9 +12,26 @@
         options.desc = "Oil";
       }
       {
-        key = "<leader>E";
-        action = "<cmd>Neotree toggle<cr>";
+        key = "<leader>e";
+        action = "<cmd>Neotree toggle right<cr>";
         options.desc = "Neotree";
+      }
+
+      {
+        key = "<C-h>";
+        action = "<cmd>TmuxNavigateLeft<cr>";
+      }
+      {
+        key = "<C-j>";
+        action = "<cmd>TmuxNavigateDown<cr>";
+      }
+      {
+        key = "<C-k>";
+        action = "<cmd>TmuxNavigateUp<cr>";
+      }
+      {
+        key = "<C-l>";
+        action = "<cmd>TmuxNavigateRight<cr>";
       }
 
       {

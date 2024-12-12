@@ -8,6 +8,7 @@
         onlyRenderImageAtCursor = true;
       };
     };
+    tmux-navigator.enable = true;
     comment.enable = true;
     nvim-autopairs.enable = true;
     ts-autotag = {
