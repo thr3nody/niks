@@ -12,7 +12,10 @@
           enable = true;
           autostart = true;
         };
-        html.enable = true;
+        html = {
+          enable = true;
+          autostart = true;
+        };
         volar = {
           enable = true;
           autostart = true;
@@ -29,11 +32,14 @@
           enable = true;
           autostart = true;
         };
-        texlab = {
+        # texlab = {
+        #   enable = true;
+        #   autostart = true;
+        # };
+        tinymist = {
           enable = true;
           autostart = true;
         };
-        tinymist.enable = true;
       };
     };
     none-ls = {

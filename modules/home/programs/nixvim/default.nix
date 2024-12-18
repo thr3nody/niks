@@ -12,7 +12,7 @@
     ./plugins/utils.nix
     ./plugins/cmp.nix
     ./plugins/dap.nix
-    ./plugins/vimtex.nix
+    # ./plugins/vimtex.nix
     ./plugins/typst-vim.nix
   ];
 
