@@ -13,16 +13,22 @@
     ../../modules/system/audio/pipewire.nix
 
     ../../modules/system/securities/pam.nix
+
     ../../modules/system/networking/firewall.nix
     ../../modules/system/networking/tailscale.nix
     ../../modules/system/networking/warp.nix
 
     ../../modules/system/themes/fonts.nix
+
     ../../modules/system/de/gnome.nix
     ../../modules/system/services/tor.nix
+
     ../../modules/system/graphics/opengl.nix
     ../../modules/system/graphics/nvidia/565.nix
+
     ../../modules/system/programs/nh.nix
+    ../../modules/system/programs/firefox.nix
+    ../../modules/system/programs/thunderbird.nix
   ];
 
   boot = {
@@ -103,14 +109,6 @@
     extraSpecialArgs = {inherit inputs;};
     users = {
       "erine" = import ./home.nix;
-    };
-  };
-
-  programs = {
-    firefox.enable = true;
-    thunderbird = {
-      enable = true;
-      package = pkgs.thunderbird-128;
     };
   };
 
