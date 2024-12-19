@@ -99,9 +99,7 @@
     extraGroups = ["networkmanager" "wheel" "docker" "kvm" "adbuser"];
     packages = with pkgs; [
       vesktop
-      element-desktop
       spotify-player # TUI for Spotify
-      telegram-desktop
     ];
   };
 
@@ -130,7 +128,6 @@
 
   # Paket
   environment.systemPackages = with pkgs; [
-    motrix
     feh
     gimp
     krita
@@ -192,9 +189,6 @@
     python3
 
     vscode-langservers-extracted
-
-    # Docker Compose
-    docker-compose
 
     # Fish Plugins
     fishPlugins.done

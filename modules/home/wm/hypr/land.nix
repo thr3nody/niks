@@ -8,6 +8,7 @@
     ../../themes/gtk.nix
     ../components/waybar.nix
     ../components/wofi.nix
+    ../components/rofi/default.nix
     ../components/mako.nix
     ./paper.nix
     ./lock.nix
