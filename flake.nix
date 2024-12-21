@@ -24,18 +24,25 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    ...
+  } @ inputs: {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; };
+      specialArgs = {inherit inputs;};
       modules = [
         "${self}/hosts/default/configuration.nix"
         inputs.home-manager.nixosModules.default
       ];
     };
     homeConfigurations.default = home-manager.lib.homeManagerConfigurations {
-      extraSpecialArgs = { inherit inputs;};
+      extraSpecialArgs = {inherit inputs;};
       modules = [
         "${self}/hosts/default/home.nix"
       ];

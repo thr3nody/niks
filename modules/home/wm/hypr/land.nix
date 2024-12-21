@@ -20,23 +20,6 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    # Styling Look like this, goes from darker color (top) to lighter color (bottom).
-    # base00: "282828" # ----
-    # base01: "3c3836" # ---
-    # base02: "504945" # --
-    # base03: "665c54" # -
-    # base04: "bdae93" # +
-    # base05: "d5c4a1" # ++
-    # base06: "ebdbb2" # +++
-    # base07: "fbf1c7" # ++++
-    # base08: "fb4934" # red
-    # base09: "fe8019" # orange
-    # base0A: "fabd2f" # yellow
-    # base0B: "b8bb26" # green
-    # base0C: "8ec07c" # aqua/cyan
-    # base0D: "83a598" # blue
-    # base0E: "d3869b" # purple
-    # base0F: "d65d0e" # brown
     settings = with config.colorScheme.palette; {
       "$mod" = "SUPER";
       "$supermod" = "SUPERSHIFT";
@@ -46,7 +29,7 @@
 
       bind =
         [
-          "$mod, B, exec, firefox"
+          "$mod, B, exec, zen"
           "$mod, D, exec, vesktop"
           "$mod, RETURN, exec, kitty"
           "$mod, S, exec, $screenshot"
@@ -157,6 +140,7 @@
       windowrulev2 = workspace 4, class:(dev.zed.Zed)
       windowrulev2 = workspace 4, class:(Godot_Engine)
       windowrulev2 = workspace 3, class:(firefox)
+      windowrulev2 = workspace 3, class:(zen-beta)
       windowrulev2 = workspace 1, class:(vesktop)
       windowrulev2 = float, class:(pavucontrol)
       windowrulev2 = size 622 652, class:(pavucontrol)

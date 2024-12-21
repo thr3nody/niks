@@ -134,7 +134,10 @@
     audacity
     libreoffice-fresh
     zathura
+
+    # Browser
     chromium
+    inputs.zen-browser.packages."${system}".default
 
     # Video thing
     kdenlive
