@@ -7,6 +7,7 @@
     cmp-path.enable = true;
     cmp-dap.enable = true;
     cmp_luasnip.enable = true;
+    blink-cmp.enable = true;
 
     cmp = {
       enable = true;
