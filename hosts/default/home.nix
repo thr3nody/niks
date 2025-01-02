@@ -6,9 +6,13 @@
   imports = [
     inputs.nix-colors.homeManagerModules.default
     ../../modules/home/wm/hypr/land.nix
+
     ../../modules/home/programs/nixvim/default.nix
+
     ../../modules/home/themes/spicetify.nix
+
     ../../modules/home/shell/fish.nix
+
     ../../modules/home/services/easyeffects.nix
   ];
 
