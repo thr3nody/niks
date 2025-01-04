@@ -8,7 +8,7 @@
     ../../themes/gtk.nix
     ../components/waybar.nix
     ../components/wofi.nix
-    ../components/rofi/default.nix
+    ../components/tofi/default.nix
     ../components/mako.nix
     ./paper.nix
     ./lock.nix
@@ -143,8 +143,8 @@
       windowrulev2 = workspace 3, class:(firefox)
       windowrulev2 = workspace 3, class:(zen-beta)
       windowrulev2 = workspace 1, class:(vesktop)
-      windowrulev2 = float, class:(pavucontrol)
-      windowrulev2 = size 622 652, class:(pavucontrol)
+      windowrulev2 = float, class:(org.pulseaudio.pavucontrol)
+      windowrulev2 = size 622 652, class:(org.pulseaudio.pavucontrol)
       windowrulev2 = float, class:(clipse)
       windowrulev2 = size 622 652, class:(clipse)
 
