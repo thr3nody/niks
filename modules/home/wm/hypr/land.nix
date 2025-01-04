@@ -23,7 +23,8 @@
     settings = with config.colorScheme.palette; {
       "$mod" = "SUPER";
       "$supermod" = "SUPERSHIFT";
-      "$menu" = "wofi --show drun --allow-image";
+      # "$menu" = "wofi --show drun --allow-image";
+      "$menu" = "tofi-drun --drun-launch=true";
       "$clipboard" = "kitty --class clipse -e clipse";
       "$screenshot" = "grimshot savecopy anything \"./Pictures/Screenshots/$(date +'%Y-%m-%d %H:%M:%S').png\"";
 
