@@ -156,7 +156,6 @@
     kitty
 
     # Cli
-    git
     fzf
     grc
     btop
@@ -177,8 +176,6 @@
     # Coding Stuff
     lunarvim
     vscode
-
-    gitlab-runner
 
     php
     php82Packages.composer

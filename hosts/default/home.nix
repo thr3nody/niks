@@ -8,6 +8,7 @@
     ../../modules/home/wm/hypr/land.nix
 
     ../../modules/home/programs/nixvim/default.nix
+    ../../modules/home/programs/git/default.nix
 
     ../../modules/home/themes/spicetify.nix
 
