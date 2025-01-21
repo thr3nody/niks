@@ -155,7 +155,7 @@
     # Terminal Emulator
     kitty
 
-    # Cli
+    # CLI/TUI
     fzf
     grc
     btop
@@ -172,6 +172,7 @@
     lm_sensors
     bunbun # VERY CUTE!
     unrar
+    peaclock
 
     # Coding Stuff
     lunarvim
