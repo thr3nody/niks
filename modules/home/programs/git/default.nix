@@ -6,7 +6,7 @@
     aliases = {
       pu = "push";
       co = "checkout";
-      cm = "commit";
+      cm = "commit -m";
     };
   };
 }
