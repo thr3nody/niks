@@ -28,10 +28,10 @@
             "blade.php"
           ];
         };
-        ltex = {
-          enable = true;
-          autostart = true;
-        };
+        # ltex = {
+        #   enable = true;
+        #   autostart = true;
+        # };
         # texlab = {
         #   enable = true;
         #   autostart = true;
