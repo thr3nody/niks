@@ -1,8 +1,9 @@
-{pkgs, ...}: {
+# {pkgs, ...}:
+{
   services = {
     xserver = {
       enable = true;
-      excludePackages = [pkgs.xterm];
+      # excludePackages = [pkgs.xterm];
     };
 
     # Configure keymap in X11
