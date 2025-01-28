@@ -23,7 +23,7 @@
     ../../modules/system/de/gnome.nix
 
     ../../modules/system/services/tor.nix
-    ../../modules/system/services/caddy.nix
+    # ../../modules/system/services/caddy.nix
     ../../modules/system/services/phpfpm.nix
 
     ../../modules/system/graphics/opengl.nix
