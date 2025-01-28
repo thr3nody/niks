@@ -22,6 +22,7 @@
 
     ../../modules/system/de/gnome.nix
 
+    ../../modules/system/services/xserver.nix
     ../../modules/system/services/tor.nix
     # ../../modules/system/services/caddy.nix
     # ../../modules/system/services/phpfpm.nix
@@ -72,17 +73,6 @@
       LC_TELEPHONE = "id_ID.UTF-8";
       LC_TIME = "id_ID.UTF-8";
     };
-  };
-
-  # Enable the X11 windowing system.
-  services = {
-    xserver.enable = true;
-    # Configure keymap in X11
-    xserver.xkb = {
-      layout = "us";
-      variant = "";
-    };
-    printing.enable = true;
   };
 
   # RTKit
