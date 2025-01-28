@@ -24,7 +24,7 @@
 
     ../../modules/system/services/tor.nix
     # ../../modules/system/services/caddy.nix
-    ../../modules/system/services/phpfpm.nix
+    # ../../modules/system/services/phpfpm.nix
 
     ../../modules/system/graphics/opengl.nix
     ../../modules/system/graphics/nvidia/565.nix
