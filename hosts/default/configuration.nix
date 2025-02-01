@@ -91,6 +91,7 @@
     description = "Erine Moira";
     extraGroups = ["networkmanager" "wheel" "docker" "kvm" "adbuser"];
     packages = with pkgs; [
+      telegram-desktop
       vesktop
       spotify-player # TUI for Spotify
     ];
