@@ -159,7 +159,6 @@
     wl-clipboard # Clipboard for Wayland
     clipse # TUI Clipboard Manager
     wget
-    starship
     zoxide
     cbonsai
     yazi # File manager
