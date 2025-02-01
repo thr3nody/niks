@@ -15,7 +15,8 @@
   ];
 
   home.packages = with pkgs; [
-    sway-contrib.grimshot
+    grimblast
+    libnotify
   ];
 
   wayland.windowManager.hyprland = {
@@ -23,23 +24,27 @@
     settings = with config.colorScheme.palette; {
       "$mod" = "SUPER";
       "$supermod" = "SUPERSHIFT";
-      # "$menu" = "wofi --show drun --allow-image";
       "$menu" = "tofi-drun --drun-launch=true";
       "$clipboard" = "kitty --class clipse -e clipse";
-      "$screenshot" = "grimshot savecopy anything \"./Pictures/Screenshots/$(date +'%Y-%m-%d %H:%M:%S').png\"";
+      "$clock" = "kitty --class peaclock -e peaclock";
+      "$screenshot" = "grimblast copysave area \"./Pictures/Screenshots/$(date +'%Y-%m-%d %H:%M:%S')area.png\" && notify-send 'Screenshot saved.'";
+      "$screenshot-full" = "grimblast copysave screen \"./Pictures/Screenshots/$(date +'%Y-%m-%d %H:%M:%S')full.png\" && notify-send 'Screenshot saved.'";
 
       bind =
         [
           "$mod, B, exec, zen"
           "$mod, D, exec, vesktop"
+          "$mod, T, exec, telegram-desktop"
           "$mod, RETURN, exec, kitty"
           "$mod, S, exec, $screenshot"
+          "$supermod, S, exec, $screenshot-full"
           "$mod, SPACE, exec, $menu"
           "$mod, M, exec, spotify"
           "$mod, P, exec, hyprpicker -a -f hex"
           "$mod, W, exec, pkill waybar || waybar &"
           "$mod, E, exec, nautilus"
           "$mod, V, exec, $clipboard"
+          "$mod, C, exec, $clock"
 
           "$mod, F, fullscreen"
           "$mod, Q, killactive"
@@ -148,6 +153,8 @@
       windowrulev2 = size 622 652, class:(org.pulseaudio.pavucontrol)
       windowrulev2 = float, class:(clipse)
       windowrulev2 = size 622 652, class:(clipse)
+      windowrulev2 = float, class:(peaclock)
+      windowrulev2 = size 360 230, class:(peaclock)
 
       exec-once = clipse -listen
       exec-once = hyprctl setcursor Pokemon 24
