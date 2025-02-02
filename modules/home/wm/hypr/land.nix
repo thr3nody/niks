@@ -24,9 +24,12 @@
     settings = with config.colorScheme.palette; {
       "$mod" = "SUPER";
       "$supermod" = "SUPERSHIFT";
-      "$menu" = "tofi-drun --drun-launch=true";
+
+      "$menu" = "tofi-run | xargs hyprctl dispatch exec --";
+      "$bar" = "pkill waybar || waybar &";
       "$clipboard" = "kitty --class clipse -e clipse";
-      "$clock" = "kitty --class peaclock -e peaclock";
+      "$colorpicker" = "hyprpicker -a -f hex";
+      "$clock" = "pkill peaclock || kitty --class peaclock -e peaclock";
       "$screenshot" = "grimblast copysave area \"./Pictures/Screenshots/$(date +'%Y-%m-%d %H:%M:%S')area.png\" && notify-send 'Screenshot saved.'";
       "$screenshot-full" = "grimblast copysave screen \"./Pictures/Screenshots/$(date +'%Y-%m-%d %H:%M:%S')full.png\" && notify-send 'Screenshot saved.'";
 
@@ -40,8 +43,8 @@
           "$supermod, S, exec, $screenshot-full"
           "$mod, SPACE, exec, $menu"
           "$mod, M, exec, spotify"
-          "$mod, P, exec, hyprpicker -a -f hex"
-          "$mod, W, exec, pkill waybar || waybar &"
+          "$mod, P, exec, $colorpicker"
+          "$mod, W, exec, $bar"
           "$mod, E, exec, nautilus"
           "$mod, V, exec, $clipboard"
           "$mod, C, exec, $clock"
