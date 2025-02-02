@@ -95,6 +95,7 @@
       vesktop
       spotify-player # TUI for Spotify
     ];
+    shell = pkgs.nushell;
   };
 
   home-manager = {
