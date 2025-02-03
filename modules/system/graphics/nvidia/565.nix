@@ -3,7 +3,7 @@
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = true; # Needed for suspend to behave correctly.
-    nvidiaSettings = false; # Disable until 0384602eac8bc57add3227688ec242667df3ffe3the hits me in the balls
+    nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
       version = "565.57.01";
       sha256_64bit = "sha256-buvpTlheOF6IBPWnQVLfQUiHv4GcwhvZW3Ks0PsYLHo=";
@@ -25,11 +25,12 @@
     };
   };
 
-  environment.variables = { # Stolen from https://github.com/TLATER/dotfiles/blob/f4ed53e9e78ff41cd2849f389499d3bfd3ffe4c7/nixos-config/hosts/yui/nvidia/default.nix
-    # Required to run the correct GBM backend for nvidia GPUs on wayland
-    GBM_BACKEND = "nvidia-drm";
-    # Apparently, without this nouveau may attempt to be used instead
-    # (despite it being blacklisted)
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-  };
+  # environment.variables = {
+  #   # Stolen from https://github.com/TLATER/dotfiles/blob/f4ed53e9e78ff41cd2849f389499d3bfd3ffe4c7/nixos-config/hosts/yui/nvidia/default.nix
+  #   # Required to run the correct GBM backend for nvidia GPUs on wayland
+  #   GBM_BACKEND = "nvidia-drm";
+  #   # Apparently, without this nouveau may attempt to be used instead
+  #   # (despite it being blacklisted)
+  #   __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+  # };
 }
