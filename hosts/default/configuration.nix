@@ -89,7 +89,7 @@
   users.users.erine = {
     isNormalUser = true;
     description = "Erine Moira";
-    extraGroups = ["networkmanager" "wheel" "docker" "kvm" "adbuser"];
+    extraGroups = ["networkmanager" "wheel" "docker" "kvm" "adbuser" "dialout"];
     packages = with pkgs; [
       telegram-desktop
       vesktop
