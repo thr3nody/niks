@@ -2734,11 +2734,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1738038026,
-        "narHash": "sha256-9Lm/QBT9ImIwtA6XzlHXsz/U5SN2+G3MIvjZQSxXYyc=",
+        "lastModified": 1738754044,
+        "narHash": "sha256-ptZWtXstcE1a3My6N0OrKTA0wQePsYqqKnGpSZZy/bY=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "555d5d3951f8bfae7a421928ec6402765980538c",
+        "rev": "e4cef7c609c948a1ebc7f29602554d29fbad500d",
         "type": "github"
       },
       "original": {
