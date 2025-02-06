@@ -151,6 +151,7 @@
       windowrulev2 = workspace 4, class:(Godot_Engine)
       windowrulev2 = workspace 3, class:(firefox)
       windowrulev2 = workspace 3, class:(zen)
+      windowrulev2 = workspace 3, class:(zen-twilight)
       windowrulev2 = workspace 1, class:(vesktop)
       windowrulev2 = float, class:(org.pulseaudio.pavucontrol)
       windowrulev2 = size 622 652, class:(org.pulseaudio.pavucontrol)
