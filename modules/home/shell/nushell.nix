@@ -21,7 +21,7 @@
 
       # Run nix shell in which the specified packages are available.
       def fuck [packages: string] {
-        nix shell nixpkgs#$packages
+        nix shell nixpkgs#($packages)
       }
 
       # Search NixOS packages with nh search.
