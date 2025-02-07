@@ -22,6 +22,7 @@
 
     ../../modules/system/de/gnome.nix
 
+    ../../modules/system/services/asusd.nix
     ../../modules/system/services/xserver.nix
     ../../modules/system/services/tor.nix
     # ../../modules/system/services/caddy.nix
@@ -129,6 +130,7 @@
     audacity
     libreoffice-fresh
     zathura
+    supergfxctl
 
     # Browser
     chromium
