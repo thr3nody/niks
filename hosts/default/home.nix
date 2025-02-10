@@ -9,6 +9,7 @@
 
     ../../modules/home/programs/nixvim/default.nix
     ../../modules/home/programs/git/default.nix
+    ../../modules/home/programs/lazygit/default.nix
     ../../modules/home/programs/carapace/default.nix
     ../../modules/home/programs/starship/default.nix
     ../../modules/home/programs/zoxide/default.nix
