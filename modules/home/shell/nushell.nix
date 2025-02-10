@@ -15,8 +15,13 @@
       def rebuild [
         command: string = "switch"
         --hostname (-H): string = "default"
+        --update (-u)
       ] {
+        if $update {
+          nh os $command -a -u -H $hostname
+        } else {
           nh os $command -a -H $hostname
+        }
       }
 
       # Run nix shell in which the specified packages are available.
