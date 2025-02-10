@@ -12,6 +12,7 @@
     ../../modules/home/programs/carapace/default.nix
     ../../modules/home/programs/starship/default.nix
     ../../modules/home/programs/zoxide/default.nix
+    ../../modules/home/programs/ghostty/default.nix
 
     ../../modules/home/themes/spicetify.nix
 
