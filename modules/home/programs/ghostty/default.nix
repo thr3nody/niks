@@ -2,9 +2,9 @@
   programs.ghostty = {
     enable = true;
     settings = {
-      theme = "gruvbox-material-medium-dark";
-      font-family = "FiraCode Nerd Font Mono";
-      font-size = 12;
+      theme = "GruvboxDark";
+      font-family = "FiraCode";
+      font-size = 11;
       keybind = [
         "ctrl+h=goto_split:left"
         "ctrl+l=goto_split:right"
