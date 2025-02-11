@@ -4,8 +4,10 @@
     noice.enable = true;
     notify = {
       enable = true;
-      level = "warn";
-      backgroundColour = "#32302F";
+      settings = {
+        backgroundColour = "#32302F";
+        level = "warn";
+      };
     };
     gitsigns = {
       enable = true;
