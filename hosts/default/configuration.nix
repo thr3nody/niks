@@ -217,10 +217,6 @@
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
   };
 
-  # Virt Manager
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
-
   # Docker
   virtualisation.docker = {
     enable = true;
