@@ -14,6 +14,7 @@
     ../../modules/home/programs/starship/default.nix
     ../../modules/home/programs/zoxide/default.nix
     ../../modules/home/programs/ghostty/default.nix
+    ../../modules/home/programs/obs/default.nix
 
     ../../modules/home/themes/spicetify.nix
 
@@ -61,16 +62,6 @@
   dconf = {
     enable = true;
     settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
-  };
-
-  # OBS
-  programs.obs-studio = {
-    enable = true;
-    plugins = with pkgs.obs-studio-plugins; [
-      wlrobs
-      obs-backgroundremoval
-      obs-pipewire-audio-capture
-    ];
   };
 
   # Home Manager can also manage your environment variables through
