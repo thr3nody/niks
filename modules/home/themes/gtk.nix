@@ -8,8 +8,8 @@
     };
 
     iconTheme = {
-      package = pkgs.gruvbox-plus-icons;
-      name = "Gruvbox-Plus-Dark";
+      package = pkgs.gruvbox-dark-icons-gtk;
+      name = "oomox-gruvbox-dark";
     };
 
     font = {
