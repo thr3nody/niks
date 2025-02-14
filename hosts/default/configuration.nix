@@ -93,7 +93,8 @@
     extraGroups = ["networkmanager" "wheel" "docker" "kvm" "adbuser" "dialout"];
     packages = with pkgs; [
       telegram-desktop
-      vesktop
+      legcord
+      discordo
       spotify-player # TUI for Spotify
     ];
     shell = pkgs.nushell;
