@@ -8,6 +8,7 @@
     fira-code-symbols
     dina-font
     inter
+    mplus-outline-fonts.githubRelease
 
     nerd-fonts.fira-code
     nerd-fonts.fira-mono
