@@ -1,5 +1,9 @@
 {
   programs.nixvim.plugins = {
+    treesj = {
+      enable = true;
+      settings.use_default_keymaps = true;
+    };
     flash.enable = true;
     image = {
       enable = true;
