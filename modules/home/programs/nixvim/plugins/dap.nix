@@ -2,6 +2,7 @@
   programs.nixvim.plugins = {
     dap-ui.enable = true;
     dap-virtual-text.enable = true;
+    dap-python.enable = true;
     dap = {
       enable = true;
       signs = {

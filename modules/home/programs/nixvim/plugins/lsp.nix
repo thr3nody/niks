@@ -4,6 +4,10 @@
   ];
   programs.nixvim.plugins = {
     lsp-format.enable = true;
+    conform-nvim = {
+      enable = true;
+      settings = {formatters_by_ft.python = ["black"];};
+    };
     lsp = {
       enable = true;
       servers = {
@@ -18,8 +22,10 @@
         };
         volar = {
           enable = true;
-          autostart = true;
           tslsIntegration = true;
+        };
+        ts_ls = {
+          enable = true;
         };
         phpactor = {
           enable = true;
@@ -28,17 +34,12 @@
             "blade.php"
           ];
         };
-        # ltex = {
-        #   enable = true;
-        #   autostart = true;
-        # };
-        # texlab = {
-        #   enable = true;
-        #   autostart = true;
-        # };
         tinymist = {
           enable = true;
           autostart = true;
+        };
+        pyright = {
+          enable = true;
         };
       };
     };
@@ -49,6 +50,8 @@
           statix.enable = true;
         };
         formatting = {
+          black.enable = true;
+          prettier.disableTsServerFormatter = true;
           alejandra.enable = true;
           prettier = {
             enable = true;
