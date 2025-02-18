@@ -1,6 +1,7 @@
 {
   imports = [
     ./keybindings.nix
+    ./settings.nix
   ];
 
   programs.kitty = {
