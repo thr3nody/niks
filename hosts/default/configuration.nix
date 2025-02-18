@@ -150,9 +150,6 @@
     # Godot
     godot_4
 
-    # Terminal Emulator
-    kitty
-
     # CLI/TUI
     fzf
     grc

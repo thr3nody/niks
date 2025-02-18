@@ -10,6 +10,7 @@
     ../../modules/home/programs/starship/default.nix
     ../../modules/home/programs/zoxide/default.nix
     ../../modules/home/programs/ghostty/default.nix
+    ../../modules/home/programs/kitty/default.nix
     ../../modules/home/programs/obs/default.nix
 
     ../../modules/home/themes/spicetify.nix
