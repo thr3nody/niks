@@ -29,7 +29,7 @@
     # ../../modules/system/services/phpfpm.nix
 
     ../../modules/system/graphics/opengl.nix
-    ../../modules/system/graphics/nvidia/565.nix
+    ../../modules/system/graphics/nvidia/570.nix
 
     ../../modules/system/programs/nh.nix
     ../../modules/system/programs/firefox.nix
