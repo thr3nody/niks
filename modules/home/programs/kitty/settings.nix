@@ -4,6 +4,7 @@
     hide_window_decorations = true;
 
     tab_bar_align = "center";
+    enable_layouts = "tall:bias=50;full_size=1;mirrored=false";
 
     detect_urls = true;
     url_style = "curly";
