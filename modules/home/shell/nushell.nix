@@ -46,6 +46,8 @@
           $spans | skip 1 | zoxide query -l ...$in | lines | where {|x| $x != $env.PWD}
       }
 
+      $env.__zoxide_hooked = true
+
       let fish_completer = {|spans|
         ${lib.getExe pkgs.fish} --command $'complete "--do-complete=($spans | str join " ")"'
         | $"value(char tab)description(char newline)" + $in
@@ -70,7 +72,8 @@
         match $spans.0 {
           nu => $fish_completer
           git => $fish_completer
-          __zoxide_z | __zoxide_zi => $zoxide_completer
+          __zoxide_z => $zoxide_completer
+          __zoxide_zi => $zoxide_completer
           _ => $carapace_completer
         } | do $in $spans
       }
