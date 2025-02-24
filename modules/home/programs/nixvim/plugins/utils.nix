@@ -1,5 +1,6 @@
 {
   programs.nixvim.plugins = {
+    tailwind-tools.enable = true;
     treesj = {
       enable = true;
       settings.use_default_keymaps = true;
