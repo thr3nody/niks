@@ -25,6 +25,7 @@
     ../../modules/system/services/asusd.nix
     ../../modules/system/services/xserver.nix
     ../../modules/system/services/tor.nix
+    ../../modules/system/services/nextdns.nix
     # ../../modules/system/services/caddy.nix
     # ../../modules/system/services/phpfpm.nix
 
@@ -125,13 +126,18 @@
 
   # Paket
   environment.systemPackages = with pkgs; [
-    feh
-    gimp
-    krita
     audacity
     libreoffice-fresh
     zathura
     supergfxctl
+    mako
+
+    # Image things
+    feh
+    gimp
+    krita
+    inkscape
+    pixelorama
 
     # Browser
     chromium
