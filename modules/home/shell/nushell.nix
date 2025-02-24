@@ -123,6 +123,7 @@
 
       $env.PATH = ($env.PATH |
         split row (char esep) |
+        append /home/erine/.bun/bin |
         prepend /home/erine/.apps |
         append /usr/bin/env
       )
