@@ -25,9 +25,6 @@
     ../../modules/system/services/asusd.nix
     ../../modules/system/services/xserver.nix
     ../../modules/system/services/tor.nix
-    ../../modules/system/services/nextdns.nix
-    # ../../modules/system/services/caddy.nix
-    # ../../modules/system/services/phpfpm.nix
 
     ../../modules/system/graphics/opengl.nix
     ../../modules/system/graphics/nvidia/570.nix
