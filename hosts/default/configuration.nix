@@ -98,6 +98,10 @@
     shell = pkgs.nushell;
   };
 
+  nix.extraOptions = ''
+    trusted-users = root erine
+  '';
+
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     users = {
