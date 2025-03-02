@@ -30,7 +30,6 @@
     ../../modules/system/graphics/nvidia/570.nix
 
     ../../modules/system/programs/nh.nix
-    ../../modules/system/programs/firefox.nix
     ../../modules/system/programs/thunderbird.nix
   ];
 
