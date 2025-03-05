@@ -43,6 +43,21 @@
         highlight.enable = true;
       };
     };
+    wrapping = {
+      enable = true;
+      settings = {
+        auto_set_mode_filetype_allowlist = [
+          "markdown"
+          "text"
+          "latex"
+          "typst"
+        ];
+        create_commands = true;
+        create_keymaps = true;
+        notify_on_switch = true;
+        set_nvim_opt_default = true;
+      };
+    };
     harpoon = {
       enable = true;
       enableTelescope = true;
