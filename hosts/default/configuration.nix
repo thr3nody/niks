@@ -127,10 +127,14 @@
   # Paket
   environment.systemPackages = with pkgs; [
     audacity
-    libreoffice-fresh
     zathura
     supergfxctl
     mako
+
+    # Productivity, I guess
+    libreoffice-fresh
+    obsidian
+    obsidian-export
 
     # Image things
     feh
@@ -194,15 +198,15 @@
     vscode-langservers-extracted
 
     # Fish Plugins
-    fishPlugins.done
-    fishPlugins.fzf-fish
-    fishPlugins.forgit
-    fishPlugins.grc
-    fishPlugins.colored-man-pages
-    fishPlugins.autopair
-    fishPlugins.fish-you-should-use
-    fishPlugins.gruvbox
-    fishPlugins.sponge
+    # fishPlugins.done
+    # fishPlugins.fzf-fish
+    # fishPlugins.forgit
+    # fishPlugins.grc
+    # fishPlugins.colored-man-pages
+    # fishPlugins.autopair
+    # fishPlugins.fish-you-should-use
+    # fishPlugins.gruvbox
+    # fishPlugins.sponge
   ];
 
   programs = {
