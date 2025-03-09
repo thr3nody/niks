@@ -163,20 +163,21 @@
     # CLI/TUI
     fzf
     grc
-    btop
+    btop # Task manager TUI
     fd
     ripgrep
     xclip # Clipboard for X
     wl-clipboard # Clipboard for Wayland
     clipse # TUI Clipboard Manager
     wget
-    zoxide
-    cbonsai
+    zoxide # Better <cd>
+    cbonsai # Bonsai tree
     yazi # File manager
     lm_sensors
     bunbun # VERY CUTE!
     unrar
-    peaclock
+    peaclock # Clock
+    cava # Audio Visualizer
 
     # Coding Stuff
     devenv
