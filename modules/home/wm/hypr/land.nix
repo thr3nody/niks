@@ -93,7 +93,10 @@
         workspace_swipe_fingers = 3;
       };
 
-      monitor = ",1920x1080@144,0x0,1";
+      monitor = [
+        "eDP-1,1920x1080@144,0x0,1"
+        "HDMI-A-1,1920x1080@60,auto,1,mirror,eDP-1"
+      ];
 
       general = {
         gaps_in = 6;
