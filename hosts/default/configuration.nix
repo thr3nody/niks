@@ -130,6 +130,7 @@
     zathura
     supergfxctl
     mako
+    zoom-us
 
     # Productivity, I guess
     libreoffice-fresh
