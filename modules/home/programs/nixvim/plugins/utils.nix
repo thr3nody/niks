@@ -8,9 +8,28 @@
     flash.enable = true;
     image = {
       enable = true;
-      integrations.markdown = {
-        clearInInsertMode = true;
-        onlyRenderImageAtCursor = true;
+      settings = {
+        editor_only_render_when_focused = true;
+        integrations = {
+          css = {
+            enabled = false;
+          };
+          html = {
+            enabled = false;
+          };
+          markdown = {
+            enabled = true;
+          };
+          neorg = {
+            enabled = true;
+          };
+          syslang = {
+            enabled = true;
+          };
+          typst = {
+            enabled = true;
+          };
+        };
       };
     };
     tmux-navigator.enable = true;

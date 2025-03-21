@@ -149,7 +149,7 @@
     inputs.zen-browser.packages."${system}".twilight
 
     # Video thing
-    kdenlive
+    kdePackages.kdenlive
     mpv
     vlc
 
