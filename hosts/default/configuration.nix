@@ -146,7 +146,7 @@
 
     # Browser
     chromium
-    inputs.zen-browser.packages."${system}".twilight
+    inputs.zen-browser.packages."${system}".default
 
     # Video thing
     kdenlive
