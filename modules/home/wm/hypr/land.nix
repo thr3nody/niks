@@ -154,6 +154,7 @@
       windowrulev2 = workspace 4, class:(Godot_Engine)
       windowrulev2 = workspace 3, class:(firefox)
       windowrulev2 = workspace 3, class:(zen)
+      windowrulev2 = workspace 3, class:(zen-beta)
       windowrulev2 = workspace 3, class:(zen-twilight)
       windowrulev2 = workspace 1, class:(legcord)
       windowrulev2 = float, class:(org.pulseaudio.pavucontrol)
