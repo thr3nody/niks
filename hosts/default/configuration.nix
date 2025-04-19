@@ -188,6 +188,7 @@
     php82Packages.composer
 
     dotnet-sdk
+    omnisharp-roslyn
 
     nodejs_22
 

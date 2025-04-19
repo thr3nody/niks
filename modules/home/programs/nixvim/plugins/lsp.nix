@@ -12,6 +12,11 @@
       enable = true;
       servers = {
         bashls.enable = true;
+        gdscript = {
+          enable = true;
+          package = null;
+        };
+        omnisharp.enable = true;
         nixd = {
           enable = true;
           autostart = true;

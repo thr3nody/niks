@@ -47,6 +47,13 @@
       require'lspconfig'.nixd.setup{
         offset_encoding = "utf-8"
       }
+      require'lspconfig'.omnisharp.setup {
+        cmd = {
+          "OmniSharp",
+          "--languageserver",
+          "--hostPID", tostring(vim.fn.getpid()),
+        },
+      }
     '';
   };
 }
