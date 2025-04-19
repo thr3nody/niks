@@ -125,6 +125,8 @@
         append /usr/bin/env
       )
 
+      $env.EDITOR = 'nvim'
+
       bunbun
     '';
     shellAliases = {
