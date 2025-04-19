@@ -142,7 +142,6 @@
     gimp
     krita
     inkscape
-    pixelorama
     aseprite
 
     # Browser
@@ -150,7 +149,7 @@
     inputs.zen-browser.packages."${system}".default
 
     # Video thing
-    kdenlive
+    kdePackages.kdenlive
     mpv
     vlc
 
@@ -158,9 +157,6 @@
     mindustry-wayland
     mangohud
     protonup
-
-    # Godot
-    godot_4
 
     # CLI/TUI
     fzf
@@ -190,6 +186,8 @@
 
     php
     php82Packages.composer
+
+    dotnet-sdk
 
     nodejs_22
 
