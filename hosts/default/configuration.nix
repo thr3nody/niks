@@ -143,6 +143,7 @@
     krita
     inkscape
     pixelorama
+    aseprite
 
     # Browser
     chromium
