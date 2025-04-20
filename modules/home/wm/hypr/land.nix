@@ -30,8 +30,8 @@
       "$clipboard" = "kitty --class clipse -e clipse";
       "$colorpicker" = "hyprpicker -a -f hex";
       "$clock" = "pkill peaclock || kitty --class peaclock -e peaclock";
-      "$screenshot" = "grimblast copysave area \"./Pictures/Screenshots/$(date +'%Y-%m-%d %H:%M:%S')area.png\" && notify-send 'Screenshot saved.'";
-      "$screenshot-full" = "grimblast copysave screen \"./Pictures/Screenshots/$(date +'%Y-%m-%d %H:%M:%S')full.png\" && notify-send 'Screenshot saved.'";
+      "$screenshot" = "grimblast --notify copysave area \"./Pictures/Screenshots/$(date +'%Y-%m-%d %H:%M:%S')area.png\"";
+      "$screenshot-full" = "grimblast --notify copysave screen \"./Pictures/Screenshots/$(date +'%Y-%m-%d %H:%M:%S')full.png\"";
 
       bind =
         [
