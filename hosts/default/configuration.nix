@@ -131,6 +131,7 @@
     supergfxctl
     mako
     zoom-us
+    prismlauncher
 
     # Productivity, I guess
     libreoffice-fresh
@@ -157,6 +158,7 @@
     mindustry-wayland
     mangohud
     protonup
+    r2modman
 
     # CLI/TUI
     fzf
