@@ -91,8 +91,9 @@
     packages = with pkgs; [
       telegram-desktop
       legcord
-      discordo
+      discordo # Discord TUI
       spotify-player # TUI for Spotify
+      kew # Music player
     ];
     shell = pkgs.nushell;
   };
