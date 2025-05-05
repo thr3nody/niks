@@ -178,6 +178,7 @@
     unrar
     peaclock # Clock
     cava # Audio Visualizer
+    inputs.curd.packages."${system}".default # Watch anime
 
     # Coding Stuff
     devenv
