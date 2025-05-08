@@ -3,14 +3,14 @@
     enable = true;
     settings = {
       actions = true;
-      backgroundColor = "#${base01}";
-      borderColor = "#${base05}";
-      borderRadius = 5;
-      borderSize = 2;
+      background-color = "#${base01}";
+      border-color = "#${base05}";
+      border-radius = 5;
+      border-size = 2;
       padding = "10,20,10,20";
-      textColor = "#${base06}";
+      text-color = "#${base06}";
       layer = "overlay";
-      defaultTimeout = 5000;
+      default-timeout = 5000;
     };
   };
 }
