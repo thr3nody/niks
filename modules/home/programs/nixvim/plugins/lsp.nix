@@ -56,11 +56,10 @@
         };
         formatting = {
           black.enable = true;
-          prettier.disableTsServerFormatter = true;
           alejandra.enable = true;
-          prettier = {
+          prettierd = {
+            disableTsServerFormatter = true;
             enable = true;
-            settings.disabled_filetypes = [ "vue" ];
           };
         };
       };

@@ -21,14 +21,18 @@
     enable = true;
     colorschemes.gruvbox.enable = true;
     extraConfigLua = ''
-      -- require'lspconfig'.volar.setup{
+      require'lspconfig'.volar.setup{
       --   init_options = {
       --     -- typescript = {
       --     --   tsdk = '/home/erine/.bun/install/global/node_modules/typescript/lib'
       --     -- }
       --     filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
       --   }
-      -- }
+        on_attach = function(client)
+          client.server_capabilities.documentFormattingProvider = false
+          client.server_capabilities.documentRangeFormattingProvider = false
+        end,
+      }
       require'lspconfig'.ts_ls.setup{
         init_options = {
           plugins = {
