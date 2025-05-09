@@ -60,6 +60,7 @@
           alejandra.enable = true;
           prettier = {
             enable = true;
+            settings.disabled_filetypes = [ "vue" ];
           };
         };
       };
