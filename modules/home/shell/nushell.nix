@@ -11,6 +11,17 @@
       def ll  [...args] { ls -l  ...(if $args == [] {["."]} else {$args}) | sort-by type name -i }
       def l   [...args] { ls     ...(if $args == [] {["."]} else {$args}) | sort-by type name -i }
 
+      # Yazi
+      def --env y [...args] {
+        let tmp = (mktemp -t "yazi-cwd.XXXXXX")
+        yazi ...$args --cwd-file $tmp
+        let cwd = (open $tmp)
+        if $cwd != "" and $cwd != $env.PWD {
+          cd $cwd
+        }
+        rm -fp $tmp
+      }
+
       # NixOS rebuild with nh os rebuild.
       def rebuild [
         command: string = "switch"
