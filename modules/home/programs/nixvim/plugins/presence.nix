@@ -1,7 +1,7 @@
 {
   programs.nixvim.plugins.presence-nvim = {
     enable = true;
-    editingText = "Don't look, I'm shy.";
+    editingText = "Pretending to work.";
     neovimImageText = "My beloved Neovim.";
     readingText = "Hmmm...";
     gitCommitText = "Making a commitment.";
