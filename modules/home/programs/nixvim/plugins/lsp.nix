@@ -46,6 +46,10 @@
         pyright = {
           enable = true;
         };
+        djlsp = {
+          enable = true;
+          package = null;
+        };
       };
     };
     none-ls = {
