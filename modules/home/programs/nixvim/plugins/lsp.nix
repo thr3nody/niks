@@ -65,6 +65,7 @@
             disableTsServerFormatter = true;
             enable = true;
           };
+          clang_format.enable = true;
         };
       };
     };
