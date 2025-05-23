@@ -36,7 +36,7 @@
       bind =
         [
           "$mod, B, exec, zen"
-          "$mod, D, exec, legcord"
+          "$mod, D, exec, Discord"
           "$mod, T, exec, telegram-desktop"
           "$mod, RETURN, exec, kitty"
           "$mod, S, exec, $screenshot"
@@ -157,6 +157,7 @@
       windowrulev2 = workspace 3, class:(zen-beta)
       windowrulev2 = workspace 3, class:(zen-twilight)
       windowrulev2 = workspace 1, class:(legcord)
+      windowrulev2 = workspace 1, class:(discord)
       windowrulev2 = float, class:(org.pulseaudio.pavucontrol)
       windowrulev2 = size 622 652, class:(org.pulseaudio.pavucontrol)
       windowrulev2 = float, class:(clipse)

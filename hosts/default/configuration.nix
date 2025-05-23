@@ -94,6 +94,9 @@
       discordo # Discord TUI
       spotify-player # TUI for Spotify
       kew # Music player
+      (discord.override {
+        withOpenASAR = true;
+      })
     ];
     shell = pkgs.nushell;
   };
