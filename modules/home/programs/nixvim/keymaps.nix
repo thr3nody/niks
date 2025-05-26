@@ -100,6 +100,12 @@
         action = "<cmd>TodoTelescope<cr>";
         options.desc = "Todos";
       }
+
+      {
+        key = "<leader>gg";
+        action = "<cmd>LazyGit<cr>";
+        options.desc = "Nvim lazygit.";
+      }
     ];
   };
 }
