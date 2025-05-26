@@ -68,6 +68,9 @@
 
           "$supermod, Q, exit"
           "$supermod, BACKSPACE, exec, hyprlock"
+
+          "$mod, 0, workspace, 10"
+          "$supermod, 0, movetoworkspace, 10"
         ]
         ++ (
           # workspaces
