@@ -20,8 +20,6 @@
 
     ../../modules/system/themes/fonts.nix
 
-    ../../modules/system/de/gnome.nix
-
     ../../modules/system/services/asusd.nix
     ../../modules/system/services/xserver.nix
     ../../modules/system/services/tor.nix
