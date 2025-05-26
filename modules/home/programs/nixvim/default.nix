@@ -15,6 +15,7 @@
     ./plugins/typst-vim.nix
     ./plugins/obsidian.nix
     ./plugins/presence.nix
+    ./plugins/lazygit.nix
   ];
 
   programs.nixvim = {
