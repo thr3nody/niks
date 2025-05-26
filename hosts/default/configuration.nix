@@ -31,6 +31,7 @@
 
     ../../modules/system/programs/nh.nix
     ../../modules/system/programs/thunderbird.nix
+    ../../modules/system/programs/seahorse.nix
   ];
 
   boot = {
@@ -137,6 +138,9 @@
     zoom-us
     prismlauncher
 
+    # Keyring and stuff
+    gnome-keyring
+    gcr
     # Productivity, I guess
     libreoffice-fresh
     obsidian
@@ -256,9 +260,15 @@
   # Polkit
   security.polkit.enable = true;
 
+  # Also keyring stuff
   services = {
     gnome.gnome-keyring.enable = true;
+    xserver.displayManager.sessionCommands = ''
+      eval $(gnome-keyring-daemon --start --daemonize --components=ssh,secrets)
+      export SSH_AUTH_SOCK
+    '';
   };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
