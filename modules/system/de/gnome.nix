@@ -15,8 +15,6 @@
     udev.packages = with pkgs; [
       gnome-settings-daemon
     ];
-    # Gnome keyring
-    gnome.gnome-keyring.enable = true;
   };
 
   environment = {
