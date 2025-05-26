@@ -16,6 +16,7 @@
     ./plugins/obsidian.nix
     ./plugins/presence.nix
     ./plugins/lazygit.nix
+    ./plugins/smear-cursor.nix
   ];
 
   programs.nixvim = {
