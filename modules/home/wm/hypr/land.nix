@@ -45,7 +45,7 @@
           "$mod, M, exec, spotify"
           "$mod, P, exec, $colorpicker"
           "$mod, W, exec, $bar"
-          "$mod, E, exec, nautilus"
+          "$mod, E, exec, Thunar"
           "$mod, V, exec, $clipboard"
           "$mod, C, exec, $clock"
 
