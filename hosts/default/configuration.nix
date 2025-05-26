@@ -30,6 +30,7 @@
     ../../modules/system/programs/nh.nix
     ../../modules/system/programs/thunderbird.nix
     ../../modules/system/programs/seahorse.nix
+    ../../modules/system/programs/thunar.nix
   ];
 
   boot = {
@@ -139,6 +140,7 @@
     # Keyring and stuff
     gnome-keyring
     gcr
+
     # Productivity, I guess
     libreoffice-fresh
     obsidian
