@@ -106,6 +106,12 @@
         action = "<cmd>LazyGit<cr>";
         options.desc = "Nvim lazygit.";
       }
+
+      {
+        key = "<leader>xx";
+        action = "<cmd>Trouble diagnostics toggle<cr>";
+        options.desc = "Toggle Trouble.nvim diagnostic.";
+      }
     ];
   };
 }
