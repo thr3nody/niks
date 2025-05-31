@@ -24,6 +24,13 @@
         html = {
           enable = true;
           autostart = true;
+          filetypes = ["html" "templ" "htmldjango"];
+          rootMarkers = ["package.json" ".git" "devenv.nix"];
+          extraOptions = {
+            init_options = {
+              provideFormatter = true;
+            };
+          };
         };
         volar = {
           enable = true;
