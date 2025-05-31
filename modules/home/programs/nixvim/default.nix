@@ -62,6 +62,13 @@
           "--hostPID", tostring(vim.fn.getpid()),
         },
       }
+      -- require('lspconfig').tailwindcss.setup({
+      --   init_options = {
+      --     userLanguages = {
+      --       htmldjango = "html",
+      --     },
+      --   },
+      -- })
     '';
   };
 }
