@@ -25,7 +25,7 @@
     ../../modules/system/services/tor.nix
 
     ../../modules/system/graphics/opengl.nix
-    ../../modules/system/graphics/nvidia/570.nix
+    ../../modules/system/graphics/nvidia/beta.nix
 
     ../../modules/system/programs/nh.nix
     ../../modules/system/programs/thunderbird.nix
