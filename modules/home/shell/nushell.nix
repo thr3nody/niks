@@ -11,6 +11,12 @@
       def ll  [...args] { ls -l  ...(if $args == [] {["."]} else {$args}) | sort-by type name -i }
       def l   [...args] { ls     ...(if $args == [] {["."]} else {$args}) | sort-by type name -i }
 
+      # WANNA GO TO NIX CONFIG? WELL HERE IT IS BOI
+      def niks [] {
+        cd ~/niks/
+        nvim .
+      }
+
       # Yazi
       def --env y [...args] {
         let tmp = (mktemp -t "yazi-cwd.XXXXXX")
