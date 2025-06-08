@@ -98,6 +98,7 @@
         battery = {
           format = "{icon}   {capacity}";
           format-icons = [" " " " " " " " " "];
+          format-charging = " {icon}   {capacity}";
         };
 
         clock = {
@@ -221,19 +222,24 @@
       }
 
       #battery.warning {
-          color: #${palette.base09};
+        color: #${palette.base09};
       }
 
       #battery.critical {
-          color: #${palette.base08};
+        color: #${palette.base08};
       }
 
       #battery.warning.discharging {
-          color: #${palette.base09};
+        color: #${palette.base09};
       }
 
       #battery.critical.discharging {
-          color: #${palette.base08};
+        color: #${palette.base08};
+      }
+
+      #battery.charging {
+        background-color: #${palette.base0B};
+        color: #${palette.base00};
       }
 
       #clock {
