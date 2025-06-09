@@ -98,7 +98,8 @@
         battery = {
           format = "{icon}   {capacity}";
           format-icons = [" " " " " " " " " "];
-          format-charging = " {icon}   {capacity}";
+          format-charging = "    {capacity}";
+          format-full = "{icon}";
         };
 
         clock = {
@@ -240,6 +241,11 @@
       #battery.charging {
         background-color: #${palette.base0B};
         color: #${palette.base00};
+      }
+
+      #battery.full {
+        background-color: #${palette.base06};
+        color: #${palette.base01};
       }
 
       #clock {
