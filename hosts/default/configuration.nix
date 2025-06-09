@@ -159,7 +159,6 @@
 
     # Video thing
     kdePackages.kdenlive
-    mpv
     vlc
 
     # Ngegame bentaran lah ya

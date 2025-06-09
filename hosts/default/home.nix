@@ -13,6 +13,7 @@
     ../../modules/home/programs/kitty/default.nix
     ../../modules/home/programs/obs/default.nix
     ../../modules/home/programs/librewolf/default.nix
+    ../../modules/home/programs/mpv/default.nix.nix
 
     ../../modules/home/themes/spicetify.nix
 
