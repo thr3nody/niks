@@ -8,6 +8,7 @@
       intel-vaapi-driver
       libvdpau-va-gl
       intel-compute-runtime
+      nvidia-vaapi-driver
     ];
   };
 }
