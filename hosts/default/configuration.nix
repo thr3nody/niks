@@ -31,6 +31,7 @@
     ../../modules/system/programs/thunderbird.nix
     ../../modules/system/programs/seahorse.nix
     ../../modules/system/programs/thunar.nix
+    ../../modules/system/programs/chromium.nix
   ];
 
   boot = {
@@ -246,14 +247,6 @@
   # Docker
   virtualisation.docker = {
     enable = true;
-  };
-
-  # Chromium
-  programs.chromium = {
-    enable = true;
-    extensions = [
-      "cjpalhdlnbpafiamejdnhcphjbkeiagm"
-    ];
   };
 
   # Polkit
