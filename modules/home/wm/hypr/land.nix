@@ -15,7 +15,7 @@
   ];
 
   home.packages = with pkgs; [
-    grimblast
+    hyprshot
     libnotify
   ];
 
@@ -30,8 +30,8 @@
       "$clipboard" = "kitty --class clipse -e clipse";
       "$colorpicker" = "hyprpicker -a -f hex";
       "$clock" = "pkill peaclock || kitty --class peaclock -e peaclock";
-      "$screenshot" = "grimblast --notify copysave area \"./Pictures/Screenshots/$(date +'%Y-%m-%d %H:%M:%S')area.png\"";
-      "$screenshot-full" = "grimblast --notify copysave screen \"./Pictures/Screenshots/$(date +'%Y-%m-%d %H:%M:%S')full.png\"";
+      "$screenshot" = "hyprshot -m region -o ./Pictures/Screenshots/";
+      "$screenshot-full" = "hyprshot -m output -m eDP-1 -o ./Pictures/Screenshots/";
 
       bind =
         [
