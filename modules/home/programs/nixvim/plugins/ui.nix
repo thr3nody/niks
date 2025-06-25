@@ -1,5 +1,14 @@
 {
   programs.nixvim.plugins = {
+    smear-cursor = {
+      enable = true;
+      settings = {
+        stiffness = 0.5;
+        trailing_stiffness = 0.5;
+        damping = 0.67;
+        matrix_pixel_threshold = 0.5;
+      };
+    };
     web-devicons.enable = true;
     noice.enable = true;
     notify = {
