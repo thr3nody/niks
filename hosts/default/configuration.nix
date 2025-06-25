@@ -137,6 +137,8 @@
     mako
     zoom-us
     prismlauncher
+    motrix
+    bottles
 
     # Keyring and stuff
     gnome-keyring
