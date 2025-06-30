@@ -14,7 +14,7 @@
     notify = {
       enable = true;
       settings = {
-        backgroundColour = "#32302F";
+        background_colour = "#32302F";
         level = "warn";
       };
     };
