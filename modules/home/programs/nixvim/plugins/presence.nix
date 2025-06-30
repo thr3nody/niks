@@ -6,6 +6,6 @@
     readingText = "Hmmm...";
     gitCommitText = "Making a commitment.";
     fileExplorerText = "Let's see what we got here...";
-    workspaceText = "Working on a secret project.";
+    workspaceText = "Eee.....";
   };
 }
