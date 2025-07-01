@@ -28,7 +28,7 @@
           rootMarkers = ["package.json" ".git" "devenv.nix"];
           extraOptions = {
             init_options = {
-              provideFormatter = true;
+              provideFormatter = false;
             };
           };
         };
