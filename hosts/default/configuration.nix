@@ -32,6 +32,7 @@
     ../../modules/system/programs/seahorse.nix
     ../../modules/system/programs/thunar.nix
     ../../modules/system/programs/chromium.nix
+    ../../modules/system/programs/gaming.nix
   ];
 
   boot = {
@@ -164,12 +165,6 @@
     kdePackages.kdenlive
     vlc
 
-    # Ngegame bentaran lah ya
-    mindustry-wayland
-    mangohud
-    protonup
-    r2modman
-
     # CLI/TUI
     fzf
     grc
@@ -224,17 +219,8 @@
     # fishPlugins.sponge
   ];
 
-  programs = {
-    # Adb
-    adb.enable = true;
-
-    # Steamy
-    steam = {
-      enable = true;
-      gamescopeSession.enable = true;
-    };
-    gamemode.enable = true;
-  };
+  # Adb
+  programs.adb.enable = true;
 
   environment = {
     variables = {
