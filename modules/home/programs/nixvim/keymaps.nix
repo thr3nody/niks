@@ -112,6 +112,12 @@
         action = "<cmd>Trouble diagnostics toggle<cr>";
         options.desc = "Toggle Trouble.nvim diagnostic.";
       }
+
+      {
+        key = "<leader>m";
+        action = "<cmd>MurenOpen<cr>";
+        options.desc = "Open Muren search and replace.";
+      }
     ];
   };
 }

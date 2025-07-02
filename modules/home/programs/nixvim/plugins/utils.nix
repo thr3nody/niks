@@ -1,5 +1,6 @@
 {
   programs.nixvim.plugins = {
+    muren.enable = true;
     tailwind-tools.enable = true;
     treesj = {
       enable = true;
