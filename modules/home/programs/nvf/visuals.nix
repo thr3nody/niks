@@ -1,4 +1,4 @@
-_: {
+{
   programs.nvf.settings.vim.visuals = {
     highlight-undo.enable = true;
     indentBlankline.enable = true;

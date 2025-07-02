@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   services.pipewire = {
     enable = true;
@@ -10,7 +8,7 @@
     extraConfig.pipewire.adjust-sample-rate = {
       "context.properties" = {
         "default.clock.rate" = 48000;
-        "defautlt.allowed-rates" = [ 48000 192000 ];
+        "defautlt.allowed-rates" = [48000 192000];
       };
     };
     # use the example session manager (no others are packaged yet so this is enabled by default,

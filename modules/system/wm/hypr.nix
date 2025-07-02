@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   imports = [
     ./components/picker.nix
