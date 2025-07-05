@@ -73,6 +73,13 @@
             enable = true;
           };
           clang_format.enable = true;
+          djlint = {
+            enable = true;
+            settings.extra_args = [
+              "--indent"
+              "2"
+            ];
+          };
         };
       };
     };
