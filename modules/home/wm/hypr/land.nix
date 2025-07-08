@@ -87,6 +87,11 @@
             9)
         );
 
+      binde = [
+        ", XF86AudioRaiseVolume, exec, wpctl set-mute @DEFAULT_SINK@ 0 && wpctl set-volume -l 1.0 @DEFAULT_SINK@ 1%+"
+        ", XF86AudioLowerVolume, exec, wpctl set-mute @DEFAULT_SINK@ 0 && wpctl set-volume -l 1.0 @DEFAULT_SINK@ 1%-"
+      ];
+
       bindm = [
         "$mod, mouse:272, movewindow"
         "$mod, mouse:273, resizewindow"
