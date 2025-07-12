@@ -1,7 +1,7 @@
 {
   programs.nixvim.plugins = {
     neo-tree = {
-      enable = true;
+      enable = false; # Try Snacks.explorer
       enableGitStatus = true;
       enableModifiedMarkers = true;
       enableRefreshOnWrite = true;

@@ -7,7 +7,7 @@
 
     ./plugins/lsp.nix
     ./plugins/tree.nix
-    ./plugins/telescope.nix
+    # ./plugins/telescope.nix # Use Snacks.picker now
     ./plugins/ui.nix
     ./plugins/utils.nix
     ./plugins/cmp.nix
@@ -16,6 +16,7 @@
     ./plugins/presence.nix
     ./plugins/lazygit.nix
     ./plugins/render-markdown.nix
+    ./plugins/snacks.nix
   ];
 
   programs.nixvim = {
