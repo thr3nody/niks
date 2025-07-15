@@ -23,6 +23,7 @@
     enable = true;
     colorschemes.gruvbox.enable = true;
     extraConfigLua = ''
+      local util = require("lspconfig.util")
       require'lspconfig'.volar.setup{
       --   init_options = {
       --     -- typescript = {
@@ -62,6 +63,11 @@
         },
       }
       require('render-markdown').setup({ latex = { enabled = false } })
+      require'lspconfig'.djlsp.setup {
+        root_dir = function(fname)
+          return util.root_pattern("manage.py")(fname)
+        end,
+      }
     '';
   };
 }
