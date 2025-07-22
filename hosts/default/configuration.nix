@@ -33,6 +33,7 @@
     ../../modules/system/programs/thunar.nix
     ../../modules/system/programs/chromium.nix
     ../../modules/system/programs/gaming.nix
+    ../../modules/system/programs/obs.nix
   ];
 
   boot = {
