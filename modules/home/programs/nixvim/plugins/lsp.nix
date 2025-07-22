@@ -57,6 +57,7 @@
           enable = true;
           package = null;
         };
+        dockerls.enable = true;
       };
     };
     none-ls = {
