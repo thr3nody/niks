@@ -8,7 +8,7 @@
     enable = true;
     themeFile = "gruvbox-dark-soft";
     font = {
-      name = "FiraCode";
+      name = "JetBrainsMono Nerd Font";
       size = 11;
     };
   };
