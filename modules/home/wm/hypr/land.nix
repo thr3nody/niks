@@ -15,7 +15,8 @@
   ];
 
   home.packages = with pkgs; [
-    hyprshot
+    # hyprshot # INFO: Cursor visible in all screenshot.
+    grimblast
     libnotify
   ];
 
@@ -30,8 +31,8 @@
       "$clipboard" = "kitty --class clipse -e clipse";
       "$colorpicker" = "hyprpicker -a -f hex";
       "$clock" = "pkill peaclock || kitty --class peaclock -e peaclock";
-      "$screenshot" = "hyprshot -m region -o ./Pictures/Screenshots/";
-      "$screenshot-full" = "hyprshot -m output -m eDP-1 -o ./Pictures/Screenshots/";
+      "$screenshot" = "grimblast --notify copysave area \"./Pictures/Screenshots/$(date +'%Y-%m-%d %H:%M:%S').png\"";
+      "$screenshot-full" = "grimblast --notify copysave screen \"./Pictures/Screenshots/$(date +'%Y-%m-%d %H:%M:%S').png\"";
 
       bind =
         [
