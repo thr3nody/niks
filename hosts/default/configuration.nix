@@ -31,7 +31,6 @@
     ../../modules/system/programs/thunderbird.nix
     ../../modules/system/programs/seahorse.nix
     ../../modules/system/programs/thunar.nix
-    ../../modules/system/programs/chromium.nix
     ../../modules/system/programs/gaming.nix
     ../../modules/system/programs/obs.nix
   ];
@@ -159,7 +158,7 @@
     aseprite
 
     # Browser
-    chromium
+    brave
     inputs.zen-browser.packages."${system}".default
 
     # Video thing
