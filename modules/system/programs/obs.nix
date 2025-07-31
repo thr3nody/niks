@@ -5,7 +5,6 @@
 }: {
   programs.obs-studio = {
     enable = true;
-    # enableVirtualCamera = true;
 
     package = pkgs.obs-studio.override {
       cudaSupport = true;
@@ -19,17 +18,8 @@
   };
 
   boot = {
-    extraModulePackages = [
-      # TODO: After flake update, just use the regular v4l2loopback package, refer to https://discourse.nixos.org/t/obs-virtual-camera-broken-in-recent-unstable/65450
-      (pkgs.linuxPackages.v4l2loopback.overrideAttrs {
-        version = "0.13.2-manual";
-        src = pkgs.fetchFromGitHub {
-          owner = "umlaeute";
-          repo = "v4l2loopback";
-          rev = "v0.13.2";
-          hash = "sha256-rcwgOXnhRPTmNKUppupfe/2qNUBDUqVb3TeDbrP5pnU=";
-        };
-      })
+    extraModulePackages = with config.boot.kernelPackages; [
+      v4l2loopback
     ];
     kernelModules = ["v4l2loopback"];
     extraModprobeConfig = ''

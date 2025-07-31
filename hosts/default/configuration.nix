@@ -135,7 +135,7 @@
 
   # Paket
   environment.systemPackages = with pkgs; [
-    audacity
+    # audacity # INFO: Build failed in current update.
     zathura
     supergfxctl
     mako
