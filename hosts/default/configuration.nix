@@ -103,10 +103,6 @@
     shell = pkgs.nushell;
   };
 
-  nix.extraOptions = ''
-    trusted-users = root erine
-  '';
-
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     users = {
@@ -118,7 +114,14 @@
   nixpkgs.config.allowUnfree = true;
 
   nix = {
-    settings.experimental-features = ["nix-command" "flakes"];
+    extraOptions = ''
+      trusted-users = root erine
+    '';
+    settings = {
+      experimental-features = ["nix-command" "flakes"];
+      cores = 4;
+      max-jobs = 2;
+    };
     # Garbage Collection
     gc = {
       automatic = true;
