@@ -15,7 +15,6 @@
   ];
 
   home.packages = with pkgs; [
-    # hyprshot # INFO: Cursor visible in all screenshot.
     grimblast
     libnotify
   ];
@@ -176,7 +175,10 @@
       windowrulev2 = size 360 230, class:(peaclock)
 
       exec-once = clipse -listen
-      exec-once = hyprctl setcursor Pokemon 24
+
+      cursor {
+        no_hardware_cursors = false
+      }
     '';
   };
 }
