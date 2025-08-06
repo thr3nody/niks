@@ -143,6 +143,7 @@
     prismlauncher
     motrix
     bottles
+    hydralauncher
 
     # Keyring and stuff
     gnome-keyring
