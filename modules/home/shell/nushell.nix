@@ -73,7 +73,7 @@
         ## alias fixer start https://www.nushell.sh/cookbook/external_completers.html#alias-completions
         let expanded_alias = scope aliases
         | where name == $spans.0
-        | get -i 0.expansion
+        | get -o 0.expansion
 
         let spans = if $expanded_alias != null {
           $spans
