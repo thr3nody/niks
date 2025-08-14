@@ -82,8 +82,8 @@
   # services.xserver.libinput.enable = true;
 
   # Xbox Gamepad
-  # hardware.xone.enable = true;
-  hardware.xpadneo.enable = true;
+  hardware.xone.enable = true;
+  # hardware.xpadneo.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.erine = {
