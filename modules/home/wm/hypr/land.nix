@@ -42,6 +42,7 @@
           "$mod, RETURN, exec, kitty"
           "$mod, S, exec, $screenshot"
           "$supermod, S, exec, $screenshot-full"
+          ", PRINT, exec, $screenshot-full"
           "$mod, SPACE, exec, $menu"
           "$mod, M, exec, spotify"
           "$mod, P, exec, $colorpicker"
