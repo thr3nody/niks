@@ -58,6 +58,7 @@
           package = null;
         };
         dockerls.enable = true;
+        jsonls.enable = true;
       };
     };
     none-ls = {
