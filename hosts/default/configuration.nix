@@ -156,7 +156,7 @@
 
     # Image things
     feh
-    gimp
+    gimp3-with-plugins
     krita
     inkscape
     aseprite
