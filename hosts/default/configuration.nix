@@ -163,7 +163,6 @@
 
     # Browser
     brave
-    inputs.zen-browser.packages."${system}".default
 
     # Video thing
     kdePackages.kdenlive
