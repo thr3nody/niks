@@ -143,6 +143,7 @@
       )
 
       $env.EDITOR = 'nvim'
+      $env.TERM = 'kitty'
 
       bunbun
     '';
