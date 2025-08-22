@@ -142,7 +142,7 @@
         rounding = 15;
         blur = {
           enabled = true;
-          size = 16;
+          size = 8;
           passes = 4;
           new_optimizations = true;
           ignore_opacity = true;
