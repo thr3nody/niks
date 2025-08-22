@@ -21,7 +21,10 @@
 
   programs.nixvim = {
     enable = true;
-    colorschemes.gruvbox.enable = true;
+    colorschemes.gruvbox = {
+      enable = true;
+      settings.transparent_mode = true;
+    };
     extraConfigLua = ''
       local util = require("lspconfig.util")
       require'lspconfig'.volar.setup{
