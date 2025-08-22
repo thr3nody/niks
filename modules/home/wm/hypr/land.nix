@@ -140,6 +140,13 @@
           range = 50;
         };
         rounding = 15;
+        blur = {
+          enabled = true;
+          size = 16;
+          passes = 4;
+          new_optimizations = true;
+          ignore_opacity = true;
+        };
       };
 
       dwindle = {

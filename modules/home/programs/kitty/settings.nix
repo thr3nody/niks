@@ -13,5 +13,8 @@
     cursor_shape = "block";
     cursor_shape_unfocused = "underline";
     scrollback_lines = 3000;
+
+    background_opacity = 0.64;
+    dynamic_background_opacity = "yes";
   };
 }
