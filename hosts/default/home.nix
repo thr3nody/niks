@@ -14,6 +14,7 @@
     ../../modules/home/programs/librewolf/default.nix
     ../../modules/home/programs/zen-browser/default.nix
     ../../modules/home/programs/mpv/default.nix
+    ../../modules/home/programs/btop/default.nix
 
     ../../modules/home/themes/spicetify.nix
 

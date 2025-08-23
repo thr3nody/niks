@@ -171,7 +171,6 @@
     # CLI/TUI
     fzf
     grc
-    btop # Task manager TUI
     fd
     ripgrep
     xclip # Clipboard for X
