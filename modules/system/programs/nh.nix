@@ -1,6 +1,6 @@
 {
   programs.nh = {
     enable = true;
-    flake = "/home/erine/niks/";
+    flake = "$HOME/niks/";
   };
 }
