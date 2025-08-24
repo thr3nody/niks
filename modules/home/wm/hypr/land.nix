@@ -36,6 +36,7 @@
       bind =
         [
           "$mod, B, exec, zen"
+          "$supermod, B, exec, nvidia-offload zen"
           "$mod, D, exec, Discord"
           "$supermod, D, exec, legcord"
           "$mod, T, exec, telegram-desktop"
