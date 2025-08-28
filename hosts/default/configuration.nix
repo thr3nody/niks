@@ -139,8 +139,6 @@
     zathura
     supergfxctl
     mako
-    zoom-us
-    prismlauncher
     motrix
     bottles
     hydralauncher
