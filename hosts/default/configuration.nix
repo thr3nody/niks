@@ -15,7 +15,7 @@
     ../../modules/system/securities/pam.nix
 
     ../../modules/system/networking/firewall.nix
-    ../../modules/system/networking/tailscale.nix
+    # ../../modules/system/networking/tailscale.nix
     ../../modules/system/networking/warp.nix
 
     ../../modules/system/themes/fonts.nix
