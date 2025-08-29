@@ -185,6 +185,7 @@
     peaclock # Clock
     cava # Audio Visualizer
     inputs.curd.packages."${system}".default # Watch anime
+    nix-output-monitor # As the name would suggest
 
     # Coding Stuff
     devenv
