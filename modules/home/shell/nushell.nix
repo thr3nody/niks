@@ -31,13 +31,12 @@
       # NixOS rebuild with nh os rebuild.
       def rebuild [
         command: string = "switch"
-        --hostname (-H): string = "default"
         --update (-u)
       ] {
         if $update {
-          nh os $command -a -u -H $hostname
+          nh os $command -a -u
         } else {
-          nh os $command -a -H $hostname
+          nh os $command -a
         }
       }
 

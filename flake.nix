@@ -34,14 +34,16 @@
     home-manager,
     ...
   } @ inputs: {
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+    # 'nixos' is the default machine
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         "${self}/hosts/default/configuration.nix"
         inputs.home-manager.nixosModules.default
       ];
     };
-    homeConfigurations.default = home-manager.lib.homeManagerConfigurations {
+    # 'nixos' is the default machine
+    homeConfigurations.nixos = home-manager.lib.homeManagerConfigurations {
       extraSpecialArgs = {inherit inputs;};
       modules = [
         "${self}/hosts/default/home.nix"
