@@ -50,6 +50,28 @@
         nh search $packages
       }
 
+      # It is to qlean the machine and also do a nix-store checkups, defaults to only cleaning user space.
+      def qlean [
+        --system (-s)
+        --optimize (-o)
+        --repair (-r)
+      ] {
+        sudo -v
+        nix-collect-garbage -d
+
+        if $system {
+          sudo nix-collect-garbage -d
+        }
+
+        if $optimize {
+          nix-store --optimise --verbose
+        }
+
+        if $repair {
+          sudo nix-store --verify --check-contents --repair --verbose
+        }
+      }
+
       let carapace_completer = {|spans: list<string>|
         carapace $spans.0 nushell ...$spans
         | from json
