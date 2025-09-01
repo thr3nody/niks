@@ -6,10 +6,13 @@
   imports = [
     ../../themes/cursor.nix
     ../../themes/gtk.nix
+
     ../components/waybar.nix
     ../components/wofi.nix
     ../components/tofi/default.nix
     ../components/mako.nix
+    ../components/swayosd.nix
+
     ./paper.nix
     ./lock.nix
   ];
@@ -90,8 +93,14 @@
         );
 
       binde = [
-        ", XF86AudioRaiseVolume, exec, wpctl set-mute @DEFAULT_SINK@ 0 && wpctl set-volume -l 1.0 @DEFAULT_SINK@ 1%+"
-        ", XF86AudioLowerVolume, exec, wpctl set-mute @DEFAULT_SINK@ 0 && wpctl set-volume -l 1.0 @DEFAULT_SINK@ 1%-"
+        ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise"
+        ", XF86AudioLowerVolume, exec, swayosd-client --output-volume lower"
+
+        ", XF86MonBrightnessUp, exec, swayosd-client --brightness raise"
+        ", XF86MonBrightnessDown, exec, swayosd-client --brightness lower"
+
+        ", Caps_Lock, exec, sleep 0.07; swayosd-client --caps-lock"
+        ", Num_Lock, exec, sleep 0.07; swayosd-client --num-lock"
       ];
 
       bindm = [
