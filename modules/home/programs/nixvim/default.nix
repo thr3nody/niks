@@ -64,6 +64,10 @@
           "--languageserver",
           "--hostPID", tostring(vim.fn.getpid()),
         },
+        on_attach = function(client)
+          client.server_capabilities.documentFormattingProvider = false
+          client.server_capabilities.documentRangeFormattingProvider = false
+        end,
       }
       require('render-markdown').setup({ latex = { enabled = false } })
       require'lspconfig'.djlsp.setup {
