@@ -143,6 +143,7 @@
     motrix
     bottles
     hydralauncher
+    inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin
 
     # Keyring and stuff
     gnome-keyring
