@@ -4,7 +4,6 @@
   ];
 
   # Autostart warp-svc on startup.
-  systemd.packages = [pkgs.cloudflare-warp];
-  systemd.targets.multi-user.wants = ["warp-svc.service"];
-
+  # systemd.packages = [pkgs.cloudflare-warp];
+  # systemd.targets.multi-user.wants = ["warp-svc.service"];
 }
