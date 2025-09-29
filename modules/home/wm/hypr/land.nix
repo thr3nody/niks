@@ -12,6 +12,8 @@
     ../components/mako.nix
     ../components/swayosd.nix
 
+    ../../services/gnome-keyring.nix
+
     ./paper.nix
     ./lock.nix
   ];

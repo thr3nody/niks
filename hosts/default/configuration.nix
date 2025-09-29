@@ -244,15 +244,6 @@
   # Polkit
   security.polkit.enable = true;
 
-  # Also keyring stuff
-  services = {
-    gnome.gnome-keyring.enable = true;
-    xserver.displayManager.sessionCommands = ''
-      eval $(gnome-keyring-daemon --start --daemonize --components=ssh,secrets)
-      export SSH_AUTH_SOCK
-    '';
-  };
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
