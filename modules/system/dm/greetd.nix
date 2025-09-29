@@ -1,13 +1,11 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   tuigreet = "${pkgs.tuigreet}/bin/tuigreet";
-in
-{
+in {
   services.greetd = {
     enable = true;
     settings = {
       default_session = {
-        command = "${tuigreet} --time --remember --cmd Hyprland";
+        command = "${tuigreet} --time --remember";
         user = "greeter";
       };
     };

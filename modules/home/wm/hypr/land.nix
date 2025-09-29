@@ -23,6 +23,7 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
+    systemd.enable = false;
     settings = with config.colorScheme.palette; {
       "$mod" = "SUPER";
       "$supermod" = "SUPERSHIFT";
@@ -71,7 +72,7 @@
           "$mod, mouse_up, workspace, e+1"
           "$mod, mouse_down, workspace, e-1"
 
-          "$supermod, Q, exit"
+          "$supermod, Q, exec, uwsm stop"
           "$supermod, BACKSPACE, exec, hyprlock"
 
           "$mod, 0, workspace, 10"
