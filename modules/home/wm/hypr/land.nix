@@ -110,11 +110,6 @@
         "$mod, mouse:273, resizewindow"
       ];
 
-      gestures = {
-        workspace_swipe = "yes";
-        workspace_swipe_fingers = 3;
-      };
-
       monitor = [
         "eDP-1,1920x1080@144,0x0,1"
         "HDMI-A-1,1920x1080@60,auto,1,mirror,eDP-1"
@@ -199,6 +194,8 @@
       cursor {
         no_hardware_cursors = false
       }
+
+      gesture = 3, vertical, workspace
     '';
   };
 }
