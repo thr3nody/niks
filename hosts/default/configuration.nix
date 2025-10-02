@@ -97,6 +97,7 @@
       discordo # Discord TUI
       spotify-player # TUI for Spotify
       kew # Music player
+      vesktop
       (discord.override {
         withOpenASAR = true;
       })
