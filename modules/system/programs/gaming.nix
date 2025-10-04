@@ -1,9 +1,17 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     mindustry-wayland
     mangohud
     protonup
     r2modman
+    bottles
+    hydralauncher
+    heroic
+    inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin
   ];
 
   programs = {

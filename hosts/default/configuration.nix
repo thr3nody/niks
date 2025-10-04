@@ -142,10 +142,6 @@
     supergfxctl
     mako
     motrix
-    bottles
-    hydralauncher
-    heroic
-    inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin
 
     # Keyring and stuff
     gnome-keyring
