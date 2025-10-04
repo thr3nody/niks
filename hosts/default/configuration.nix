@@ -189,6 +189,7 @@
     cava # Audio Visualizer
     inputs.curd.packages."${system}".default # Watch anime
     nix-output-monitor # As the name would suggest
+    nurl # Generate nix fetcher url
 
     # Coding Stuff
     devenv
