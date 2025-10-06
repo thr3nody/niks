@@ -3,11 +3,7 @@
     phpactor
   ];
   programs.nixvim.plugins = {
-    lsp-format.enable = true;
-    conform-nvim = {
-      enable = true;
-      settings = {formatters_by_ft.python = ["black"];};
-    };
+    lsp-format.enable = false;
     lsp = {
       enable = true;
       servers = {

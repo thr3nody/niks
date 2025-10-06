@@ -54,6 +54,10 @@
           "typescript",
           "vue",
         },
+        on_attach = function(client)
+          client.server_capabilities.documentFormattingProvider = false
+          client.server_capabilities.documentRangeFormattingProvider = false
+        end,
       }
       require'lspconfig'.nixd.setup{
         offset_encoding = "utf-8"
@@ -75,6 +79,22 @@
           return util.root_pattern("manage.py")(fname)
         end,
       }
-    '';
+      -- Format with null-ls only mate
+      local augroup = vim.api.nvim_create_augroup("FormatOnSave", { clear = true })
+
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        group = augroup,
+        pattern = "*",
+        callback = function()
+          local clients = vim.lsp.get_active_clients({ bufnr = 0 })
+          for _, client in ipairs(clients) do
+            if client.name == "null-ls" or client.name == "none-ls" then
+              vim.lsp.buf.format({ async = false, name = client.name })
+              return
+            end
+          end
+        end,
+      })
+      '';
   };
 }
