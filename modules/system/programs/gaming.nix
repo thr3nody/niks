@@ -7,7 +7,8 @@
     mindustry-wayland
     mangohud
     protonup
-    r2modman
+    r2modman # Outdated though, try gale
+    gale
     bottles
     hydralauncher
     heroic
