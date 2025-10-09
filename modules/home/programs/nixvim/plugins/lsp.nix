@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   home.packages = with pkgs; [
     phpactor
   ];
@@ -12,10 +16,23 @@
           enable = true;
           package = null;
         };
-        omnisharp.enable = true;
+        omnisharp = {
+          enable = true;
+          extraOptions = {
+            cmd = [
+              "OmniSharp"
+              "--languageserver"
+              "--hostPID"
+              "\${tostring(vim.fn.getpid())}"
+            ];
+          };
+        };
         nixd = {
           enable = true;
           autostart = true;
+          extraOptions = {
+            offset_encoding = "utf-8";
+          };
         };
         html = {
           enable = true;
@@ -34,6 +51,18 @@
         };
         ts_ls = {
           enable = true;
+          filetypes = ["javascript" "typescript" "vue"];
+          extraOptions = {
+            init_options = {
+              plugins = lib.mkForce [
+                {
+                  name = "@vue/typescript-plugin";
+                  location = "/home/erine/.bun/install/global/node_modules/@vue/typescript-plugin";
+                  languages = ["javascript" "typescript" "vue"];
+                }
+              ];
+            };
+          };
         };
         phpactor = {
           enable = true;
@@ -52,6 +81,14 @@
         djlsp = {
           enable = true;
           package = null;
+          extraOptions = {
+            root_dir = ''
+              function(fname)
+                local util = require("lspconfig.util")
+                return util.root_pattern("manage.py")(fname)
+              end
+            '';
+          };
         };
         dockerls.enable = true;
         jsonls.enable = true;

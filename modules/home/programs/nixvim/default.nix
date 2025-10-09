@@ -4,6 +4,7 @@
 
     ./options.nix
     ./keymaps.nix
+    ./autocmd.nix
 
     ./plugins/lsp.nix
     ./plugins/tree.nix
@@ -25,76 +26,5 @@
       enable = true;
       settings.transparent_mode = true;
     };
-    extraConfigLua = ''
-      local util = require("lspconfig.util")
-      require'lspconfig'.volar.setup{
-      --   init_options = {
-      --     -- typescript = {
-      --     --   tsdk = '/home/erine/.bun/install/global/node_modules/typescript/lib'
-      --     -- }
-      --     filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
-      --   }
-        on_attach = function(client)
-          client.server_capabilities.documentFormattingProvider = false
-          client.server_capabilities.documentRangeFormattingProvider = false
-        end,
-      }
-      require'lspconfig'.ts_ls.setup{
-        init_options = {
-          plugins = {
-            {
-              name = "@vue/typescript-plugin",
-              location = "/home/erine/.bun/install/global/node_modules/@vue/typescript-plugin",
-              languages = {"javascript", "typescript", "vue"},
-            },
-          },
-        },
-        filetypes = {
-          "javascript",
-          "typescript",
-          "vue",
-        },
-        on_attach = function(client)
-          client.server_capabilities.documentFormattingProvider = false
-          client.server_capabilities.documentRangeFormattingProvider = false
-        end,
-      }
-      require'lspconfig'.nixd.setup{
-        offset_encoding = "utf-8"
-      }
-      require'lspconfig'.omnisharp.setup {
-        cmd = {
-          "OmniSharp",
-          "--languageserver",
-          "--hostPID", tostring(vim.fn.getpid()),
-        },
-        on_attach = function(client)
-          client.server_capabilities.documentFormattingProvider = false
-          client.server_capabilities.documentRangeFormattingProvider = false
-        end,
-      }
-      require('render-markdown').setup({ latex = { enabled = false } })
-      require'lspconfig'.djlsp.setup {
-        root_dir = function(fname)
-          return util.root_pattern("manage.py")(fname)
-        end,
-      }
-      -- Format with null-ls only mate
-      local augroup = vim.api.nvim_create_augroup("FormatOnSave", { clear = true })
-
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        group = augroup,
-        pattern = "*",
-        callback = function()
-          local clients = vim.lsp.get_active_clients({ bufnr = 0 })
-          for _, client in ipairs(clients) do
-            if client.name == "null-ls" or client.name == "none-ls" then
-              vim.lsp.buf.format({ async = false, name = client.name })
-              return
-            end
-          end
-        end,
-      })
-      '';
   };
 }
