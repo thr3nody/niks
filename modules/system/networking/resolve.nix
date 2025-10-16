@@ -1,13 +1,19 @@
 {
-  networking.resolvconf.enable = false;
+  networking = {
+    nameservers = [
+      "1.1.1.1"
+      "1.0.0.1"
+    ];
+    resolvconf.enable = false;
+  };
   services.resolved = {
     enable = true;
-    dnssec = "allow-downgrade";
+    dnssec = "true";
+    domains = ["~."];
     fallbackDns = ["1.1.1.1" "1.0.0.1"];
+    dnsovertls = "true";
     extraConfig = ''
-      DNS=1.1.1.1 1.0.0.1
-      FallbackDNS=2606:4700:4700::1111 2606:4700:4700::1001
-      DNSOverTLS=yes
+      DNSStubListener=no
     '';
   };
 }
