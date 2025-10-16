@@ -1,5 +1,5 @@
 {config, ...}: {
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = ["modesetting" "nvidia"];
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = true; # Needed for suspend to behave correctly.
