@@ -143,6 +143,10 @@
     mako
     motrix
 
+    # Input test thingy
+    evtest
+    wev
+
     # Keyring and stuff
     gnome-keyring
     gcr
