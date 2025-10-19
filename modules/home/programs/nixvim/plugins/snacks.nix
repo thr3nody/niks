@@ -14,6 +14,10 @@
       };
       image = {
         enabled = true;
+        doc = {
+          max_width = 20;
+          max_height = 10;
+        };
       };
     };
   };
