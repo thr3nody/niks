@@ -190,6 +190,7 @@
     inputs.curd.packages."${system}".default # Watch anime
     nix-output-monitor # As the name would suggest
     nurl # Generate nix fetcher url
+    nix-tree # Interactively browse dependency graphs of Nix derivations
 
     # Coding Stuff
     devenv
