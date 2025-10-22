@@ -195,7 +195,6 @@
     # Coding Stuff
     devenv
 
-    lunarvim
     vscode
     thonny
 
