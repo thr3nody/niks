@@ -82,9 +82,22 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Xbox Gamepad
-  hardware.xone.enable = true;
-  # hardware.xpadneo.enable = true;
+  hardware = {
+    # Xbox Gamepad
+    xone.enable = true;
+    # xpadneo.enable = true;
+
+    # Drawing Tablet
+    opentabletdriver = {
+      enable = true;
+      daemon.enable = true;
+      blacklistedKernelModules = [
+        # Just some examples from the docs.
+        "hid-uclogic"
+        "wacom"
+      ];
+    };
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.erine = {
