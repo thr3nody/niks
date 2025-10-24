@@ -142,6 +142,7 @@
     supergfxctl
     mako
     motrix
+    drawio
 
     # Input test thingy
     evtest
