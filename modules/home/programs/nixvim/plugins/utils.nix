@@ -1,7 +1,6 @@
 {
   programs.nixvim.plugins = {
     muren.enable = true;
-    tailwind-tools.enable = true;
     treesj = {
       enable = true;
       settings.use_default_keymaps = true;

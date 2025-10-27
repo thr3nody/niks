@@ -1,12 +1,16 @@
 {
   programs.git = {
     enable = true;
-    userName = "thr3nody";
-    userEmail = "me@erine.dev";
-    aliases = {
-      pu = "push";
-      co = "checkout";
-      cm = "commit -m";
+    settings = {
+      aliases = {
+        pu = "push";
+        co = "checkout";
+        cm = "commit -m";
+      };
+      user = {
+        name = "Erine";
+        email = "me@erine.dev";
+      };
     };
   };
 }
