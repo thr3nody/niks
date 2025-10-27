@@ -92,6 +92,7 @@
         };
         dockerls.enable = true;
         jsonls.enable = true;
+        tailwindcss.enable = true;
       };
     };
     none-ls = {

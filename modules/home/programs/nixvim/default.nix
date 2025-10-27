@@ -8,7 +8,6 @@
 
     ./plugins/lsp.nix
     ./plugins/tree.nix
-    # ./plugins/telescope.nix # Use Snacks.picker now
     ./plugins/ui.nix
     ./plugins/utils.nix
     ./plugins/cmp.nix
