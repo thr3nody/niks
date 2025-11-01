@@ -104,7 +104,7 @@
         formatting = {
           black.enable = true;
           alejandra.enable = true;
-          prettierd = {
+          prettier = {
             disableTsServerFormatter = true;
             enable = true;
           };
