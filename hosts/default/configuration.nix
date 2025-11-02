@@ -6,27 +6,22 @@
   imports = [
     inputs.home-manager.nixosModules.default
     ./hardware-configuration.nix
-    ../../modules/system/wm/hypr.nix
-    ../../modules/system/dm/greetd.nix
 
-    ../../modules/system/audio/pulse.nix
-    ../../modules/system/audio/pipewire.nix
+    # Truly modular
+    ../../modules/system/audio/default.nix
+    ../../modules/system/dm/default.nix
+    ../../modules/system/networks/default.nix
+    ../../modules/system/wm/default.nix
+    ../../modules/system/graphics/default.nix
 
+    # Not truly modular
     ../../modules/system/securities/pam.nix
-
-    ../../modules/system/networking/firewall.nix
-    # ../../modules/system/networking/tailscale.nix
-    # ../../modules/system/networking/warp.nix
-    ../../modules/system/networking/resolve.nix
 
     ../../modules/system/themes/fonts.nix
 
     ../../modules/system/services/asusd.nix
     ../../modules/system/services/xserver.nix
     ../../modules/system/services/tor.nix
-
-    ../../modules/system/graphics/opengl.nix
-    ../../modules/system/graphics/nvidia/stable.nix
 
     ../../modules/system/programs/nh.nix
     ../../modules/system/programs/thunderbird.nix
@@ -156,6 +151,7 @@
     mako
     motrix
     drawio
+    pavucontrol
 
     # Input test thingy
     evtest
