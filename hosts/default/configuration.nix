@@ -13,16 +13,14 @@
     ../../modules/system/networks/default.nix
     ../../modules/system/wm/default.nix
     ../../modules/system/graphics/default.nix
+    ../../modules/system/services/default.nix
 
     # Not truly modular
+    # On purpose (I'm lazy mate)
     ../../modules/system/securities/pam.nix
-
     ../../modules/system/themes/fonts.nix
 
-    ../../modules/system/services/asusd.nix
-    ../../modules/system/services/xserver.nix
-    ../../modules/system/services/tor.nix
-
+    # On the way
     ../../modules/system/programs/nh.nix
     ../../modules/system/programs/thunderbird.nix
     ../../modules/system/programs/seahorse.nix
