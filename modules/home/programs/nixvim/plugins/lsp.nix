@@ -64,6 +64,10 @@
             };
           };
         };
+        cssls = {
+          enable = true;
+          filetypes = ["css" "scss"];
+        };
         phpactor = {
           enable = true;
           filetypes = [
