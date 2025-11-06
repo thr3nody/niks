@@ -27,6 +27,7 @@
     ../../modules/system/programs/thunar.nix
     ../../modules/system/programs/gaming.nix
     ../../modules/system/programs/obs.nix
+    ../../modules/system/programs/ssh/default.nix
   ];
 
   boot = {
