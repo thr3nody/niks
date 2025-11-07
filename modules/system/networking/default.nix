@@ -4,6 +4,5 @@
     ./resolved/default.nix
 
     ./warp/default.nix
-    ./tailscale/default.nix
   ];
 }

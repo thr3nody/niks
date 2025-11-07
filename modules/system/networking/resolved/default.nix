@@ -4,14 +4,14 @@
   ...
 }: {
   options = {
-    networks.resolved.enable = lib.mkOption {
+    netSetup.resolved.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
       description = "Enables systemd resolved.";
     };
   };
 
-  config = lib.mkIf config.networks.resolved.enable {
+  config = lib.mkIf config.netSetup.resolved.enable {
     networking = {
       nameservers = [
         "1.1.1.1"

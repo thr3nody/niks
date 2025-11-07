@@ -10,7 +10,7 @@
     # Truly modular
     ../../modules/system/audio/default.nix
     ../../modules/system/dm/default.nix
-    ../../modules/system/networks/default.nix
+    ../../modules/system/networking/default.nix
     ../../modules/system/wm/default.nix
     ../../modules/system/graphics/default.nix
     ../../modules/system/services/default.nix

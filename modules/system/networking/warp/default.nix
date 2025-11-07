@@ -5,14 +5,14 @@
   ...
 }: {
   options = {
-    networks.warp.enable = lib.mkOption {
+    netSetup.warp.enable = lib.mkOption {
       type = lib.types.bool;
       default = false;
       description = "Enables cloudflare warp.";
     };
   };
 
-  config = lib.mkIf config.networks.warp.enable {
+  config = lib.mkIf config.netSetup.warp.enable {
     environment.systemPackages = with pkgs; [
       cloudflare-warp
     ];

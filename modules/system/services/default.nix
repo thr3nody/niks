@@ -7,5 +7,6 @@
     ./caddy/default.nix
     ./phpfpm/default.nix
     ./nextdns/default.nix
+    ./tailscale/default.nix
   ];
 }
