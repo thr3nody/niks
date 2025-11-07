@@ -181,10 +181,8 @@
 
     # CLI/TUI
     fzf
-    grc
     fd
     ripgrep
-    xclip # Clipboard for X
     wl-clipboard # Clipboard for Wayland
     clipse # TUI Clipboard Manager
     wget
@@ -221,17 +219,6 @@
     python3
 
     vscode-langservers-extracted
-
-    # Fish Plugins
-    # fishPlugins.done
-    # fishPlugins.fzf-fish
-    # fishPlugins.forgit
-    # fishPlugins.grc
-    # fishPlugins.colored-man-pages
-    # fishPlugins.autopair
-    # fishPlugins.fish-you-should-use
-    # fishPlugins.gruvbox
-    # fishPlugins.sponge
   ];
 
   # Adb
