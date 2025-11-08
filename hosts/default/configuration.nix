@@ -14,20 +14,12 @@
     ../../modules/system/wm/default.nix
     ../../modules/system/graphics/default.nix
     ../../modules/system/services/default.nix
+    ../../modules/system/programs/default.nix
 
     # Not truly modular
     # On purpose (I'm lazy mate)
     ../../modules/system/securities/pam.nix
     ../../modules/system/themes/fonts.nix
-
-    # On the way
-    ../../modules/system/programs/nh.nix
-    ../../modules/system/programs/thunderbird.nix
-    ../../modules/system/programs/seahorse.nix
-    ../../modules/system/programs/thunar.nix
-    ../../modules/system/programs/gaming.nix
-    ../../modules/system/programs/obs.nix
-    ../../modules/system/programs/ssh/default.nix
   ];
 
   boot = {
