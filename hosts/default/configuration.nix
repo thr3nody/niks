@@ -4,8 +4,9 @@
   ...
 }: {
   imports = [
-    inputs.home-manager.nixosModules.default
     ./hardware-configuration.nix
+
+    inputs.home-manager.nixosModules.default
 
     # Truly modular
     ../../modules/system/audio/default.nix

@@ -41,7 +41,6 @@
       specialArgs = {inherit inputs;};
       modules = [
         "${self}/hosts/default/configuration.nix"
-        inputs.home-manager.nixosModules.default
       ];
     };
     # 'nixos' is the default machine
