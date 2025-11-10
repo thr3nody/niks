@@ -7,6 +7,7 @@
     ./ssh/default.nix
     ./thunar/default.nix
     ./thunderbird/default.nix
+    ./gnupg/default.nix
 
     ./bash/default.nix
     ./chromium/default.nix
