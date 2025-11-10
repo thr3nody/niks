@@ -5,6 +5,7 @@
       user = {
         name = "Erine Moira";
         email = "me@erine.dev";
+        signingkey = "34B83C26F04A401B";
       };
       alias = {
         pu = "push";
@@ -17,6 +18,9 @@
       };
       pull = {
         rebase = false;
+      };
+      commit = {
+        gpgsign = true;
       };
     };
   };
