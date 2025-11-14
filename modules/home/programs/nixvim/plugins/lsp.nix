@@ -75,10 +75,7 @@
             "blade.php"
           ];
         };
-        tinymist = {
-          enable = true;
-          autostart = true;
-        };
+        tinymist.enable = true;
         pyright = {
           enable = true;
         };
@@ -97,6 +94,7 @@
         dockerls.enable = true;
         jsonls.enable = true;
         tailwindcss.enable = true;
+        postgres_lsp.enable = true;
       };
     };
     none-ls = {
