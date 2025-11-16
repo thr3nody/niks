@@ -94,7 +94,6 @@
         dockerls.enable = true;
         jsonls.enable = true;
         tailwindcss.enable = true;
-        postgres_lsp.enable = true;
       };
     };
     none-ls = {
