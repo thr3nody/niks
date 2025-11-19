@@ -13,7 +13,17 @@
 
       background = [
         {
-          path = "$HOME/Pictures/Walp/wallhaven-m3vgvk.jpg";
+          path = "$HOME/Pictures/Walp/hyprlock/bg.jpg";
+          brightness = 0.7;
+          contrast = 0.8;
+        }
+        {
+          path = "$HOME/Pictures/Walp/hyprlock/fg.png";
+          monitor = "";
+          zindex = 1;
+          keep_aspect_ratio = true;
+          rounding = 0;
+          border_size = 0;
           brightness = 0.7;
           contrast = 0.8;
         }
@@ -22,36 +32,42 @@
       label = [
         {
           # Time
-          text = "cmd[update:1000] date +'%I:%M'";
+          text = "cmd[update:1000] date +'%H'";
           color = "rgba(${base0A}ee)";
-          font_size = 96;
-          font_family = "Fira Code Extrabold";
-          position = "0, 200";
+          font_size = 180;
+          font_family = "Inter Display ExtraBold";
+          position = "-15, 50";
           halign = "center";
           valign = "center";
-          shadow_passes = 2;
-          shadow_size = 3;
-          shadow_color = "rgba(${base09}ee)";
+        }
+        {
+          # Time
+          text = "cmd[update:1000] date +'%M'";
+          color = "rgba(${base0A}ee)";
+          font_size = 180;
+          font_family = "Inter Display ExtraBold";
+          position = "15, -155";
+          halign = "center";
+          valign = "center";
         }
         {
           # Date
           text = "cmd[update:1000] date +'%A, %B %d %Y'";
           color = "rgba(${base0A}ee)";
-          font_size = 22;
-          font_family = "Fira Code Regular";
-          position = "0, 100";
+          font_size = 16;
+          font_family = "Inter Display Light";
+          position = "0, 500";
           halign = "center";
           valign = "center";
-          shadow_passes = 2;
-          shadow_size = 2;
-          shadow_color = "rgba(${base09}ee)";
         }
       ];
 
       input-field = [
         {
           size = "256, 48";
-          position = "0, -200";
+          rounding = 1;
+          position = "0, -500";
+          zindex = 1;
           monitor = "";
           dots_center = true;
           dots_size = 0.3;
@@ -62,9 +78,6 @@
           inner_color = "rgba(${base03}ee)";
           outer_color = "rgba(${base0A}ee)";
           outline_thickness = 2;
-          shadow_passes = 2;
-          shadow_size = 2;
-          shadow_color = "rgba(${base09}ee)";
           placeholder_text = "<i>Input Password :3</i>";
           fail_text = "<i>You failed OwO</i>";
           check_color = "rgba(${base06}ee)";
