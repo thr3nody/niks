@@ -36,7 +36,7 @@
           color = "rgba(${base0A}ee)";
           font_size = 180;
           font_family = "Inter Display ExtraBold";
-          position = "-15, 50";
+          position = "0, 50";
           halign = "center";
           valign = "center";
         }
@@ -46,7 +46,7 @@
           color = "rgba(${base0A}ee)";
           font_size = 180;
           font_family = "Inter Display ExtraBold";
-          position = "15, -155";
+          position = "0, -155";
           halign = "center";
           valign = "center";
         }
