@@ -46,9 +46,6 @@
           "$supermod, D, exec, legcord"
           "$mod, T, exec, telegram-desktop"
           "$mod, RETURN, exec, kitty"
-          "$mod, S, exec, $screenshot"
-          "$supermod, S, exec, $screenshot-full"
-          ", PRINT, exec, $screenshot-full"
           "$mod, SPACE, exec, $menu"
           "$mod, M, exec, spotify"
           "$mod, P, exec, $colorpicker"
@@ -93,6 +90,12 @@
             )
             9)
         );
+
+      bindl = [
+        "$mod, S, exec, $screenshot"
+        "$supermod, S, exec, $screenshot-full"
+        ", PRINT, exec, $screenshot-full"
+      ];
 
       binde = [
         ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise"
