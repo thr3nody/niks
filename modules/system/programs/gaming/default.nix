@@ -19,11 +19,11 @@
     environment.systemPackages = with pkgs; [
       # Install and launch games (no launcher)
       mindustry-wayland
-      inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin
+      inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.osu-lazer-bin
 
       # Utilities
       mangohud
-      protonup
+      protonup-ng
 
       # Modding
       r2modman # Outdated though, try gale

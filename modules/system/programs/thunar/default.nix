@@ -13,6 +13,10 @@
   };
 
   config = lib.mkIf config.prog.thunar.enable {
+    environment.systemPackages = with pkgs; [
+      file-roller
+    ];
+
     programs = {
       thunar = {
         enable = true;
@@ -26,9 +30,6 @@
 
       # If xfce is not used as desktop and therefore xfconf is not enabled, preference changes are discarded. In that case enable the xfconf program manually to be able to save preferences.
       xfconf.enable = true;
-
-      # Archive manager
-      file-roller.enable = true;
     };
 
     services = {
