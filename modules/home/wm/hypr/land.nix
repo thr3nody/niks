@@ -185,12 +185,25 @@
       windowrulev2 = workspace 3, class:(zen-twilight)
       windowrulev2 = workspace 1, class:(legcord)
       windowrulev2 = workspace 1, class:(discord)
+      windowrulev2 = workspace 1, class:(vesktop)
+
       windowrulev2 = float, class:(org.pulseaudio.pavucontrol)
       windowrulev2 = size 622 652, class:(org.pulseaudio.pavucontrol)
       windowrulev2 = float, class:(clipse)
       windowrulev2 = size 622 652, class:(clipse)
       windowrulev2 = float, class:(peaclock)
       windowrulev2 = size 360 230, class:(peaclock)
+
+      windowrulev2 = noscreenshare, class:(vesktop)
+      windowrulev2 = noscreenshare, class:(discord)
+      windowrulev2 = noscreenshare, class:(legcord)
+      windowrulev2 = noscreenshare, class:(Thunar)
+      windowrulev2 = noscreenshare, class:(org.gnome.seahorse.Application)
+      windowrulev2 = noscreenshare, class:(thunderbird)
+
+      windowrulev2 = noscreenshare, title:(WhatsApp — Zen Browser)
+
+      layerrule = noscreenshare, notifications
 
       exec-once = clipse -listen
 
