@@ -75,7 +75,10 @@
             "blade.php"
           ];
         };
-        tinymist.enable = true;
+        tinymist = {
+          enable = true;
+          settings.exportPdf = "onType";
+        };
         pyright = {
           enable = true;
         };
@@ -117,6 +120,7 @@
               "2"
             ];
           };
+          typstyle.enable = true;
         };
       };
     };
