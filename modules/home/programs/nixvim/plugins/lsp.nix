@@ -120,7 +120,14 @@
               "2"
             ];
           };
-          typstyle.enable = true;
+          typstyle = {
+            enable = true;
+            settings.extra_args = [
+              "--line-width"
+              "80"
+              "--wrap-text"
+            ];
+          };
         };
       };
     };
