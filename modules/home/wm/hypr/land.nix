@@ -40,10 +40,12 @@
 
       bind =
         [
-          "$mod, B, exec, zen"
           "$supermod, B, exec, nvidia-offload zen"
-          "$mod, D, exec, Discord"
           "$supermod, D, exec, legcord"
+          "$supermod, RETURN, exec, kitty --class secretty"
+
+          "$mod, B, exec, zen"
+          "$mod, D, exec, Discord"
           "$mod, T, exec, telegram-desktop"
           "$mod, RETURN, exec, kitty"
           "$mod, SPACE, exec, $menu"
@@ -200,6 +202,8 @@
       windowrulev2 = noscreenshare, class:(Thunar)
       windowrulev2 = noscreenshare, class:(org.gnome.seahorse.Application)
       windowrulev2 = noscreenshare, class:(thunderbird)
+      windowrulev2 = noscreenshare, class:(secretty)
+      windowrulev2 = noscreenshare, class:(clipse)
 
       windowrulev2 = noscreenshare, title:(WhatsApp — Zen Browser)
 
