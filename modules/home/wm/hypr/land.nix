@@ -129,6 +129,8 @@
       };
 
       input = {
+        kb_options = "compose:ralt";
+
         touchpad = {
           natural_scroll = true;
           scroll_factor = 0.4;
