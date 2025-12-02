@@ -34,7 +34,7 @@
       SearchEngines = {
         Default = "DuckDuckGo";
         PreventInstalls = true;
-        Remove = ["Google" "Bing"];
+        Remove = ["Google" "Bing" "Perplexity"];
       };
       SearchSuggestEnabled = true;
       ExtensionSettings = {
