@@ -33,7 +33,8 @@
       "$menu" = "tofi-run | xargs hyprctl dispatch exec --";
       "$bar" = "pkill waybar || waybar &";
       "$clipboard" = "kitty --class clipse -e clipse";
-      "$colorpicker" = "hyprpicker -a -f hex";
+      "$color-picker-hex" = "hyprpicker -a -f hex";
+      "$color-picker-rgb" = "hyprpicker -a -f rgb";
       "$clock" = "pkill peaclock || kitty --class peaclock -e peaclock";
       "$screenshot" = "grimblast --notify copysave area \"./Pictures/Screenshots/$(date +'%Y-%m-%d %H:%M:%S').png\"";
       "$screenshot-full" = "grimblast --notify copysave screen \"./Pictures/Screenshots/$(date +'%Y-%m-%d %H:%M:%S').png\"";
@@ -43,14 +44,15 @@
           "$supermod, B, exec, nvidia-offload zen"
           "$supermod, D, exec, legcord"
           "$supermod, RETURN, exec, kitty --class secretty"
+          "$supermod, P, exec, $color-picker-rgb"
 
           "$mod, B, exec, zen"
-          "$mod, D, exec, Discord"
+          "$mod, D, exec, vesktop"
           "$mod, T, exec, telegram-desktop"
           "$mod, RETURN, exec, kitty"
           "$mod, SPACE, exec, $menu"
           "$mod, M, exec, spotify"
-          "$mod, P, exec, $colorpicker"
+          "$mod, P, exec, $color-picker-hex"
           "$mod, W, exec, $bar"
           "$mod, E, exec, Thunar"
           "$mod, V, exec, $clipboard"
