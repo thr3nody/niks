@@ -92,8 +92,6 @@
     description = "Erine Moira";
     extraGroups = ["networkmanager" "wheel" "docker" "kvm" "adbuser" "dialout"];
     packages = with pkgs; [
-      telegram-desktop
-      legcord
       discordo # Discord TUI
       spotify-player # TUI for Spotify
       kew # Music player
