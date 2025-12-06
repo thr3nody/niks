@@ -48,7 +48,7 @@
 
           "$mod, B, exec, zen"
           "$mod, D, exec, vesktop"
-          "$mod, T, exec, telegram-desktop"
+          "$mod, T, exec, thunderbird"
           "$mod, RETURN, exec, kitty"
           "$mod, SPACE, exec, $menu"
           "$mod, M, exec, spotify"
