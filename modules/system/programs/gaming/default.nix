@@ -26,8 +26,7 @@
       protonup-ng
 
       # Modding
-      r2modman # Outdated though, try gale
-      gale
+      # gale #INFO: Broken in current update.
 
       # Non Steam
       bottles
