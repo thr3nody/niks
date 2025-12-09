@@ -50,17 +50,20 @@
         nh search $packages
       }
 
-      # It is to qlean the machine and also do a nix-store checkups, defaults to only cleaning user space.
+      # It is to qlean the machine, optimise, and also do a nix-store checkups, defaults to only cleaning user space.
       def qlean [
         --system (-s)
         --optimize (-o)
         --repair (-r)
       ] {
-        sudo -v
-        nix-collect-garbage -d
+        "\n" + (date now | into string) + "\n" | save --append ~/niks/qleanlog.txt
+
+        "Qleaning current user profile.\n" | save --append ~/niks/qleanlog.txt
+        nix-collect-garbage -d | grep -E "deleted|saves" | save --append --raw ~/niks/qleanlog.txt
 
         if $system {
-          sudo nix-collect-garbage -d
+          "Qleaning system profiles.\n" | save --append ~/niks/qleanlog.txt
+          sudo nix-collect-garbage -d | grep -E "deleted|saves" | save --append --raw ~/niks/qleanlog.txt
         }
 
         if $optimize {
