@@ -8,6 +8,7 @@
     fira-code-symbols
     dina-font
     inter
+    aileron
     mplus-outline-fonts.githubRelease
 
     nerd-fonts.fira-code
