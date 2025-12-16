@@ -210,6 +210,7 @@
       windowrulev2 = noscreenshare, class:(clipse)
 
       windowrulev2 = noscreenshare, title:(WhatsApp — Zen Browser)
+      windowrulev2 = noscreenshare, title:(.*[Bb]itwarden.*)
 
       layerrule = noscreenshare, notifications
 
