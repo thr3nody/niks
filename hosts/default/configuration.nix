@@ -140,7 +140,9 @@
     mako
     motrix
     drawio
+
     pavucontrol
+    helvum
 
     # Input test thingy
     evtest
