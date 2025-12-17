@@ -9,6 +9,7 @@
     dina-font
     inter
     aileron
+    nacelle
     mplus-outline-fonts.githubRelease
 
     nerd-fonts.fira-code
