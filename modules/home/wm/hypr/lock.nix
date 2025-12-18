@@ -34,9 +34,9 @@
           # Time
           text = "cmd[update:1000] date +'%H'";
           color = "rgba(${base0A}ee)";
-          font_size = 180;
-          font_family = "Inter Display ExtraBold";
-          position = "0, 50";
+          font_size = 200;
+          font_family = "Nacelle Heavy";
+          position = "0, 60";
           halign = "center";
           valign = "center";
         }
@@ -44,9 +44,9 @@
           # Time
           text = "cmd[update:1000] date +'%M'";
           color = "rgba(${base0A}ee)";
-          font_size = 180;
-          font_family = "Inter Display ExtraBold";
-          position = "0, -155";
+          font_size = 200;
+          font_family = "Nacelle Heavy";
+          position = "0, -165";
           halign = "center";
           valign = "center";
         }
@@ -55,7 +55,7 @@
           text = "cmd[update:1000] date +'%A, %B %d %Y'";
           color = "rgba(${base0A}ee)";
           font_size = 16;
-          font_family = "Inter Display Light";
+          font_family = "Nacelle Light";
           position = "0, 500";
           halign = "center";
           valign = "center";
