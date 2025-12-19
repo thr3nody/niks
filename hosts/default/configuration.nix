@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  lib,
   ...
 }: {
   imports = [
@@ -236,6 +237,13 @@
 
   netSetup.protonvpn.enable = true;
   svcs.tailscale.enable = true;
+
+  systemd.services.nix-daemon.serviceConfig = {
+    Nice = lib.mkForce 15;
+    CPUWeight = 5;
+    IOSchedulingClass = lib.mkForce "idle";
+    IOSchedulingPriority = lib.mkForce 7;
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
