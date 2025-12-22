@@ -97,7 +97,7 @@
         dockerls.enable = true;
         jsonls.enable = true;
         tailwindcss.enable = true;
-        clangd.enable = true;
+        ccls.enable = true;
       };
     };
     none-ls = {
