@@ -209,8 +209,6 @@
     bun
     deno
 
-    bear
-
     python3
 
     vscode-langservers-extracted
