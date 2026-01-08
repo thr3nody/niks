@@ -196,7 +196,6 @@
     devenv
 
     vscode
-    thonny
 
     php
     php82Packages.composer
