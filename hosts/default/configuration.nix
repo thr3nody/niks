@@ -141,6 +141,7 @@
     mako
     motrix
     drawio
+    gale
 
     pavucontrol
     helvum
