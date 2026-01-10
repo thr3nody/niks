@@ -15,7 +15,11 @@
   config = lib.mkIf config.prog.gnupg.enable {
     programs.gnupg = {
       package = pkgs.gnupg;
-      agent.enable = true;
+      agent = {
+        enable = true;
+        pinentryPackage = pkgs.pinentry-gtk2;
+        settings = {default-cache-ttl = 1550;};
+      };
     };
   };
 }
