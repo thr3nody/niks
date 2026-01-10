@@ -2,12 +2,15 @@
   services.hyprpaper = {
     enable = true;
     settings = {
-      preload = [
-        "$HOME/niks/modules/system/themes/wallpaper/gruv-drinks.png"
-      ];
       wallpaper = [
-        ",$HOME/niks/modules/system/themes/wallpaper/gruv-drinks.png"
+        {
+          monitor = "eDP-1";
+          path = "~/niks/modules/system/themes/wallpaper/gruv-drinks.png";
+          fit_mode = "cover";
+        }
       ];
+      ipc = true;
+      splash = false;
     };
   };
 }

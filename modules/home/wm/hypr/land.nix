@@ -181,38 +181,38 @@
         animation=workspaces,1,6,overshot,slidevert
       }
 
-      windowrulev2 = workspace 5, class:(Spotify)
-      windowrulev2 = workspace 4, class:(Code)
-      windowrulev2 = workspace 4, class:(dev.zed.Zed)
-      windowrulev2 = workspace 4, class:(Godot_Engine)
-      windowrulev2 = workspace 3, class:(firefox)
-      windowrulev2 = workspace 3, class:(zen)
-      windowrulev2 = workspace 3, class:(zen-beta)
-      windowrulev2 = workspace 3, class:(zen-twilight)
-      windowrulev2 = workspace 1, class:(legcord)
-      windowrulev2 = workspace 1, class:(discord)
-      windowrulev2 = workspace 1, class:(vesktop)
+      windowrule = workspace 5, match:class Spotify
+      windowrule = workspace 4, match:class Code
+      windowrule = workspace 4, match:class dev.zed.Zed
+      windowrule = workspace 4, match:class Godot_Engine
+      windowrule = workspace 3, match:class firefox
+      windowrule = workspace 3, match:class zen
+      windowrule = workspace 3, match:class zen-beta
+      windowrule = workspace 3, match:class zen-twilight
+      windowrule = workspace 1, match:class legcord
+      windowrule = workspace 1, match:class discord
+      windowrule = workspace 1, match:class vesktop
 
-      windowrulev2 = float, class:(org.pulseaudio.pavucontrol)
-      windowrulev2 = size 622 652, class:(org.pulseaudio.pavucontrol)
-      windowrulev2 = float, class:(clipse)
-      windowrulev2 = size 622 652, class:(clipse)
-      windowrulev2 = float, class:(peaclock)
-      windowrulev2 = size 360 230, class:(peaclock)
+      windowrule = float on, match:class org.pulseaudio.pavucontrol
+      windowrule = size 622 652, match:class org.pulseaudio.pavucontrol
+      windowrule = float on, match:class clipse
+      windowrule = size 622 652, match:class clipse
+      windowrule = float on, match:class peaclock
+      windowrule = size 360 230, match:class peaclock
 
-      windowrulev2 = noscreenshare, class:(vesktop)
-      windowrulev2 = noscreenshare, class:(discord)
-      windowrulev2 = noscreenshare, class:(legcord)
-      windowrulev2 = noscreenshare, class:(Thunar)
-      windowrulev2 = noscreenshare, class:(org.gnome.seahorse.Application)
-      windowrulev2 = noscreenshare, class:(thunderbird)
-      windowrulev2 = noscreenshare, class:(secretty)
-      windowrulev2 = noscreenshare, class:(clipse)
+      windowrule = no_screen_share on, match:class vesktop
+      windowrule = no_screen_share on, match:class discord
+      windowrule = no_screen_share on, match:class legcord
+      windowrule = no_screen_share on, match:class Thunar
+      windowrule = no_screen_share on, match:class org.gnome.seahorse.Application
+      windowrule = no_screen_share on, match:class thunderbird
+      windowrule = no_screen_share on, match:class secretty
+      windowrule = no_screen_share on, match:class clipse
 
-      windowrulev2 = noscreenshare, title:(WhatsApp — Zen Browser)
-      windowrulev2 = noscreenshare, title:(.*[Bb]itwarden.*)
+      windowrule = no_screen_share on, match:title WhatsApp — Zen Browser
+      windowrule = no_screen_share on, match:title .*[Bb]itwarden.*
 
-      layerrule = noscreenshare, notifications
+      layerrule = no_screen_share on, match:namespace notifications
 
       exec-once = clipse -listen
 

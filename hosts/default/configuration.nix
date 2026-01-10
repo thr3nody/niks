@@ -91,7 +91,7 @@
   users.users.erine = {
     isNormalUser = true;
     description = "Erine Moira";
-    extraGroups = ["networkmanager" "wheel" "docker" "kvm" "adbuser" "dialout"];
+    extraGroups = ["networkmanager" "wheel" "docker" "kvm" "dialout"];
     packages = with pkgs; [
       spotify-player # TUI for Spotify
       kew # Music player
@@ -212,9 +212,6 @@
 
     vscode-langservers-extracted
   ];
-
-  # Adb
-  programs.adb.enable = true;
 
   environment = {
     variables = {
