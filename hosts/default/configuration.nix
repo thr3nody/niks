@@ -93,7 +93,6 @@
     description = "Erine Moira";
     extraGroups = ["networkmanager" "wheel" "docker" "kvm" "dialout"];
     packages = with pkgs; [
-      spotify-player # TUI for Spotify
       kew # Music player
       vesktop
       (discord.override {
