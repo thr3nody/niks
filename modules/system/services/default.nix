@@ -8,5 +8,6 @@
     ./phpfpm/default.nix
     ./nextdns/default.nix
     ./tailscale/default.nix
+    ./actual/default.nix
   ];
 }

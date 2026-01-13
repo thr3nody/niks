@@ -232,7 +232,10 @@
   security.polkit.enable = true;
 
   netSetup.protonvpn.enable = true;
-  svcs.tailscale.enable = true;
+  svcs = {
+    tailscale.enable = true;
+    actual.enable = true;
+  };
 
   systemd.services.nix-daemon.serviceConfig = {
     Nice = lib.mkForce 15;
