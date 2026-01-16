@@ -132,27 +132,71 @@
         }
         keybindings: [
           {
-            name: move_up
+            name: left
             modifier: control
-            keycode: char_k
+            keycode: char_h
             mode: [emacs, vi_normal, vi_insert]
             event: {
               until: [
-                { send: menuup }
-                { send: up }
+                { send: MenuLeft }
+                { edit: MoveLeft }
+                { send: Left }
               ]
             }
           }
 
           {
-            name: move_down
+            name: right
+            modifier: control
+            keycode: char_l
+            mode: [emacs, vi_normal, vi_insert]
+            event: {
+              until: [
+                { send: HistoryHintWordComplete }
+                { send: MenuRight }
+                { edit: MoveRight }
+                { send: Right }
+              ]
+            }
+          }
+
+          {
+            name: right_full_complete
+            modifier: alt
+            keycode: char_l
+            mode: [emacs, vi_normal, vi_insert]
+            event: {
+              until: [
+                { send: HistoryHintComplete }
+                { send: MenuRight }
+                { edit: MoveRight }
+                { send: Right }
+              ]
+            }
+          }
+
+          {
+            name: up
+            modifier: control
+            keycode: char_k
+            mode: [emacs, vi_normal, vi_insert]
+            event: {
+              until: [
+                { send: MenuUp }
+                { send: Down }
+              ]
+            }
+          }
+
+          {
+            name: down
             modifier: control
             keycode: char_j
             mode: [emacs, vi_normal, vi_insert]
             event: {
               until: [
-                { send: menudown }
-                { send: up }
+                { send: MenuDown }
+                { send: Down }
               ]
             }
           }
@@ -171,6 +215,7 @@
 
       bunbun
     '';
+
     shellAliases = {
       g = "git";
       c = "code";
