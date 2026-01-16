@@ -93,7 +93,7 @@
     description = "Erine Moira";
     extraGroups = ["networkmanager" "wheel" "docker" "kvm" "dialout"];
     packages = with pkgs; [
-      kew # Music player
+      musikcube # Music player
       vesktop
       (discord.override {
         withOpenASAR = true;
