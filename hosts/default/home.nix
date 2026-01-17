@@ -15,8 +15,6 @@
     ../../modules/home/programs/mpv/default.nix
     ../../modules/home/programs/btop/default.nix
 
-    ../../modules/home/themes/spicetify.nix
-
     ../../modules/home/shell/nushell.nix
 
     ../../modules/home/services/easyeffects.nix
@@ -46,7 +44,7 @@
   #   base0C: #8ec07c
   #   base0D: #83a598
   #   base0E: #d3869b
-  # base0F: #d65d0e
+  #   base0F: #d65d0e
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
