@@ -51,7 +51,7 @@
           "$mod, T, exec, thunderbird"
           "$mod, RETURN, exec, kitty"
           "$mod, SPACE, exec, $menu"
-          "$mod, M, exec, spotify"
+          "$mod, M, exec, kitty --class moosic -e musikcube"
           "$mod, P, exec, $color-picker-hex"
           "$mod, W, exec, $bar"
           "$mod, E, exec, Thunar"
@@ -181,7 +181,7 @@
         animation=workspaces,1,6,overshot,slidevert
       }
 
-      windowrule = workspace 5, match:class Spotify
+      windowrule = workspace 5, match:class moosic
       windowrule = workspace 4, match:class Code
       windowrule = workspace 4, match:class dev.zed.Zed
       windowrule = workspace 4, match:class Godot_Engine
