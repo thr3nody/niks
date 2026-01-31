@@ -209,7 +209,7 @@
       windowrule = no_screen_share on, match:class secretty
       windowrule = no_screen_share on, match:class clipse
 
-      windowrule = no_screen_share on, match:title WhatsApp — Zen Browser
+      windowrule = no_screen_share on, match:title .*[Ww]hats[Aa]pp.*
       windowrule = no_screen_share on, match:title .*[Bb]itwarden.*
 
       layerrule = no_screen_share on, match:namespace notifications
