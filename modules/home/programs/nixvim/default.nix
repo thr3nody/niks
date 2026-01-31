@@ -15,8 +15,9 @@
     ./plugins/typst-vim.nix
     ./plugins/presence.nix
     ./plugins/lazygit.nix
-    ./plugins/render-markdown.nix
+    ./plugins/markview.nix
     ./plugins/snacks.nix
+    ./plugins/obsidian.nix
   ];
 
   programs.nixvim = {

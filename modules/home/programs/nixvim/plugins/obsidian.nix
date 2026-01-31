@@ -6,18 +6,34 @@
         min_chars = 2;
         nvim_cmp = true;
       };
-      picker.name = "telescope.nvim";
       new_notes_location = "current_dir";
+      preferred_link_style = "wiki";
       workspaces = [
         {
-          name = "Work";
-          path = "~/Documents/Obsidian/Work";
-        }
-        {
-          name = "Study";
-          path = "~/Documents/Obsidian/Study";
+          name = "Personal";
+          path = "~/Documents/Obsidian";
         }
       ];
+      attachments = {
+        folder = "./Images";
+      };
+      templates = {
+        folder = "/Templates";
+        dateFormat = "%Y-%m-%d";
+        timeFormat = "%H:%M";
+        substitutions = {};
+      };
+      legacy_commands = false;
+      note_id_func = {
+        __raw = ''
+          function(title)
+            if not title or title == "" then
+              return tostring(os.time())
+            end
+            return title
+          end
+        '';
+      };
     };
   };
 }
