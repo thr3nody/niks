@@ -47,7 +47,7 @@
           "$supermod, P, exec, $color-picker-rgb"
 
           "$mod, B, exec, zen"
-          "$mod, D, exec, vesktop"
+          "$mod, D, exec, signal-desktop"
           "$mod, T, exec, thunderbird"
           "$mod, RETURN, exec, kitty"
           "$mod, SPACE, exec, $menu"
@@ -192,6 +192,7 @@
       windowrule = workspace 1, match:class legcord
       windowrule = workspace 1, match:class discord
       windowrule = workspace 1, match:class vesktop
+      windowrule = workspace 1, match:class signal
 
       windowrule = float on, match:class org.pulseaudio.pavucontrol
       windowrule = size 622 652, match:class org.pulseaudio.pavucontrol
@@ -200,6 +201,7 @@
       windowrule = float on, match:class peaclock
       windowrule = size 360 230, match:class peaclock
 
+      windowrule = no_screen_share on, match:class signal
       windowrule = no_screen_share on, match:class vesktop
       windowrule = no_screen_share on, match:class discord
       windowrule = no_screen_share on, match:class legcord
