@@ -94,6 +94,7 @@
     extraGroups = ["networkmanager" "wheel" "docker" "kvm" "dialout"];
     packages = with pkgs; [
       musikcube # Music player
+      signal-desktop
       vesktop
       (discord.override {
         withOpenASAR = true;
@@ -196,6 +197,8 @@
     devenv
 
     vscode
+
+    unityhub
 
     php
     php82Packages.composer
