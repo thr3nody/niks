@@ -119,15 +119,6 @@
       cores = 4;
       max-jobs = 2;
     };
-    # Garbage Collection
-    gc = {
-      automatic = true;
-      dates = "Sat *-*-* 20:30:00";
-    };
-    optimise = {
-      automatic = true;
-      dates = ["Sat *-*-* 21:00:00"];
-    };
   };
 
   # Paket
