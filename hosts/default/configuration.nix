@@ -96,9 +96,6 @@
       musikcube # Music player
       signal-desktop
       vesktop
-      (discord.override {
-        withOpenASAR = true;
-      })
     ];
     shell = pkgs.nushell;
   };
@@ -174,22 +171,16 @@
     vlc
 
     # CLI/TUI
-    fzf
-    fd
-    ripgrep
     wl-clipboard # Clipboard for Wayland
     clipse # TUI Clipboard Manager
-    wget
     zoxide # Better <cd>
     cbonsai # Bonsai tree
     yazi # File manager
     lm_sensors
     bunbun # VERY CUTE!
-    unrar
     peaclock # Clock
     cava # Audio Visualizer
     inputs.curd.packages."${stdenv.hostPlatform.system}".default # Watch anime
-    nix-output-monitor # As the name would suggest
     nurl # Generate nix fetcher url
     nix-tree # Interactively browse dependency graphs of Nix derivations
 
@@ -200,20 +191,22 @@
 
     unityhub
 
-    php
-    php82Packages.composer
-
     dotnet-sdk
-    omnisharp-roslyn
-
-    nodejs_22
-
-    bun
-    deno
-
     python3
 
+    omnisharp-roslyn
     vscode-langservers-extracted
+
+    nodejs_22
+    bun
+
+    # Games
+    mindustry-wayland
+    inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.osu-lazer-bin
+
+    # Uh, gaming utilities
+    mangohud
+    protonup-ng
   ];
 
   environment = {
