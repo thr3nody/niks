@@ -174,6 +174,7 @@
     inputs.curd.packages."${stdenv.hostPlatform.system}".default # Watch anime
     nurl # Generate nix fetcher url
     nix-tree # Interactively browse dependency graphs of Nix derivations
+    nix-output-monitor
 
     # Coding Stuff
     devenv
