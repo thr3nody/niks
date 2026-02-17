@@ -13,7 +13,6 @@
     ./plugins/cmp.nix
     ./plugins/dap.nix
     ./plugins/typst-vim.nix
-    ./plugins/presence.nix
     ./plugins/lazygit.nix
     ./plugins/markview.nix
     ./plugins/snacks.nix
