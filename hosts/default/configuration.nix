@@ -35,13 +35,6 @@
 
   networking = {
     hostName = "nixos";
-    # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-    # Configure network proxy if necessary
-    # networking.proxy.default = "http://user:password@proxy:port/";
-    # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-    # Enable networking
     networkmanager.enable = true;
   };
 
@@ -66,9 +59,6 @@
 
   # RTKit
   security.rtkit.enable = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   hardware = {
     # Xbox Gamepad
@@ -114,6 +104,8 @@
     extraOptions = ''
       trusted-users = root erine
     '';
+    daemonIOSchedClass = "idle";
+    daemonCPUSchedPolicy = "idle";
     settings = {
       experimental-features = ["nix-command" "flakes"];
       cores = 4;
@@ -228,22 +220,11 @@
   systemd.services.nix-daemon.serviceConfig = {
     Nice = lib.mkForce 15;
     CPUWeight = 5;
-    IOSchedulingClass = lib.mkForce "idle";
-    IOSchedulingPriority = lib.mkForce 7;
+    CPUQuota = "70%";
+    IOWeight = 5;
+    MemoryHigh = "3072M";
+    MemoryMax = "4096M";
   };
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
