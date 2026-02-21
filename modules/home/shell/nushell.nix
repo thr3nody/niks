@@ -28,18 +28,6 @@
         rm -fp $tmp
       }
 
-      # NixOS rebuild with nh os rebuild.
-      def rebuild [
-        command: string = "switch"
-        --update (-u)
-      ] {
-        if $update {
-          nh os $command -a -u
-        } else {
-          nh os $command -a
-        }
-      }
-
       # Run nix shell in which the specified packages are available.
       def fuck [packages: string] {
         nom shell nixpkgs#($packages)
