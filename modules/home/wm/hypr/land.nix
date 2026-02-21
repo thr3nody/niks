@@ -46,7 +46,7 @@
           "$supermod, RETURN, exec, kitty --class secretty"
           "$supermod, P, exec, $color-picker-rgb"
 
-          "$mod, B, exec, zen"
+          "$mod, B, exec, zen-beta"
           "$mod, D, exec, signal-desktop"
           "$mod, T, exec, thunderbird"
           "$mod, RETURN, exec, kitty"
