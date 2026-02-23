@@ -167,6 +167,7 @@
     nurl # Generate nix fetcher url
     nix-tree # Interactively browse dependency graphs of Nix derivations
     nix-output-monitor
+    fd
 
     # Coding Stuff
     devenv
