@@ -5,6 +5,7 @@
 
   programs.zen-browser = {
     enable = true;
+    suppressXdgMigrationWarning = true;
     policies = {
       AutofillAddressEnabled = true;
       AutofillCreditCardEnabled = false;
