@@ -147,7 +147,7 @@
     aseprite
 
     # Browser
-    brave
+    vivaldi
 
     # Video thing
     kdePackages.kdenlive
