@@ -1,7 +1,3 @@
-### This is the sexiest Nix Configuration you've ever seen.
+# Erine's Nix Configurations
 
-I use Flake because it's flakey ❄️.
-I use home-manager to feel at home 🏡.
-I use your love to fill my life with hope ❤️.
-I like modularity because modularity is king 👑.
-NVIDIA, fuck you 🖕.
+This thing uses flake and home manager. Uh, I dunno what else to tell you.
