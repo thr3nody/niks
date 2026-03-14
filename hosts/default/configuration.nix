@@ -31,6 +31,7 @@
 
     initrd.luks.devices."luks-9addd389-4e0e-408d-be35-702214e2f5de".device = "/dev/disk/by-uuid/9addd389-4e0e-408d-be35-702214e2f5de";
     kernelParams = ["module_blacklist=mt7921e"];
+    kernelModules = ["uinput"];
   };
 
   networking = {
@@ -64,6 +65,9 @@
     # Xbox Gamepad
     xone.enable = true;
     # xpadneo.enable = true;
+
+    # opentabletdriver needs this.
+    uinput.enable = true;
 
     # Drawing Tablet
     opentabletdriver = {
