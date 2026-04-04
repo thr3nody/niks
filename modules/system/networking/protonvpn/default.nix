@@ -13,6 +13,6 @@
   };
 
   config = lib.mkIf config.netSetup.protonvpn.enable {
-    environment.systemPackages = with pkgs; [wireguard-tools protonvpn-gui];
+    environment.systemPackages = with pkgs; [wireguard-tools proton-vpn];
   };
 }

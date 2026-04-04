@@ -128,7 +128,7 @@
     gale
 
     pavucontrol
-    helvum
+    crosspipe
 
     # Input test thingy
     evtest
@@ -175,10 +175,6 @@
 
     # Coding Stuff
     devenv
-
-    vscode
-
-    unityhub
 
     dotnet-sdk
     python3

@@ -14,7 +14,6 @@
   config = lib.mkIf config.svcs.asusd.enable {
     services.asusd = {
       enable = true;
-      enableUserService = true;
     };
   };
 }
