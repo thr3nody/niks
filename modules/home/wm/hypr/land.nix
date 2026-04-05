@@ -171,6 +171,46 @@
       };
     };
 
+    windowrule = [
+      "workspace 5, match:class moosic"
+      "workspace 4, match:class Code"
+      "workspace 4, match:class dev.zed.Zed"
+      "workspace 4, match:class Godot_Engine"
+      "workspace 3, match:class firefox"
+      "workspace 3, match:class zen"
+      "workspace 3, match:class zen-beta"
+      "workspace 3, match:class zen-twilight"
+      "workspace 1, match:class legcord"
+      "workspace 1, match:class discord"
+      "workspace 1, match:class vesktop"
+      "workspace 1, match:class signal"
+
+      "float on, match:class org.pulseaudio.pavucontrol"
+      "size 622 652, match:class org.pulseaudio.pavucontrol"
+      "float on, match:class clipse"
+      "size 622 652, match:class clipse"
+      "float on, match:class peaclock"
+      "size 360 230, match:class peaclock"
+
+      "no_screen_share on, match:class signal"
+      "no_screen_share on, match:class vesktop"
+      "no_screen_share on, match:class discord"
+      "no_screen_share on, match:class legcord"
+      "no_screen_share on, match:class Thunar"
+      "no_screen_share on, match:class org.gnome.seahorse.Application"
+      "no_screen_share on, match:class thunderbird"
+      "no_screen_share on, match:class secretty"
+      "no_screen_share on, match:class clipse"
+
+      "no_screen_share on, match:title .*[Ww]hats[Aa]pp.*"
+      "no_screen_share on, match:title .*[Bb]itwarden.*"
+      "no_screen_share on, match:title .*[Gg]mail.*"
+    ];
+
+    layerrule = [
+      "no_screen_share on, match:namespace notifications"
+    ];
+
     extraConfig = ''
       animations {
         enabled=1
@@ -180,41 +220,6 @@
         animation=fade,1,10,default
         animation=workspaces,1,6,overshot,slidevert
       }
-
-      windowrule = workspace 5, match:class moosic
-      windowrule = workspace 4, match:class Code
-      windowrule = workspace 4, match:class dev.zed.Zed
-      windowrule = workspace 4, match:class Godot_Engine
-      windowrule = workspace 3, match:class firefox
-      windowrule = workspace 3, match:class zen
-      windowrule = workspace 3, match:class zen-beta
-      windowrule = workspace 3, match:class zen-twilight
-      windowrule = workspace 1, match:class legcord
-      windowrule = workspace 1, match:class discord
-      windowrule = workspace 1, match:class vesktop
-      windowrule = workspace 1, match:class signal
-
-      windowrule = float on, match:class org.pulseaudio.pavucontrol
-      windowrule = size 622 652, match:class org.pulseaudio.pavucontrol
-      windowrule = float on, match:class clipse
-      windowrule = size 622 652, match:class clipse
-      windowrule = float on, match:class peaclock
-      windowrule = size 360 230, match:class peaclock
-
-      windowrule = no_screen_share on, match:class signal
-      windowrule = no_screen_share on, match:class vesktop
-      windowrule = no_screen_share on, match:class discord
-      windowrule = no_screen_share on, match:class legcord
-      windowrule = no_screen_share on, match:class Thunar
-      windowrule = no_screen_share on, match:class org.gnome.seahorse.Application
-      windowrule = no_screen_share on, match:class thunderbird
-      windowrule = no_screen_share on, match:class secretty
-      windowrule = no_screen_share on, match:class clipse
-
-      windowrule = no_screen_share on, match:title .*[Ww]hats[Aa]pp.*
-      windowrule = no_screen_share on, match:title .*[Bb]itwarden.*
-
-      layerrule = no_screen_share on, match:namespace notifications
 
       exec-once = clipse -listen
 
