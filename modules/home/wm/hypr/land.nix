@@ -142,6 +142,8 @@
         accel_profile = "flat";
       };
 
+      gesture = ["3, vertical, workspace"];
+
       device = {
         name = "elan1203:00-04f3:307a-touchpad";
         sensitivity = 0.5;
@@ -168,6 +170,17 @@
       dwindle = {
         pseudotile = 1; # Enable pseudotiling on dwindle
         force_split = 0;
+      };
+
+      animations = {
+        enabled = 1;
+        bezier = ["overshot,0.13,0.99,0.29,1.1"];
+        animation = [
+          "windows,1,4,overshot,slide"
+          "border,1,10,default"
+          "fade,1,10,default"
+          "workspaces,1,6,overshot,slidevert"
+        ];
       };
 
       windowrule = [
@@ -209,25 +222,10 @@
       layerrule = [
         "no_screen_share on, match:namespace notifications"
       ];
+
+      cursor.no_hardware_cursors = false;
+
+      exec-once = ["clipse -listen"];
     };
-
-    extraConfig = ''
-      animations {
-        enabled=1
-        bezier=overshot,0.13,0.99,0.29,1.1
-        animation=windows,1,4,overshot,slide
-        animation=border,1,10,default
-        animation=fade,1,10,default
-        animation=workspaces,1,6,overshot,slidevert
-      }
-
-      exec-once = clipse -listen
-
-      cursor {
-        no_hardware_cursors = false
-      }
-
-      gesture = 3, vertical, workspace
-    '';
   };
 }
