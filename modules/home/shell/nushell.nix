@@ -55,11 +55,16 @@
         }
 
         if $optimize {
-          nix-store --optimise --verbose
+          let tmp = (mktemp)
+          "Optimizing nix store.\n" | save --append ~/niks/qleanlog.txt
+          nix-store --optimise --verbose o+e> $tmp
+          grep "MiB freed by hard-linking" $tmp | save --append --raw ~/niks/qleanlog.txt
+          rm $tmp
         }
 
         if $repair {
           sudo nix-store --verify --check-contents --repair --verbose
+          "Ran nix-store verify, check contents, and repair.\n" | save --append ~/niks/qleanlog.txt
         }
       }
 
