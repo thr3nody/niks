@@ -42,7 +42,6 @@
       bind =
         [
           "$supermod, B, exec, nvidia-offload zen"
-          "$supermod, D, exec, legcord"
           "$supermod, RETURN, exec, kitty --class secretty"
           "$supermod, P, exec, $color-picker-rgb"
 
