@@ -173,6 +173,10 @@
     nix-output-monitor
     fd
 
+    # Watch anime together online.
+    ani-cli
+    syncplay
+
     # Coding Stuff
     devenv
 
