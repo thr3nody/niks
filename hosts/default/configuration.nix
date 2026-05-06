@@ -119,7 +119,6 @@
 
   # Paket
   environment.systemPackages = with pkgs; [
-    # audacity # INFO: Build failed in current update.
     zathura
     supergfxctl
     mako
@@ -146,6 +145,7 @@
     # Image things
     feh
     gimp3-with-plugins
+    rapidraw
     krita
     inkscape
     aseprite
