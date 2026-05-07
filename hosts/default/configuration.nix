@@ -231,6 +231,32 @@
     MemoryMax = "4096M";
   };
 
+  nixpkgs.overlays = [
+    (final: prev: {
+      ani-cli = prev.ani-cli.overrideAttrs (_: {
+        version = "4.14";
+        src = prev.fetchFromGitHub {
+          owner = "pystardust";
+          repo = "ani-cli";
+          rev = "6803b8a15faafa41cb79271e9a4f7f9c70a53651";
+          hash = "sha256-OyCKDN89sBz59+3JncMDyNOq8UMqqjara+A0Owo3oko=";
+        };
+        postInstall = ''
+          wrapProgram $out/bin/ani-cli \
+          --prefix PATH : ${prev.lib.makeBinPath [
+            prev.curl
+            prev.openssl
+            prev.fzf
+            prev.mpv
+            prev.ffmpeg
+            prev.aria2
+            prev.yt-dlp
+          ]}
+        '';
+      });
+    })
+  ];
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
