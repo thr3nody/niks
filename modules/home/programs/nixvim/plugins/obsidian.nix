@@ -7,7 +7,7 @@
         nvim_cmp = true;
       };
       new_notes_location = "current_dir";
-      preferred_link_style = "wiki";
+      link.style = "wiki";
       workspaces = [
         {
           name = "Personal";
