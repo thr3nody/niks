@@ -125,6 +125,7 @@
     motrix
     drawio
     gale
+    blender
 
     pavucontrol
     crosspipe
