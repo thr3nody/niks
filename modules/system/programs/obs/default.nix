@@ -5,29 +5,51 @@
   ...
 }: {
   options = {
-    prog.obs.enable = lib.mkOption {
-      type = lib.types.bool;
-      default = true;
-      description = "Enables OBS.";
+    progs.obs = {
+      enable = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+        description = "Enables OBS.";
+      };
+
+      cudaSupport = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+        description = "Enable CUDA support for Nvidia cards.";
+      };
+
+      extraPlugins = lib.mkOption {
+        type = lib.types.listOf lib.types.package;
+        default = [];
+        description = "Additional OBS plugins to install.";
+      };
+
+      virtualCamera = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+        description = "Enable OBS virtual camera.";
+      };
     };
   };
 
-  config = lib.mkIf config.prog.obs.enable {
+  config = lib.mkIf config.progs.obs.enable {
     programs.obs-studio = {
       enable = true;
 
       package = pkgs.obs-studio.override {
-        cudaSupport = true;
+        inherit (config.progs.obs) cudaSupport;
       };
 
-      plugins = with pkgs.obs-studio-plugins; [
-        wlrobs
-        obs-backgroundremoval
-        obs-pipewire-audio-capture
-      ];
+      plugins = with pkgs.obs-studio-plugins;
+        [
+          wlrobs
+          obs-backgroundremoval
+          obs-pipewire-audio-capture
+        ]
+        ++ config.progs.obs.extraPlugins;
     };
 
-    boot = {
+    boot = lib.mkIf config.progs.obs.virtualCamera {
       extraModulePackages = with config.boot.kernelPackages; [
         v4l2loopback
       ];

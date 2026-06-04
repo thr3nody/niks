@@ -5,14 +5,14 @@
   ...
 }: {
   options = {
-    prog.thunar.enable = lib.mkOption {
+    progs.thunar.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
       description = "Enables Thunar file manager.";
     };
   };
 
-  config = lib.mkIf config.prog.thunar.enable {
+  config = lib.mkIf config.progs.thunar.enable {
     environment.systemPackages = with pkgs; [
       file-roller
     ];

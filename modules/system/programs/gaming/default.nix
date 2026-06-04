@@ -4,14 +4,14 @@
   ...
 }: {
   options = {
-    prog.steamy.enable = lib.mkOption {
+    progs.steamy.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
       description = "Enables gaming.";
     };
   };
 
-  config = lib.mkIf config.prog.steamy.enable {
+  config = lib.mkIf config.progs.steamy.enable {
     programs = {
       # Steamy
       steam = {

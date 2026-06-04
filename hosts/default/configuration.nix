@@ -9,7 +9,7 @@
 
     inputs.home-manager.nixosModules.default
 
-    # Truly modular
+    # Truly modular (I guess...)
     ../../modules/system/audio/default.nix
     ../../modules/system/dm/default.nix
     ../../modules/system/networking/default.nix
@@ -221,6 +221,11 @@
   svcs = {
     tailscale.enable = true;
     actual.enable = true;
+  };
+  progs.obs = {
+    enable = true;
+    cudaSupport = true;
+    virtualCamera = true;
   };
 
   systemd.services.nix-daemon.serviceConfig = {

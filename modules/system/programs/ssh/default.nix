@@ -4,14 +4,14 @@
   ...
 }: {
   options = {
-    prog.ssh.autoStartAgent = lib.mkOption {
+    progs.ssh.autoStartAgent = lib.mkOption {
       type = lib.types.bool;
       default = true;
       description = "Autostart ssh-agent on boot.";
     };
   };
 
-  config = lib.mkIf config.prog.ssh.autoStartAgent {
+  config = lib.mkIf config.progs.ssh.autoStartAgent {
     programs.ssh.startAgent = true;
   };
 }
