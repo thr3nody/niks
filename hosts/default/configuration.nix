@@ -227,6 +227,11 @@
     cudaSupport = true;
     virtualCamera = true;
   };
+  graphics = {
+    opengl.enable = true;
+    cpu = "intel";
+    nvidia.vaapiEnable = true;
+  };
 
   systemd.services.nix-daemon.serviceConfig = {
     Nice = lib.mkForce 15;
