@@ -19,7 +19,7 @@
     ../../modules/home/services/easyeffects.nix
   ];
 
-  # nixos machine
+  # eropa machine
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
 
@@ -55,15 +55,15 @@
   };
 
   wm.hyprland = {
-    monitors = ["eDP-1,1920x1080@144,0x0,1" "HDMI-A-1,1920x1080@60,auto,1,mirror,eDP-1"];
+    monitors = ["eDP-1,preferred,0x0,1"];
     mouseSens = -0.6;
     touchpadScrollFactor = 0.4;
-    devices = [
-      {
-        name = "elan1203:00-04f3:307a-touchpad";
-        sensitivity = 0.5;
-      }
-    ];
+    # devices = [
+    #   {
+    #     name = "CHANGE-THIS-AFTER-<hyprctl devices>";
+    #     sensitivity = 0.5;
+    #   }
+    # ];
   };
 
   # Gnome GTK4 set all to dark theme.

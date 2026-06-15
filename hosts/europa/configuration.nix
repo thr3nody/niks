@@ -29,13 +29,11 @@
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
 
-    initrd.luks.devices."luks-9addd389-4e0e-408d-be35-702214e2f5de".device = "/dev/disk/by-uuid/9addd389-4e0e-408d-be35-702214e2f5de";
-    kernelParams = ["module_blacklist=mt7921e"];
-    kernelModules = ["uinput"];
+    initrd.luks.devices."cryptswap".device = "/dev/disk/by-uuid/CHANGE-THE-UUID-HERE";
   };
 
   networking = {
-    hostName = "nixos";
+    hostName = "europa";
     networkmanager.enable = true;
   };
 
@@ -61,35 +59,14 @@
   # RTKit
   security.rtkit.enable = true;
 
-  hardware = {
-    # Xbox Gamepad
-    xone.enable = true;
-    # xpadneo.enable = true;
-
-    # opentabletdriver needs this.
-    uinput.enable = true;
-
-    # Drawing Tablet
-    opentabletdriver = {
-      enable = true;
-      daemon.enable = true;
-      blacklistedKernelModules = [
-        # Just some examples from the docs.
-        "hid-uclogic"
-        "wacom"
-      ];
-    };
-  };
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.erine = {
     isNormalUser = true;
-    description = "Erine Moira";
+    description = "Erine Peregrine";
     extraGroups = ["networkmanager" "wheel" "docker" "kvm" "dialout"];
     packages = with pkgs; [
       musikcube # Music player
       signal-desktop
-      vesktop
     ];
     shell = pkgs.nushell;
   };
@@ -120,15 +97,11 @@
   # Paket
   environment.systemPackages = with pkgs; [
     zathura
-    supergfxctl
     mako
     motrix
     drawio
-    gale
-    blender
 
     pavucontrol
-    crosspipe
 
     # Input test thingy
     evtest
@@ -146,17 +119,7 @@
     # Image things
     feh
     gimp3-with-plugins
-    rapidraw
-    krita
-    inkscape
     aseprite
-
-    # Browser
-    vivaldi
-
-    # Video thing
-    kdePackages.kdenlive
-    vlc
 
     # CLI/TUI
     wl-clipboard # Clipboard for Wayland
@@ -167,32 +130,19 @@
     lm_sensors
     bunbun # VERY CUTE!
     peaclock # Clock
-    cava # Audio Visualizer
     inputs.curd.packages."${stdenv.hostPlatform.system}".default # Watch anime
     nurl # Generate nix fetcher url
     nix-tree # Interactively browse dependency graphs of Nix derivations
     nix-output-monitor
     fd
 
-    # Watch anime together online.
-    ani-cli
-    syncplay
-
     # Coding Stuff
-    devenv
-
-    dotnet-sdk
     python3
 
-    omnisharp-roslyn
     vscode-langservers-extracted
 
     nodejs_22
     bun
-
-    # Games
-    mindustry-wayland
-    inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.osu-lazer-bin
 
     # Uh, gaming utilities
     mangohud
@@ -217,21 +167,11 @@
   # Polkit
   security.polkit.enable = true;
 
-  netSetup.protonvpn.enable = true;
-  svcs = {
-    tailscale.enable = true;
-    asusd.enable = true;
-    actual.enable = true;
-  };
-  progs.obs = {
-    enable = true;
-    cudaSupport = true;
-    virtualCamera = true;
-  };
+  svcs.actual.enable = true;
   graphics = {
     opengl.enable = true;
-    cpu = "intel";
-    nvidia.vaapiEnable = true;
+    cpu = "amd";
+    nvidia.vaapiEnable = false;
   };
 
   systemd.services.nix-daemon.serviceConfig = {
@@ -243,37 +183,11 @@
     MemoryMax = "4096M";
   };
 
-  nixpkgs.overlays = [
-    (final: prev: {
-      ani-cli = prev.ani-cli.overrideAttrs (_: {
-        version = "4.14";
-        src = prev.fetchFromGitHub {
-          owner = "pystardust";
-          repo = "ani-cli";
-          rev = "6803b8a15faafa41cb79271e9a4f7f9c70a53651";
-          hash = "sha256-OyCKDN89sBz59+3JncMDyNOq8UMqqjara+A0Owo3oko=";
-        };
-        postInstall = ''
-          wrapProgram $out/bin/ani-cli \
-          --prefix PATH : ${prev.lib.makeBinPath [
-            prev.curl
-            prev.openssl
-            prev.fzf
-            prev.mpv
-            prev.ffmpeg
-            prev.aria2
-            prev.yt-dlp
-          ]}
-        '';
-      });
-    })
-  ];
-
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system.stateVersion = "26.05"; # Did you read the comment?
 }
