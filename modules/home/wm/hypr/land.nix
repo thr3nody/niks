@@ -170,7 +170,7 @@
 
           touchpad = {
             natural_scroll = true;
-            scroll_factor = 0.4;
+            scroll_factor = config.wm.hyprland.touchpadScrollFactor;
           };
 
           sensitivity = -0.6;

@@ -55,15 +55,15 @@
   };
 
   wm.hyprland = {
-    monitors = ["eDP-1,preferred,0x0,1"];
+    monitors = ["eDP-1,1920x1080@60,0x0,1"];
     mouseSens = -0.6;
-    touchpadScrollFactor = 0.4;
-    # devices = [
-    #   {
-    #     name = "CHANGE-THIS-AFTER-<hyprctl devices>";
-    #     sensitivity = 0.5;
-    #   }
-    # ];
+    touchpadScrollFactor = 0.3;
+    devices = [
+      {
+        name = "synps/2-synaptics-touchpad";
+        sensitivity = 0.3;
+      }
+    ];
   };
 
   # Gnome GTK4 set all to dark theme.

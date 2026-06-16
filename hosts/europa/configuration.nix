@@ -29,7 +29,7 @@
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
 
-    initrd.luks.devices."cryptswap".device = "/dev/disk/by-uuid/CHANGE-THE-UUID-HERE";
+    initrd.luks.devices."cryptswap".device = "/dev/disk/by-uuid/468d034a-0b95-49cf-99a0-7f4a8e5e3274";
   };
 
   networking = {
