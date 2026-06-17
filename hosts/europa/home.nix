@@ -57,7 +57,7 @@
   wm.hyprland = {
     monitors = ["eDP-1,1920x1080@60,0x0,1"];
     mouseSens = -0.6;
-    touchpadScrollFactor = 0.3;
+    touchpadScrollFactor = 0.15;
     devices = [
       {
         name = "synps/2-synaptics-touchpad";
