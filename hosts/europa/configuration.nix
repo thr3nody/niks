@@ -30,6 +30,10 @@
     loader.efi.canTouchEfiVariables = true;
 
     initrd.luks.devices."cryptswap".device = "/dev/disk/by-uuid/468d034a-0b95-49cf-99a0-7f4a8e5e3274";
+
+    kernelParams = [
+      "mem_sleep_default=deep"
+    ];
   };
 
   networking = {
@@ -167,7 +171,13 @@
   # Polkit
   security.polkit.enable = true;
 
-  svcs.actual.enable = true;
+  # Stock Power Management
+  powerManagement.enable = true;
+
+  svcs = {
+    actual.enable = true;
+    auto-cpufreq.enable = true;
+  };
   graphics = {
     opengl.enable = true;
     cpu = "amd";

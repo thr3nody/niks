@@ -9,5 +9,6 @@
     ./nextdns/default.nix
     ./tailscale/default.nix
     ./actual/default.nix
+    ./auto-cpufreq/default.nix
   ];
 }
