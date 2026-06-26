@@ -6,7 +6,7 @@
   options = {
     graphics.nvidia.stable.enable = lib.mkOption {
       type = lib.types.bool;
-      default = true;
+      default = false;
       description = "Enables nvidia stable driver.";
     };
   };

@@ -231,7 +231,10 @@
   graphics = {
     opengl.enable = true;
     cpu = "intel";
-    nvidia.vaapiEnable = true;
+    nvidia = {
+      vaapiEnable = true;
+      stable.enable = true;
+    };
   };
 
   systemd.services.nix-daemon.serviceConfig = {
