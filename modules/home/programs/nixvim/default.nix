@@ -21,6 +21,7 @@
 
   programs.nixvim = {
     enable = true;
+    nixpkgs.source = inputs.nixpkgs;
     colorschemes.gruvbox = {
       enable = true;
       settings.transparent_mode = true;
