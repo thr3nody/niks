@@ -69,7 +69,6 @@
     description = "Erine Peregrine";
     extraGroups = ["networkmanager" "wheel" "docker" "kvm" "dialout"];
     packages = with pkgs; [
-      musikcube # Music player
       signal-desktop
     ];
     shell = pkgs.nushell;

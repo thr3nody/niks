@@ -1,8 +1,4 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = [
     pkgs.clipse # TUI Clipboard Manager
   ];
