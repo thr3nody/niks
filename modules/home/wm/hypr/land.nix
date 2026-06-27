@@ -199,10 +199,7 @@
           };
         };
 
-        dwindle = {
-          pseudotile = 1; # Enable pseudotiling on dwindle
-          force_split = 0;
-        };
+        dwindle.force_split = 0;
 
         animations = {
           enabled = 1;
