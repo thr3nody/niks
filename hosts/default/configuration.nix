@@ -160,7 +160,6 @@
 
     # CLI/TUI
     wl-clipboard # Clipboard for Wayland
-    clipse # TUI Clipboard Manager
     zoxide # Better <cd>
     cbonsai # Bonsai tree
     yazi # File manager
