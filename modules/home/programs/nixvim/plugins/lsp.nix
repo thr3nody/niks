@@ -122,6 +122,10 @@
           enable = true;
           package = pkgs.ccls;
         };
+        qmlls = {
+          enable = true;
+          package = pkgs.kdePackages.qtdeclarative;
+        };
       };
     };
     none-ls = {

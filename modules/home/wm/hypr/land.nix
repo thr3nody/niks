@@ -146,6 +146,9 @@
           ", XF86MonBrightnessUp, exec, swayosd-client --brightness raise"
           ", XF86MonBrightnessDown, exec, swayosd-client --brightness lower"
 
+          ", XF86AudioMute, exec, sleep 0.07; swayosd-client --output-volume mute-toggle"
+          ", XF86AudioMicMute, exec, sleep 0.07; swayosd-client --input-volume mute-toggle"
+
           ", Caps_Lock, exec, sleep 0.07; swayosd-client --caps-lock"
           ", Num_Lock, exec, sleep 0.07; swayosd-client --num-lock"
         ];
