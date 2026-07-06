@@ -146,9 +146,11 @@
     nodejs_22
     bun
 
-    # Uh, gaming utilities
+    # Uh, gaming stuff
     mangohud
     protonup-ng
+
+    mindustry
   ];
 
   environment = {
