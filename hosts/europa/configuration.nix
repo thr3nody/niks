@@ -103,6 +103,7 @@
     mako
     motrix
     drawio
+    blender
 
     pavucontrol
 

@@ -8,7 +8,7 @@
     ../../themes/cursor.nix
     ../../themes/gtk.nix
 
-    ../components/waybar.nix
+    ../components/quickshell/default.nix
     ../components/tofi/default.nix
     ../components/mako.nix
     ../components/swayosd.nix

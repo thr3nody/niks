@@ -172,6 +172,10 @@
               "--wrap-text"
             ];
           };
+          qmlformat = {
+            enable = true;
+            package = pkgs.qt6.qtdeclarative;
+          };
         };
       };
     };
