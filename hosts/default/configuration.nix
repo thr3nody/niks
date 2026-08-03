@@ -244,6 +244,8 @@
     MemoryMax = "4096M";
   };
 
+  services.upower.enable = true;
+
   nixpkgs.overlays = [
     (final: prev: {
       ani-cli = prev.ani-cli.overrideAttrs (_: {
