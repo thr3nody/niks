@@ -11,6 +11,8 @@
     aileron
     nacelle
     mplus-outline-fonts.githubRelease
+    gyre-fonts
+    arkpandora_ttf
 
     nerd-fonts.fira-code
     nerd-fonts.fira-mono
