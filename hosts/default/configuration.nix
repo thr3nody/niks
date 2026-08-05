@@ -195,6 +195,7 @@
     # Uh, gaming utilities
     mangohud
     protonup-ng
+    bottles
   ];
 
   environment = {
