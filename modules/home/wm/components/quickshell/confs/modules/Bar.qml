@@ -11,8 +11,10 @@ PanelWindow {
     property int revealTriggerWidth: 220
     property int revealTriggerHeight: 6
 
-    property int pillWidth: 360
+    property int basePillWidth: 360
     property int pillHeight: 45
+    property int pillContentPadding: pillHeight
+    property int pillWidth: Math.max(basePillWidth, pillContent.implicitWidth + pillContentPadding)
     property int topPadding: 10
     property int hideDelayMs: 500
     property string fontFam: "JetBrainsMono Nerd Font"
@@ -71,6 +73,13 @@ PanelWindow {
         border {
             color: "#fe8019"
             width: 2
+        }
+
+        Behavior on width {
+            NumberAnimation {
+                duration: 170
+                easing.type: Easing.OutCubic
+            }
         }
 
         RowLayout {
