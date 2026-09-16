@@ -69,7 +69,7 @@
         mode = "preferred";
         position = "0x0";
         scale = "auto";
-        mirror = "HDMI-A-1";
+        mirror = "eDP-1";
       }
     ];
     mouseSens = -0.6;
