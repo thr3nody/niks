@@ -21,8 +21,9 @@
 
   options.wm.hyprland = {
     monitors = lib.mkOption {
-      type = lib.types.listOf lib.types.str;
+      type = lib.types.listOf (lib.types.attrsOf lib.types.anything);
       default = [];
+      description = "Monitor config blocks.";
     };
 
     devices = lib.mkOption {
@@ -64,98 +65,111 @@
 
     wayland.windowManager.hyprland = {
       enable = true;
+      configType = "lua";
       systemd.enable = false;
       settings = with config.colorScheme.palette; {
-        "$mod" = "SUPER";
-        "$supermod" = "SUPERSHIFT";
+        bind = let
+          lua = lib.generators.mkLuaInline;
+          mkBind = args: {_args = args;};
+          bind = key: action:
+            mkBind [
+              key
+              (lua action)
+            ];
+          bindWithFlags = key: action: flags:
+            mkBind [
+              key
+              (lua action)
+              flags
+            ];
+          exec = cmd: ''hl.dsp.exec_cmd([[${cmd}]])'';
+          mvToWs = ws: ''hl.dsp.focus({ workspace = "${ws}"})'';
+          mvWinToWs = ws: ''hl.dsp.window.move({ workspace = "${ws}"})'';
+          mvWinTo = dr: ''hl.dsp.window.move({ direction = "${dr}"})'';
+          mvFocusTo = dr: ''hl.dsp.focus({ direction = "${dr}"})'';
+          fullScreenMode = mode: ''hl.dsp.window.fullscreen({ mode = "${mode}"})'';
+        in [
+          (bind "SUPER + SPACE" (exec "tofi-run | xargs hyprctl dispatch exec --"))
 
-        "$menu" = "tofi-run | xargs hyprctl dispatch exec --";
-        "$bar" = "pkill waybar || waybar &";
-        "$clipboard" = "kitty --class clipse -e clipse";
-        "$color-picker-hex" = "hyprpicker -a -f hex";
-        "$color-picker-rgb" = "hyprpicker -a -f rgb";
-        "$clock" = "pkill peaclock || kitty --class peaclock -e peaclock";
-        "$screenshot" = "grimblast --notify copysave area \"./Pictures/Screenshots/$(date +'%Y-%m-%d %H:%M:%S').png\"";
-        "$screenshot-full" = "grimblast --notify copysave screen \"./Pictures/Screenshots/$(date +'%Y-%m-%d %H:%M:%S').png\"";
+          # Workspace
+          (bind "SUPER + 1" (mvToWs "1"))
+          (bind "SUPER + 2" (mvToWs "2"))
+          (bind "SUPER + 3" (mvToWs "3"))
+          (bind "SUPER + 4" (mvToWs "4"))
+          (bind "SUPER + 5" (mvToWs "5"))
+          (bind "SUPER + 6" (mvToWs "6"))
+          (bind "SUPER + 7" (mvToWs "7"))
+          (bind "SUPER + 8" (mvToWs "8"))
+          (bind "SUPER + 9" (mvToWs "9"))
+          (bind "SUPER + 0" (mvToWs "10"))
 
-        bind =
-          [
-            "$supermod, RETURN, exec, kitty --class secretty"
-            "$supermod, P, exec, $color-picker-rgb"
+          (bind "SUPER + SHIFT + 1" (mvWinToWs "1"))
+          (bind "SUPER + SHIFT + 2" (mvWinToWs "2"))
+          (bind "SUPER + SHIFT + 3" (mvWinToWs "3"))
+          (bind "SUPER + SHIFT + 4" (mvWinToWs "4"))
+          (bind "SUPER + SHIFT + 5" (mvWinToWs "5"))
+          (bind "SUPER + SHIFT + 6" (mvWinToWs "6"))
+          (bind "SUPER + SHIFT + 7" (mvWinToWs "7"))
+          (bind "SUPER + SHIFT + 8" (mvWinToWs "8"))
+          (bind "SUPER + SHIFT + 9" (mvWinToWs "9"))
+          (bind "SUPER + SHIFT + 0" (mvWinToWs "10"))
 
-            "$mod, B, exec, zen-beta"
-            "$mod, D, exec, signal-desktop"
-            "$mod, T, exec, thunderbird"
-            "$mod, RETURN, exec, kitty"
-            "$mod, SPACE, exec, $menu"
-            "$mod, M, exec, kitty --class moosic -e musikcube"
-            "$mod, P, exec, $color-picker-hex"
-            "$mod, W, exec, $bar"
-            "$mod, E, exec, Thunar"
-            "$mod, V, exec, $clipboard"
-            "$mod, C, exec, $clock"
+          (bindWithFlags "SUPER + mouse_up" "hl.dsp.focus({ workspace = \"e+1\"})" {mouse = true;})
+          (bindWithFlags "SUPER + mouse_down" "hl.dsp.focus({ workspace = \"e-1\"})" {mouse = true;})
 
-            "$mod, F, fullscreen"
-            "$mod, Q, killactive"
-            "$mod, A, togglefloating"
+          # Window
+          (bind "SUPER + H" (mvFocusTo "left"))
+          (bind "SUPER + L" (mvFocusTo "right"))
+          (bind "SUPER + K" (mvFocusTo "up"))
+          (bind "SUPER + J" (mvFocusTo "down"))
 
-            "$mod, H, movefocus, l"
-            "$mod, L, movefocus, r"
-            "$mod, K, movefocus, u"
-            "$mod, J, movefocus, d"
+          (bind "SUPER + SHIFT + H" (mvWinTo "left"))
+          (bind "SUPER + SHIFT + L" (mvWinTo "right"))
+          (bind "SUPER + SHIFT + K" (mvWinTo "up"))
+          (bind "SUPER + SHIFT + J" (mvWinTo "down"))
 
-            "$supermod, H, movewindow, l"
-            "$supermod, L, movewindow, r"
-            "$supermod, K, movewindow, u"
-            "$supermod, J, movewindow, d"
+          (bind "SUPER + Q" "hl.dsp.window.close()")
 
-            "$mod, mouse_up, workspace, e+1"
-            "$mod, mouse_down, workspace, e-1"
+          (bind "SUPER + F" (fullScreenMode "maximized"))
+          (bind "SUPER + F11" (fullScreenMode "fullscreen"))
+          (bind "SUPER + A" "hl.dsp.window.float()")
 
-            "$supermod, Q, exec, uwsm stop"
-            "$supermod, BACKSPACE, exec, hyprlock"
+          (bindWithFlags "SUPER + mouse:272" "hl.dsp.window.drag()" {mouse = true;})
+          (bindWithFlags "SUPER + mouse:273" "hl.dsp.window.resize()" {mouse = true;})
 
-            "$mod, 0, workspace, 10"
-            "$supermod, 0, movetoworkspace, 10"
-          ]
-          ++ config.wm.hyprland.extraBinds
-          ++ (
-            # workspaces
-            # binds $mod + [shift +] {1..9} to [move to] workspace {1..9}
-            builtins.concatLists (builtins.genList (
-                i: let
-                  ws = i + 1;
-                in [
-                  "$mod, code:1${toString i}, workspace, ${toString ws}"
-                  "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
-                ]
-              )
-              9)
-          );
+          # Apps
+          (bind "SUPER + RETURN" (exec "kitty"))
+          (bind "SUPER + SHIFT + RETURN" (exec "kitty --class secretty"))
 
-        bindl = [
-          "$mod, S, exec, $screenshot"
-          "$supermod, S, exec, $screenshot-full"
-          ", PRINT, exec, $screenshot-full"
-        ];
+          (bind "SUPER + B" (exec "zen-beta"))
+          (bind "SUPER + D" (exec "signal-desktop"))
+          (bind "SUPER + T" (exec "thunderbird"))
+          (bind "SUPER + M" (exec "kitty --class moosic -e musikcube"))
+          (bind "SUPER + P" (exec "hyprpicker -a -f hex"))
+          (bind "SUPER + SHIFT + P" (exec "hyprpicker -a -f rgb"))
+          (bind "SUPER + E" (exec "thunar"))
+          (bind "SUPER + V" (exec "kitty --class clipse -e clipse"))
+          (bind "SUPER + C" (exec "pkill peaclock || kitty --class peaclock -e peaclock"))
 
-        binde = [
-          ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise"
-          ", XF86AudioLowerVolume, exec, swayosd-client --output-volume lower"
+          # Other stuff
+          (bind "SUPER + SHIFT + Q" (exec "uwsm stop"))
+          (bind "SUPER + SHIFT + BACKSPACE" (exec "hyprlock"))
 
-          ", XF86MonBrightnessUp, exec, swayosd-client --brightness raise"
-          ", XF86MonBrightnessDown, exec, swayosd-client --brightness lower"
+          (bindWithFlags "SUPER + S" (exec "grimblast --notify copysave area \"./Pictures/Screenshots/$(date +'%Y-%m-%d %H:%M:%S').png\"") {locked = true;})
+          (bindWithFlags "SUPER + SHIFT + S" (exec "grimblast --notify copysave screen \"./Pictures/Screenshots/$(date +'%Y-%m-%d %H:%M:%S').png\"") {locked = true;})
+          (bindWithFlags "PRINT" (exec "grimblast --notify copysave screen \"./Pictures/Screenshots/$(date +'%Y-%m-%d %H:%M:%S').png\"") {locked = true;})
 
-          ", XF86AudioMute, exec, sleep 0.07; swayosd-client --output-volume mute-toggle"
-          ", XF86AudioMicMute, exec, sleep 0.07; swayosd-client --input-volume mute-toggle"
+          (bindWithFlags "XF86AudioRaiseVolume" (exec "swayosd-client --output-volume raise") {repeat = true;})
+          (bindWithFlags "XF86AudioLowerVolume" (exec "swayosd-client --output-volume lower") {repeat = true;})
 
-          ", Caps_Lock, exec, sleep 0.07; swayosd-client --caps-lock"
-          ", Num_Lock, exec, sleep 0.07; swayosd-client --num-lock"
-        ];
+          (bind "XF86AudioMute" (exec "sleep 0.07; swayosd-client --output-volume mute-toggle"))
+          (bind "XF86AudioMicMute" (exec "sleep 0.07; swayosd-client --input-volume mute-toggle"))
 
-        bindm = [
-          "$mod, mouse:272, movewindow"
-          "$mod, mouse:273, resizewindow"
+          (bindWithFlags "XF86MonBrightnessUp" (exec "swayosd-client --brightness raise") {repeat = true;})
+          (bindWithFlags "XF86MonBrightnessDown" (exec "swayosd-client --brightness lower") {repeat = true;})
+
+          (bind "Caps_Lock" (exec "sleep 0.07; swayosd-client --caps-lock"))
+          (bind "Num_Lock" (exec "sleep 0.07; swayosd-client --num-lock"))
         ];
 
         monitor = config.wm.hyprland.monitors;
@@ -176,11 +190,9 @@
             scroll_factor = config.wm.hyprland.touchpadScrollFactor;
           };
 
-          sensitivity = -0.6;
+          sensitivity = config.wm.hyprland.mouseSens;
           accel_profile = "flat";
         };
-
-        gesture = ["3, vertical, workspace"];
 
         device = config.wm.hyprland.devices;
 
@@ -204,6 +216,8 @@
 
         dwindle.force_split = 0;
 
+        # TODO: These might need reworks. But should be ok.
+        # https://wiki.hypr.land/configuring/core/animations/
         animations = {
           enabled = 1;
           bezier = ["overshot,0.13,0.99,0.29,1.1"];
@@ -215,49 +229,97 @@
           ];
         };
 
-        windowrule = [
-          "workspace 5, match:class moosic"
-          "workspace 4, match:class Code"
-          "workspace 4, match:class dev.zed.Zed"
-          "workspace 4, match:class Godot_Engine"
-          "workspace 3, match:class firefox"
-          "workspace 3, match:class zen"
-          "workspace 3, match:class zen-beta"
-          "workspace 3, match:class zen-twilight"
-          "workspace 1, match:class legcord"
-          "workspace 1, match:class discord"
-          "workspace 1, match:class vesktop"
-          "workspace 1, match:class signal"
+        window_rule = [
+          {
+            match.class = "moosic";
+            workspace = "5";
+          }
+          {
+            match.class = "zen-beta";
+            workspace = "3";
+          }
 
-          "float on, match:class org.pulseaudio.pavucontrol"
-          "size 622 652, match:class org.pulseaudio.pavucontrol"
-          "float on, match:class clipse"
-          "size 622 652, match:class clipse"
-          "float on, match:class peaclock"
-          "size 360 230, match:class peaclock"
+          {
+            match.class = "vesktop";
+            workspace = "1";
+            no_screen_share = true;
+          }
+          {
+            match.class = "signal";
+            workspace = "1";
+            no_screen_share = true;
+          }
 
-          "no_screen_share on, match:class signal"
-          "no_screen_share on, match:class vesktop"
-          "no_screen_share on, match:class discord"
-          "no_screen_share on, match:class legcord"
-          "no_screen_share on, match:class Thunar"
-          "no_screen_share on, match:class org.gnome.seahorse.Application"
-          "no_screen_share on, match:class thunderbird"
-          "no_screen_share on, match:class secretty"
-          "no_screen_share on, match:class clipse"
+          {
+            match.class = "org.pulseaudio.pavucontrol";
+            float = true;
+            size = [622 652];
+          }
+          {
+            match.class = "clipse";
+            float = true;
+            size = [622 652];
+          }
+          {
+            match.class = "peaclock";
+            float = true;
+            size = [360 230];
+          }
 
-          "no_screen_share on, match:title .*[Ww]hats[Aa]pp.*"
-          "no_screen_share on, match:title .*[Bb]itwarden.*"
-          "no_screen_share on, match:title .*[Gg]mail.*"
+          {
+            match.class = "Thunar";
+            no_screen_share = true;
+          }
+          {
+            match.class = "org.gnome.seahorse.Application";
+            no_screen_share = true;
+          }
+          {
+            match.class = "secretty";
+            no_screen_share = true;
+          }
+          {
+            match.class = "clipse";
+            no_screen_share = true;
+          }
+          {
+            match.title = ".*[Ww]hats[Aa]pp.*";
+            no_screen_share = true;
+          }
+          {
+            match.title = ".*[Bb]itwarden.*";
+            no_screen_share = true;
+          }
+          {
+            match.title = ".*[Gg]mail.*";
+            no_screen_share = true;
+          }
         ];
 
-        layerrule = [
-          "no_screen_share on, match:namespace notifications"
+        layer_rule = [
+          {
+            match.namespace = "notifications";
+            no_screen_share = true;
+          }
         ];
 
-        cursor.no_hardware_cursors = false;
+        cursor.no_hardware_cursors = 0;
 
-        exec-once = ["clipse -listen"] ++ config.wm.hyprland.extraExecOnce;
+        # TODO: Might have to rework this for config.wm.hyprland.extraExecOnce option.
+        on = let
+          lua = lib.generators.mkLuaInline;
+          on = event: body: {
+            _args = [
+              event
+              (lua ''function() ${body} end'')
+            ];
+          };
+          exec = cmd: ''hl.exec_cmd("${cmd}")'';
+        in [
+          (on "hyprland.start" ''
+            ${exec "clipse -listen"}
+          '')
+        ];
       };
     };
   };

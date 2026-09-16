@@ -57,7 +57,21 @@
   };
 
   wm.hyprland = {
-    monitors = ["eDP-1,1920x1080@144,0x0,1" "HDMI-A-1,1920x1080@60,auto,1,mirror,eDP-1"];
+    monitors = [
+      {
+        output = "eDP-1";
+        mode = "1920x1080@144";
+        position = "0x0";
+        scale = 1;
+      }
+      {
+        output = "HDMI-A-1";
+        mode = "preferred";
+        position = "0x0";
+        scale = "auto";
+        mirror = "HDMI-A-1";
+      }
+    ];
     mouseSens = -0.6;
     touchpadScrollFactor = 0.4;
     devices = [
