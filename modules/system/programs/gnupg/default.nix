@@ -17,7 +17,7 @@
       package = pkgs.gnupg;
       agent = {
         enable = true;
-        pinentryPackage = pkgs.pinentry-gtk2;
+        pinentryPackage = pkgs.pinentry-curses;
         settings = {default-cache-ttl = 1550;};
       };
     };

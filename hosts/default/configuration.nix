@@ -135,10 +135,10 @@
 
     # Keyring and stuff
     gnome-keyring
-    gcr
+    gcr_4
 
     # Productivity, I guess
-    libreoffice-fresh
+    libreoffice
     obsidian
     obsidian-export
 

@@ -17,7 +17,7 @@
         folder = "./Images";
       };
       templates = {
-        folder = "/Templates";
+        folder = "~/Documents/Obsidian/Templates";
         dateFormat = "%Y-%m-%d";
         timeFormat = "%H:%M";
         substitutions = {};
