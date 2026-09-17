@@ -114,8 +114,8 @@
           (bind "SUPER + SHIFT + 9" (mvWinToWs "9"))
           (bind "SUPER + SHIFT + 0" (mvWinToWs "10"))
 
-          (bindWithFlags "SUPER + mouse_up" "hl.dsp.focus({ workspace = \"e+1\"})" {mouse = true;})
-          (bindWithFlags "SUPER + mouse_down" "hl.dsp.focus({ workspace = \"e-1\"})" {mouse = true;})
+          (bindWithFlags "SUPER + mouse_up" "hl.dsp.focus({ workspace = \"e-1\"})" {mouse = true;})
+          (bindWithFlags "SUPER + mouse_down" "hl.dsp.focus({ workspace = \"e+1\"})" {mouse = true;})
 
           # Window
           (bind "SUPER + H" (mvFocusTo "left"))
@@ -131,6 +131,7 @@
           (bind "SUPER + Q" "hl.dsp.window.close()")
 
           (bind "SUPER + F" (fullScreenMode "maximized"))
+          (bind "SUPER + SHIFT + F" (fullScreenMode "fullscreen"))
           (bind "SUPER + F11" (fullScreenMode "fullscreen"))
           (bind "SUPER + A" "hl.dsp.window.float()")
 
@@ -174,60 +175,64 @@
 
         monitor = config.wm.hyprland.monitors;
 
-        general = {
-          gaps_in = 6;
-          gaps_out = 10;
-          border_size = 2;
-          "col.active_border" = "rgba(${base09}ee)";
-          "col.inactive_border" = "rgba(${base02}ee)";
-        };
-
-        input = {
-          kb_options = "compose:ralt";
-
-          touchpad = {
-            natural_scroll = true;
-            scroll_factor = config.wm.hyprland.touchpadScrollFactor;
+        config = {
+          general = {
+            gaps_in = 6;
+            gaps_out = 10;
+            border_size = 2;
+            "col.active_border" = "rgba(${base09}ee)";
+            "col.inactive_border" = "rgba(${base02}ee)";
           };
 
-          sensitivity = config.wm.hyprland.mouseSens;
-          accel_profile = "flat";
+          decoration = {
+            shadow = {
+              enabled = true;
+              render_power = 3;
+              color = "rgba(${base02}ee)";
+              color_inactive = "rgba(${base00}ee)";
+              range = 50;
+            };
+            rounding = 15;
+            blur = {
+              enabled = true;
+              size = 8;
+              passes = 4;
+              new_optimizations = true;
+              ignore_opacity = true;
+            };
+          };
+
+          input = {
+            kb_options = "compose:ralt";
+
+            touchpad = {
+              natural_scroll = true;
+              scroll_factor = config.wm.hyprland.touchpadScrollFactor;
+            };
+
+            sensitivity = config.wm.hyprland.mouseSens;
+            accel_profile = "flat";
+          };
+
+          # TODO: These might need reworks.
+          # https://wiki.hypr.land/configuring/core/animations/
+          # animations = {
+          #   enabled = 1;
+          #   bezier = ["overshot,0.13,0.99,0.29,1.1"];
+          #   animation = [
+          #     "windows,1,4,overshot,slide"
+          #     "border,1,10,default"
+          #     "fade,1,10,default"
+          #     "workspaces,1,6,overshot,slidevert"
+          #   ];
+          # };
+
+          dwindle.force_split = 0;
+
+          cursor.no_hardware_cursors = 0;
         };
 
         device = config.wm.hyprland.devices;
-
-        decoration = {
-          shadow = {
-            enabled = true;
-            render_power = 3;
-            color = "rgba(${base02}ee)";
-            color_inactive = "rgba(${base00}ee)";
-            range = 50;
-          };
-          rounding = 15;
-          blur = {
-            enabled = true;
-            size = 8;
-            passes = 4;
-            new_optimizations = true;
-            ignore_opacity = true;
-          };
-        };
-
-        dwindle.force_split = 0;
-
-        # TODO: These might need reworks. But should be ok.
-        # https://wiki.hypr.land/configuring/core/animations/
-        animations = {
-          enabled = 1;
-          bezier = ["overshot,0.13,0.99,0.29,1.1"];
-          animation = [
-            "windows,1,4,overshot,slide"
-            "border,1,10,default"
-            "fade,1,10,default"
-            "workspaces,1,6,overshot,slidevert"
-          ];
-        };
 
         window_rule = [
           {
@@ -302,8 +307,6 @@
             no_screen_share = true;
           }
         ];
-
-        cursor.no_hardware_cursors = 0;
 
         # TODO: Might have to rework this for config.wm.hyprland.extraExecOnce option.
         on = let
