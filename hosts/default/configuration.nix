@@ -125,6 +125,7 @@
     drawio
     gale
     blender
+    audacity
 
     pavucontrol
     crosspipe
