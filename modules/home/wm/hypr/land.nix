@@ -214,23 +214,54 @@
             accel_profile = "flat";
           };
 
-          # TODO: These might need reworks.
-          # https://wiki.hypr.land/configuring/core/animations/
-          # animations = {
-          #   enabled = 1;
-          #   bezier = ["overshot,0.13,0.99,0.29,1.1"];
-          #   animation = [
-          #     "windows,1,4,overshot,slide"
-          #     "border,1,10,default"
-          #     "fade,1,10,default"
-          #     "workspaces,1,6,overshot,slidevert"
-          #   ];
-          # };
-
           dwindle.force_split = 0;
 
           cursor.no_hardware_cursors = 0;
         };
+
+        curve = [
+          {
+            _args = [
+              "overshot"
+              {
+                type = "bezier";
+                points = [
+                  [0.13 0.99]
+                  [0.29 1.1]
+                ];
+              }
+            ];
+          }
+        ];
+
+        animation = [
+          {
+            leaf = "windows";
+            enabled = true;
+            speed = 4;
+            bezier = "overshot";
+            style = "slide";
+          }
+          {
+            leaf = "border";
+            enabled = true;
+            speed = 10;
+            bezier = "default";
+          }
+          {
+            leaf = "fade";
+            enabled = true;
+            speed = 10;
+            bezier = "default";
+          }
+          {
+            leaf = "workspaces";
+            enabled = true;
+            speed = 6;
+            bezier = "overshot";
+            style = "slidevert";
+          }
+        ];
 
         device = config.wm.hyprland.devices;
 
