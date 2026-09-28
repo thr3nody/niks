@@ -57,7 +57,14 @@
   };
 
   wm.hyprland = {
-    monitors = ["eDP-1,1920x1080@60,0x0,1"];
+    monitors = [
+      {
+        output = "eDP-1";
+        mode = "1920x1080@60";
+        position = "0x0";
+        scale = 1;
+      }
+    ];
     mouseSens = -0.6;
     touchpadScrollFactor = 0.15;
     devices = [
