@@ -89,7 +89,7 @@
           mvFocusTo = dr: ''hl.dsp.focus({ direction = "${dr}"})'';
           fullScreenMode = mode: ''hl.dsp.window.fullscreen({ mode = "${mode}"})'';
         in [
-          (bind "SUPER + SPACE" (exec "tofi-run | xargs hyprctl dispatch exec --"))
+          (bind "SUPER + SPACE" (exec "tofi-drun --drun-launch=true"))
 
           # Workspace
           (bind "SUPER + 1" (mvToWs "1"))
