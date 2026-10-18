@@ -127,6 +127,9 @@
     blender
     audacity
 
+    scrcpy
+    android-tools
+
     pavucontrol
     crosspipe
 
