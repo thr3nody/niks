@@ -21,7 +21,7 @@
     hlsearch = true;
     smartcase = true;
     wildmode = "list:longest";
-    completeopt = [ "menuone" "noselect" "noinsert" ];
+    completeopt = ["menuone" "noselect" "noinsert"];
     signcolumn = "yes";
     cursorline = false;
     scrolloff = 8;
@@ -34,5 +34,6 @@
     swapfile = false;
     undofile = true;
     conceallevel = 2;
+    spelllang = ["en_us"];
   };
 }

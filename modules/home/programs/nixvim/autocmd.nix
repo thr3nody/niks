@@ -4,6 +4,9 @@
       FormatOnSave = {
         clear = true;
       };
+      TinymistPin = {
+        clear = true;
+      };
     };
     autoCmd = [
       {
@@ -32,6 +35,37 @@
             vim.opt_local.tabstop = 8
             vim.opt_local.shiftwidth = 8
             vim.opt_local.softtabstop = 8
+          end
+        '';
+      }
+      {
+        event = "FileType";
+        pattern = ["typst" "markdown"];
+        command = "setlocal spell";
+      }
+      {
+        event = "LspAttach";
+        group = "TinymistPin";
+        desc = "Pin the nearest main.typ as tinymist's main file.";
+        callback.__raw = ''
+          function(args)
+            local client = vim.lsp.get_client_by_id(args.data.client_id)
+            if not client or client.name ~= "tinymist" then
+              return
+            end
+
+            local main = vim.fs.find("main.typ", {
+              upward = true,
+              path = vim.fs.dirname(vim.api.nvim_buf_get_name(args.buf)),
+            })[1]
+
+            if main then
+              client:exec_cmd({
+                title = "pin",
+                command = "tinymist.pinMain",
+                arguments = { main },
+              }, { bufnr = args.buf })
+            end
           end
         '';
       }

@@ -88,7 +88,14 @@
         tinymist = {
           enable = true;
           package = pkgs.tinymist;
-          settings.exportPdf = "onType";
+          settings = {
+            exportPdf = "onType";
+            fontPaths = ["./fonts"];
+          };
+        };
+        harper_ls = {
+          enable = true;
+          filetypes = ["typst" "markdown"];
         };
         pyright = {
           enable = true;

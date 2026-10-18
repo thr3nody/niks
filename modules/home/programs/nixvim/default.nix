@@ -17,6 +17,7 @@
     ./plugins/markview.nix
     ./plugins/snacks.nix
     ./plugins/obsidian.nix
+    ./plugins/treesitter.nix
   ];
 
   programs.nixvim = {
